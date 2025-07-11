@@ -22,3 +22,18 @@ _bundled = {
 [node name="Main" type="Node2D"]
 script = ExtResource("1_v2ws0")
 enemy_scene = SubResource("PackedScene_gpk2e")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
+size = Vector2i(384, 216)
+
+[node name="UIParent" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
