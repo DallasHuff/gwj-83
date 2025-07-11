@@ -24,5 +24,7 @@ gdscript/warnings/untyped_declaration=2
 
 [display]
 
-window/size/viewport_width=1920
-window/size/viewport_height=1080
+window/size/viewport_width=640
+window/size/viewport_height=360
+window/stretch/mode="viewport"
+window/stretch/scale_mode="integer"

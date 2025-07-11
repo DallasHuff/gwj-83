@@ -1,7 +1,6 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpar1iyust6v3"]
+[gd_scene load_steps=4 format=3 uid="uid://bpar1iyust6v3"]
 
 [ext_resource type="Script" uid="uid://b0gcayqp0jv6m" path="res://common/main/main.gd" id="1_v2ws0"]
-[ext_resource type="Script" uid="uid://dinna8yxagqok" path="res://common/main/sub_viewport_container.gd" id="2_qfc1f"]
 
 [sub_resource type="GDScript" id="GDScript_es36h"]
 script/source = "extends Node2D
@@ -23,21 +22,3 @@ _bundled = {
 [node name="Main" type="Node2D"]
 script = ExtResource("1_v2ws0")
 enemy_scene = SubResource("PackedScene_gpk2e")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
-script = ExtResource("2_qfc1f")
-
-[node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(640, 360)
-render_target_update_mode = 4
-
-[node name="UIParent" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
