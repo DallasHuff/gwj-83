@@ -1,3 +1,61 @@
-[gd_scene format=3 uid="uid://dfwplfqccjgah"]
+[gd_scene load_steps=9 format=3 uid="uid://dfwplfqccjgah"]
+
+[ext_resource type="Script" uid="uid://e8kd1dfgjoyx" path="res://combat_area/arena.gd" id="1_06mus"]
+[ext_resource type="Texture2D" uid="uid://bpx726uswm0o8" path="res://assets/enemies/kobold/ATTACK 1.png" id="1_tf7te"]
+[ext_resource type="Script" uid="uid://ur5fp1m7ww8m" path="res://combat_area/enemy_manager.gd" id="2_yhgyy"]
+[ext_resource type="PackedScene" uid="uid://dbcarbcoykvcp" path="res://combat_area/enemy_stats/enemy.tscn" id="4_5ehcq"]
+[ext_resource type="Script" uid="uid://cx2xvuia1gr48" path="res://combat_area/enemy_stats/enemy_stats.gd" id="5_wjadm"]
+[ext_resource type="Resource" uid="uid://b2lghwq7roidb" path="res://combat_area/enemy_stats/mini_demon/mini_demon.tres" id="6_6fwj8"]
+[ext_resource type="Resource" uid="uid://cr4letfros8cu" path="res://combat_area/enemy_stats/mini_memory_eater/mini_memory_eater.tres" id="7_8htal"]
+[ext_resource type="Resource" uid="uid://cisl3g6enmscf" path="res://combat_area/enemy_stats/mini_spirit/mini_spirit.tres" id="8_v6xpb"]
 
 [node name="Arena" type="Node2D"]
+script = ExtResource("1_06mus")
+
+[node name="Line2D" type="Line2D" parent="."]
+points = PackedVector2Array(0, 216, 384, 216, 384, 0, 0, 0, 0, 216)
+width = 3.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(65, 79)
+texture = ExtResource("1_tf7te")
+hframes = 5
+frame = 4
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(320, 160)
+texture = ExtResource("1_tf7te")
+hframes = 5
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(266, 96)
+texture = ExtResource("1_tf7te")
+hframes = 5
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+position = Vector2(169, 94)
+texture = ExtResource("1_tf7te")
+hframes = 5
+
+[node name="Sprite2D6" type="Sprite2D" parent="."]
+position = Vector2(215, 162)
+texture = ExtResource("1_tf7te")
+hframes = 5
+
+[node name="Sprite2D7" type="Sprite2D" parent="."]
+position = Vector2(217, 35)
+texture = ExtResource("1_tf7te")
+hframes = 5
+
+[node name="Sprite2D5" type="Sprite2D" parent="."]
+position = Vector2(321, 42)
+texture = ExtResource("1_tf7te")
+hframes = 5
+
+[node name="EnemyManager" type="Node" parent="."]
+script = ExtResource("2_yhgyy")
+enemy_scene = ExtResource("4_5ehcq")
+available_enemies = Array[ExtResource("5_wjadm")]([ExtResource("6_6fwj8"), ExtResource("7_8htal"), ExtResource("8_v6xpb")])
+
+[node name="Camera2D" type="Camera2D" parent="."]
+offset = Vector2(192, 54)

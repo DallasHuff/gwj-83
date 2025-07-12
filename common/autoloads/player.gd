@@ -1,23 +1,11 @@
 extends Node
 
-var blood: int = 0
-var souls: int = 0
-var memories: int = 0
+var max_health: float
+var attack_damage: float
+var crit_chance: float
+var attack_speed: float
+var life_steal: float
+var defense: float
+var spell_power: float
+var mana_regen: float
 
-
-func _ready() -> void:
-	CombatEvents.blood_gained.connect(_on_blood_gained)
-	CombatEvents.souls_gained.connect(_on_souls_gained)
-	CombatEvents.memories_gained.connect(_on_memories_gained)
-
-
-func _on_blood_gained(amount: int) -> void:
-	blood += amount
-
-
-func _on_souls_gained(amount: int) -> void:
-	souls += amount
-
-
-func _on_memories_gained(amount: int) -> void:
-	memories += amount

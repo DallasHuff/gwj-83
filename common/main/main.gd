@@ -1,11 +1,14 @@
 class_name Main
 extends Node
 
-@export var enemy_scene: PackedScene
+@export var arena_scene: PackedScene
+@export var shop_scene: PackedScene
+
+@onready var game: SubViewport = %SubViewport
+@onready var ui: Control = %UIParent
 
 
 func _ready() -> void:
 	Global.main = self
-	var enemy: Node2D = enemy_scene.instantiate()
-	add_child(enemy)
-	enemy.global_position = Vector2.ZERO
+	var arena: Arena = arena_scene.instantiate()
+	game.add_child(arena)
