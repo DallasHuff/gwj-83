@@ -2,16 +2,83 @@ extends Resource
 class_name ShopData
 
 # costs 
-var attack_damage_cost: int = 2 
-var attack_speed_cost: int = 2 
-var life_steal_cost: int = 2 
-var health_upgrade_cost: int = 2
-var armor_upgrade_cost: int = 2
-var spell_power_cost: int = 2
-var mana_regen_cost: int = 2
-var enemy_spawn_seed_cost: int = 2
-var amount_spawned_cost: int = 2
-var enemy_health_increase_cost: int = 2
+var attack_damage_cost: Dictionary = {
+	0: 1,
+	1: 2, 
+	2: 3,
+	3: 4, 
+	4: 5,
+}
+var attack_damage_cost1: Dictionary = {
+	0: 1,
+	1: 2, 
+	2: 3,
+	3: 4,
+	4: 5,
+}
+var attack_speed_cost: Dictionary = {
+	0: 1,
+	1: 2, 
+	2: 3,
+	3: 4,
+	4: 5,
+}
+var life_steal_cost: Dictionary = {
+	0: 1,
+	1: 2, 
+	2: 3,
+	3: 4,
+	4: 5,
+}
+var health_upgrade_cost: Dictionary = {
+	0: 1,
+	1: 2, 
+	2: 3,
+	3: 4,
+	4: 5,
+}
+var armor_upgrade_cost: Dictionary = {
+	0: 1,
+	1: 2, 
+	2: 3,
+	3: 4,
+	4: 5,
+}
+var spell_power_cost: Dictionary = {
+	0: 1,
+	1: 2, 
+	2: 3,
+	3: 4,
+	4: 5,
+}
+var mana_regen_cost: Dictionary = {
+	0: 1,
+	1: 2, 
+	2: 3,
+	3: 4,
+	4: 5,
+}
+var enemy_spawn_seed_cost: Dictionary = {
+	0: 1,
+	1: 2, 
+	2: 3,
+	3: 4,
+	4: 5,
+}
+var amount_spawned_cost: Dictionary = {
+	0: 1,
+	1: 2, 
+	2: 3,
+	3: 4,
+	4: 5,
+}
+var enemy_health_increase_cost: Dictionary = {
+	0: 1,
+	1: 2, 
+	2: 3,
+	3: 4,
+	4: 5,
+}
 
 # levels 
 var attack_damage_level: int = 0 
