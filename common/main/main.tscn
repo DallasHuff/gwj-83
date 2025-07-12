@@ -1,38 +1,41 @@
 [gd_scene load_steps=4 format=3 uid="uid://bpar1iyust6v3"]
 
 [ext_resource type="Script" uid="uid://b0gcayqp0jv6m" path="res://common/main/main.gd" id="1_v2ws0"]
-
-[sub_resource type="GDScript" id="GDScript_es36h"]
-script/source = "extends Node2D
-"
-
-[sub_resource type="PackedScene" id="PackedScene_gpk2e"]
-_bundled = {
-"conn_count": 0,
-"conns": PackedInt32Array(),
-"editable_instances": [],
-"names": PackedStringArray("Enemy", "Node2D", "script", "Sprite2D", "Sprite2D"),
-"node_count": 2,
-"node_paths": [NodePath(".")],
-"nodes": PackedInt32Array(-1, -1, 1, 0, -1, 1, 2, 0, 0, 1073741824, 0, 4, 3, -1, 0, 0),
-"variants": [SubResource("GDScript_es36h")],
-"version": 3
-}
+[ext_resource type="PackedScene" uid="uid://dfwplfqccjgah" path="res://combat_area/arena.tscn" id="2_es36h"]
+[ext_resource type="Script" uid="uid://r5yekd1v2t0s" path="res://common/main/sub_viewport_container.gd" id="2_qfc1f"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_v2ws0")
-enemy_scene = SubResource("PackedScene_gpk2e")
+arena_scene = ExtResource("2_es36h")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="SubViewportContainer" type="SubViewportContainer" parent="CanvasLayer"]
-offset_right = 40.0
-offset_bottom = 40.0
+unique_name_in_owner = true
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+script = ExtResource("2_qfc1f")
 
 [node name="SubViewport" type="SubViewport" parent="CanvasLayer/SubViewportContainer"]
-size = Vector2i(384, 216)
+unique_name_in_owner = true
+disable_3d = true
+transparent_bg = true
+handle_input_locally = false
+snap_2d_transforms_to_pixel = true
+snap_2d_vertices_to_pixel = true
+canvas_item_default_texture_filter = 0
+audio_listener_enable_2d = true
+physics_object_picking = true
+size = Vector2i(1920, 1080)
+size_2d_override = Vector2i(384, 216)
+render_target_update_mode = 4
 
 [node name="UIParent" type="Control" parent="CanvasLayer"]
+unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
