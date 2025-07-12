@@ -1,8 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4g54u5y2n181"]
+[gd_scene load_steps=3 format=3 uid="uid://b4g54u5y2n181"]
 
 [ext_resource type="Script" uid="uid://c6t1d2valsj1n" path="res://shop/shop.gd" id="1_r2p71"]
 [ext_resource type="Resource" uid="uid://b6p7fs76j6uqt" path="res://shop/resources/shop_data.tres" id="2_sxvro"]
-[ext_resource type="Script" uid="uid://dvquutds0pfb7" path="res://shop/abilities/abilities_container.gd" id="3_givde"]
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -46,7 +45,6 @@ theme_override_constants/margin_bottom = 24
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_constants/separation = 53
-script = ExtResource("3_givde")
 
 [node name="AttackDamageHbox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
 layout_mode = 2
@@ -56,24 +54,21 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Attack Damage"
 
-[node name="AbilityPrice1" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackDamageHbox"]
-unique_name_in_owner = true
+[node name="AbilityPrice" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackDamageHbox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Price"
 
-[node name="AbilityLevel1" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackDamageHbox"]
-unique_name_in_owner = true
+[node name="AbilityLevel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackDamageHbox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 horizontal_alignment = 1
 
 [node name="AttackDamageButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackDamageHbox"]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-text = "+1"
+text = "Upgrade Btn"
 
 [node name="AttackSpeedHbox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
 layout_mode = 2
@@ -83,24 +78,21 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Attack Speed"
 
-[node name="AbilityPrice2" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackSpeedHbox"]
-unique_name_in_owner = true
+[node name="AbilityPrice" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackSpeedHbox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Price"
 
-[node name="AbilityLevel2" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackSpeedHbox"]
-unique_name_in_owner = true
+[node name="AbilityLevel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackSpeedHbox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 horizontal_alignment = 1
 
 [node name="AttackSpeedButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackSpeedHbox"]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-text = "+1"
+text = "Upgrade Btn"
 
 [node name="LifeStealHbox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
 layout_mode = 2
@@ -110,24 +102,21 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Life Steal"
 
-[node name="AbilityPrice3" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/LifeStealHbox"]
-unique_name_in_owner = true
+[node name="AbilityPrice" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/LifeStealHbox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Price"
 
-[node name="AbilityLevel3" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/LifeStealHbox"]
-unique_name_in_owner = true
+[node name="AbilityLevel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/LifeStealHbox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 horizontal_alignment = 1
 
 [node name="LifeStealButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/LifeStealHbox"]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-text = "+1"
+text = "Upgrade Btn"
 
 [node name="HealthHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
 layout_mode = 2
@@ -137,24 +126,21 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Health"
 
-[node name="AbilityPrice4" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/HealthHBox"]
-unique_name_in_owner = true
+[node name="AbilityPrice" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/HealthHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Price"
 
-[node name="AbilityLevel4" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/HealthHBox"]
-unique_name_in_owner = true
+[node name="AbilityLevel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/HealthHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 horizontal_alignment = 1
 
 [node name="HealthUpgradeButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/HealthHBox"]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-text = "+1"
+text = "Upgrade Btn"
 
 [node name="ArmorHbox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
 layout_mode = 2
@@ -164,24 +150,21 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Defense"
 
-[node name="ArmorPriceLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ArmorHbox"]
-unique_name_in_owner = true
+[node name="AbilityPrice" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ArmorHbox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Price"
 
-[node name="ArmorLevelLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ArmorHbox"]
-unique_name_in_owner = true
+[node name="AbilityLevel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ArmorHbox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 horizontal_alignment = 1
 
 [node name="ArmorUpgradeButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ArmorHbox"]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-text = "+1"
+text = "Upgrade Btn"
 
 [node name="SpellPowerHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
 layout_mode = 2
@@ -191,24 +174,21 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Spell Power"
 
-[node name="AbilityPrice5" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpellPowerHBox"]
-unique_name_in_owner = true
+[node name="AbilityPrice" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpellPowerHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Price"
 
-[node name="AbilityLevel5" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpellPowerHBox"]
-unique_name_in_owner = true
+[node name="AbilityLevel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpellPowerHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 horizontal_alignment = 1
 
 [node name="SpellPowerButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpellPowerHBox"]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-text = "+1"
+text = "Upgrade Btn"
 
 [node name="ManaRegenHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
 layout_mode = 2
@@ -218,24 +198,21 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Mana Regen"
 
-[node name="AbilityPrice6" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ManaRegenHBox"]
-unique_name_in_owner = true
+[node name="AbilityPrice" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ManaRegenHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Price"
 
-[node name="AbilityLevel6" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ManaRegenHBox"]
-unique_name_in_owner = true
+[node name="AbilityLevel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ManaRegenHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 horizontal_alignment = 1
 
 [node name="ManaRegenButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ManaRegenHBox"]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-text = "+1"
+text = "Upgrade Btn"
 
 [node name="EnemySpawnSeedHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
 layout_mode = 2
@@ -245,24 +222,21 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Enemy Spawn Speed"
 
-[node name="AbilityPrice7" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemySpawnSeedHBox"]
-unique_name_in_owner = true
+[node name="AbilityPrice" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemySpawnSeedHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Price"
 
-[node name="AbilityLevel7" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemySpawnSeedHBox"]
-unique_name_in_owner = true
+[node name="AbilityLevel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemySpawnSeedHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 horizontal_alignment = 1
 
 [node name="EnemySpawnButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemySpawnSeedHBox"]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-text = "+1"
+text = "Upgrade Btn"
 
 [node name="AmountSpawnedHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
 layout_mode = 2
@@ -272,24 +246,21 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Amount Spawned"
 
-[node name="AbilityPrice8" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AmountSpawnedHBox"]
-unique_name_in_owner = true
+[node name="AbilityPrice" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AmountSpawnedHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Price"
 
-[node name="AbilityLevel8" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AmountSpawnedHBox"]
-unique_name_in_owner = true
+[node name="AbilityLevel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AmountSpawnedHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 horizontal_alignment = 1
 
 [node name="AmountSpawnedButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AmountSpawnedHBox"]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-text = "+1"
+text = "Upgrade Btn"
 
 [node name="EnemyHealthIncreaseHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
 layout_mode = 2
@@ -299,23 +270,18 @@ layout_mode = 2
 size_flags_horizontal = 3
 text = "Enemy Health +"
 
-[node name="AbilityPrice9" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemyHealthIncreaseHBox"]
-unique_name_in_owner = true
+[node name="AbilityPrice" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemyHealthIncreaseHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "Price"
 
-[node name="AbilityLevel9" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemyHealthIncreaseHBox"]
-unique_name_in_owner = true
+[node name="AbilityLevel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemyHealthIncreaseHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
 text = "0"
 horizontal_alignment = 1
 
 [node name="EnemyHealthButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemyHealthIncreaseHBox"]
-unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
-text = "+1"
-
-[connection signal="button_down" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackDamageHbox/AttackDamageButton" to="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer" method="_on_attack_damage_button_button_down"]
+text = "Upgrade Btn"
