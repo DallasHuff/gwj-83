@@ -48,7 +48,7 @@ func attack() -> void:
 
 
 func die() -> void:
-	CombatEvents.enemy_died.emit(stats)
+	CombatEvents.enemy_died.emit(self)
 	died.emit()
 
 
