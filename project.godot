@@ -44,6 +44,10 @@ folder_colors={
 "res://shop/": "blue"
 }
 
+[gui]
+
+theme/custom="uid://bu16e2vtfa5vc"
+
 [rendering]
 
 textures/canvas_textures/default_texture_filter=0

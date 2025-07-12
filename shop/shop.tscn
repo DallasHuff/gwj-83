@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://b4g54u5y2n181"]
+[gd_scene load_steps=5 format=3 uid="uid://b4g54u5y2n181"]
 
 [ext_resource type="Script" uid="uid://c6t1d2valsj1n" path="res://shop/shop.gd" id="1_r2p71"]
 [ext_resource type="Resource" uid="uid://b6p7fs76j6uqt" path="res://shop/resources/shop_data.tres" id="2_sxvro"]
 [ext_resource type="Script" uid="uid://dvquutds0pfb7" path="res://shop/abilities/abilities_container.gd" id="3_givde"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_givde"]
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -36,6 +38,59 @@ theme_override_constants/separation = 15
 layout_mode = 2
 text = "SHOP"
 horizontal_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 12
+
+[node name="PlayerResourcesHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BloodCountHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/PlayerResourcesHBox"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="BloodIcon" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/PlayerResourcesHBox/BloodCountHBox"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_givde")
+expand_mode = 3
+
+[node name="BloodCountLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/PlayerResourcesHBox/BloodCountHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Blood Count"
+
+[node name="SoulsCountHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/PlayerResourcesHBox"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="SoulsIcon" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/PlayerResourcesHBox/SoulsCountHBox"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_givde")
+expand_mode = 3
+
+[node name="SoulsCountLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/PlayerResourcesHBox/SoulsCountHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Souls Count"
+
+[node name="MemoriesCountHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/PlayerResourcesHBox"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="MemoriesIcon" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/PlayerResourcesHBox/MemoriesCountHBox"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_givde")
+expand_mode = 3
+
+[node name="MemoriesCountLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/PlayerResourcesHBox/MemoriesCountHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Memories Count"
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -243,7 +298,7 @@ layout_mode = 2
 [node name="EnemySpawnLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemySpawnSeedHBox"]
 layout_mode = 2
 size_flags_horizontal = 3
-text = "Enemy Spawn Speed"
+text = "Enemy Spawn"
 
 [node name="AbilityPrice7" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemySpawnSeedHBox"]
 unique_name_in_owner = true
