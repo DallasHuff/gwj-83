@@ -1,9 +1,124 @@
-[gd_scene load_steps=2 format=3 uid="uid://dbcarbcoykvcp"]
+[gd_scene load_steps=10 format=3 uid="uid://dbcarbcoykvcp"]
 
 [ext_resource type="Script" uid="uid://dwjtxcqkqyhv1" path="res://combat_area/enemy_stats/enemy.gd" id="1_1hql8"]
+[ext_resource type="SpriteFrames" uid="uid://bbjq76qsrcsy3" path="res://combat_area/enemy_stats/mini_spirit/mini_spirit_frames.tres" id="2_4bc1d"]
+
+[sub_resource type="Animation" id="Animation_1hql8"]
+resource_name = "death"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"death", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.9),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"die"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_4bc1d"]
+resource_name = "attack"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"attack", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.666667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0n22g"]
+_data = {
+&"attack": SubResource("Animation_4bc1d"),
+&"death": SubResource("Animation_1hql8")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bc1d"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0n22g"]
+bg_color = Color(0.578826, 0.262167, 0.0434045, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8eder"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbd3b"]
+bg_color = Color(0.0638053, 0.451248, 1.92523e-07, 1)
 
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_1hql8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
+sprite_frames = ExtResource("2_4bc1d")
+animation = &"attack"
+flip_h = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_0n22g")
+}
+
+[node name="AttackProgress" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(45, 5)
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -24.0
+offset_top = -36.0
+offset_right = 21.0
+offset_bottom = -31.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+theme_override_styles/background = SubResource("StyleBoxFlat_4bc1d")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0n22g")
+show_percentage = false
+
+[node name="HealthProgress" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(60, 7)
+offset_left = -30.0
+offset_top = -27.0
+offset_right = 30.0
+offset_bottom = -20.0
+theme_override_styles/background = SubResource("StyleBoxFlat_8eder")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cbd3b")
+show_percentage = false

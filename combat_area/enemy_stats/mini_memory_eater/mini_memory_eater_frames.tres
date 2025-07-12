@@ -43,4 +43,9 @@ animations = [{
 "loop": true,
 "name": &"attack",
 "speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"death",
+"speed": 5.0
 }]
