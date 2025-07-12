@@ -1,61 +1,223 @@
-[gd_scene load_steps=9 format=3 uid="uid://dfwplfqccjgah"]
+[gd_scene load_steps=22 format=3 uid="uid://dfwplfqccjgah"]
 
 [ext_resource type="Script" uid="uid://e8kd1dfgjoyx" path="res://combat_area/arena.gd" id="1_06mus"]
-[ext_resource type="Texture2D" uid="uid://bpx726uswm0o8" path="res://assets/enemies/kobold/ATTACK 1.png" id="1_tf7te"]
 [ext_resource type="Script" uid="uid://ur5fp1m7ww8m" path="res://combat_area/enemy_manager.gd" id="2_yhgyy"]
+[ext_resource type="Script" uid="uid://ln5hpmi4hpev" path="res://combat_area/currency_mover.gd" id="3_6fwj8"]
+[ext_resource type="SpriteFrames" uid="uid://c6y7e2duvk6f2" path="res://combat_area/player/player_frames.tres" id="3_wjadm"]
 [ext_resource type="PackedScene" uid="uid://dbcarbcoykvcp" path="res://combat_area/enemy_stats/enemy.tscn" id="4_5ehcq"]
 [ext_resource type="Script" uid="uid://cx2xvuia1gr48" path="res://combat_area/enemy_stats/enemy_stats.gd" id="5_wjadm"]
 [ext_resource type="Resource" uid="uid://b2lghwq7roidb" path="res://combat_area/enemy_stats/mini_demon/mini_demon.tres" id="6_6fwj8"]
 [ext_resource type="Resource" uid="uid://cr4letfros8cu" path="res://combat_area/enemy_stats/mini_memory_eater/mini_memory_eater.tres" id="7_8htal"]
 [ext_resource type="Resource" uid="uid://cisl3g6enmscf" path="res://combat_area/enemy_stats/mini_spirit/mini_spirit.tres" id="8_v6xpb"]
+[ext_resource type="Script" uid="uid://wmowx157tj4i" path="res://combat_area/player/player_combat_manager.gd" id="9_wjadm"]
+
+[sub_resource type="Animation" id="Animation_6fwj8"]
+resource_name = "attack"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"attack", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerCombatManager")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.266667),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"attack"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_8htal"]
+resource_name = "cast"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"cast", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerCombatManager")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"cast"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_wjadm"]
+resource_name = "death"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"death", 1.0, false],
+"method": &"play"
+}]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PlayerCombatManager")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.633333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"die"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_v6xpb"]
+resource_name = "idle"
+length = 0.2
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("PlayerSprite")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"idle", 1.0, false],
+"method": &"play"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v6xpb"]
+_data = {
+&"attack": SubResource("Animation_6fwj8"),
+&"cast": SubResource("Animation_8htal"),
+&"death": SubResource("Animation_wjadm"),
+&"idle": SubResource("Animation_v6xpb")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xb1dc"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cforn"]
+bg_color = Color(0.164206, 0.46262, 0.146827, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8htal"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6xpb"]
+bg_color = Color(0, 0.419047, 0.933055, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wjadm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fwj8"]
+bg_color = Color(0.576949, 0.239198, 0, 1)
 
 [node name="Arena" type="Node2D"]
 script = ExtResource("1_06mus")
+
+[node name="PlayerCombatManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("9_wjadm")
+
+[node name="CurrencyMover" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_6fwj8")
+
+[node name="EnemyManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_yhgyy")
+enemy_scene = ExtResource("4_5ehcq")
+available_enemies = Array[ExtResource("5_wjadm")]([ExtResource("6_6fwj8"), ExtResource("7_8htal"), ExtResource("8_v6xpb")])
 
 [node name="Line2D" type="Line2D" parent="."]
 points = PackedVector2Array(0, 216, 384, 216, 384, 0, 0, 0, 0, 216)
 width = 3.0
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="PlayerAnimator" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
+libraries = {
+&"": SubResource("AnimationLibrary_v6xpb")
+}
+
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
 position = Vector2(65, 79)
-texture = ExtResource("1_tf7te")
-hframes = 5
-frame = 4
+sprite_frames = ExtResource("3_wjadm")
+animation = &"attack"
 
-[node name="Sprite2D2" type="Sprite2D" parent="."]
-position = Vector2(320, 160)
-texture = ExtResource("1_tf7te")
-hframes = 5
+[node name="HealthProgress" type="ProgressBar" parent="PlayerSprite"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 10)
+offset_left = -24.0
+offset_top = -31.0
+offset_right = 26.0
+offset_bottom = -21.0
+theme_override_styles/background = SubResource("StyleBoxFlat_xb1dc")
+theme_override_styles/fill = SubResource("StyleBoxFlat_cforn")
+value = 100.0
+show_percentage = false
 
-[node name="Sprite2D3" type="Sprite2D" parent="."]
-position = Vector2(266, 96)
-texture = ExtResource("1_tf7te")
-hframes = 5
+[node name="VBoxContainer" type="VBoxContainer" parent="PlayerSprite"]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -94.0
+offset_top = -48.0
+offset_right = -54.0
+offset_bottom = -8.0
+grow_horizontal = 2
+theme_override_constants/separation = 2
 
-[node name="Sprite2D4" type="Sprite2D" parent="."]
-position = Vector2(169, 94)
-texture = ExtResource("1_tf7te")
-hframes = 5
+[node name="ManaProgress" type="ProgressBar" parent="PlayerSprite/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 5)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_8htal")
+theme_override_styles/fill = SubResource("StyleBoxFlat_v6xpb")
+max_value = 8.0
+show_percentage = false
 
-[node name="Sprite2D6" type="Sprite2D" parent="."]
-position = Vector2(215, 162)
-texture = ExtResource("1_tf7te")
-hframes = 5
-
-[node name="Sprite2D7" type="Sprite2D" parent="."]
-position = Vector2(217, 35)
-texture = ExtResource("1_tf7te")
-hframes = 5
-
-[node name="Sprite2D5" type="Sprite2D" parent="."]
-position = Vector2(321, 42)
-texture = ExtResource("1_tf7te")
-hframes = 5
-
-[node name="EnemyManager" type="Node" parent="."]
-script = ExtResource("2_yhgyy")
-enemy_scene = ExtResource("4_5ehcq")
-available_enemies = Array[ExtResource("5_wjadm")]([ExtResource("6_6fwj8"), ExtResource("7_8htal"), ExtResource("8_v6xpb")])
+[node name="AttackProgress" type="ProgressBar" parent="PlayerSprite/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(40, 5)
+layout_mode = 2
+theme_override_styles/background = SubResource("StyleBoxFlat_wjadm")
+theme_override_styles/fill = SubResource("StyleBoxFlat_6fwj8")
+max_value = 3.0
+show_percentage = false
 
 [node name="Camera2D" type="Camera2D" parent="."]
 offset = Vector2(192, 54)

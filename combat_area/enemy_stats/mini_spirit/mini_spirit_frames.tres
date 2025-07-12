@@ -40,7 +40,12 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_htcda")
 }],
-"loop": true,
+"loop": false,
 "name": &"attack",
-"speed": 5.0
+"speed": 12.0
+}, {
+"frames": [],
+"loop": false,
+"name": &"death",
+"speed": 12.0
 }]

@@ -9,8 +9,6 @@ var in_combat := false
 func _ready() -> void:
 	pause_play.pressed.connect(_on_pause_play_pressed)
 	speed_button.pressed.connect(_on_speed_button_pressed)
-	CombatEvents.combat_started.connect(_on_combat_started)
-	CombatEvents.combat_ended.connect(_on_combat_ended)
 	set_engine_speed()
 
 

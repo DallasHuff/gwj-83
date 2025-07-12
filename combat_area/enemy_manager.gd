@@ -13,6 +13,7 @@ var slot_to_position: Dictionary[int, Vector2] = {
 	4 : Vector2(217, 35),
 	5 : Vector2(169, 94),
 }
+var enemy_spawn_speed: float = 1
 var highest_slot_unlocked: int = 0
 var enemies: Array[Enemy] = []
 
@@ -20,18 +21,35 @@ var enemies: Array[Enemy] = []
 func _ready() -> void:
 	enemies.resize(MAX_SLOTS)
 	enemies.fill(null)
-	for i in range(highest_slot_unlocked):
+	for i in range(highest_slot_unlocked+1):
 		add_new_enemy(i)
 
 
 func add_new_enemy(slot: int) -> void:
 	var e: Enemy = enemy_scene.instantiate()
-	enemies[slot] = e
+	e.died.connect(_on_enemy_died.bind(slot))
+	e.attacked.connect(_on_enemy_attacked.bind(e))
 	
 	e.stats = available_enemies.pick_random()
 
 	Global.main.game.add_child(e)
-	e.global_position = slot_to_position[slot]
+	e.global_position = Vector2(500, slot_to_position[slot].y)
+	var tween := create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(e, "global_position", slot_to_position[slot], 1)
+	tween.tween_callback(func()->void: enemies[slot] = e; e.in_combat = true)
+
+
+func _on_enemy_died(slot: int) -> void:
+	if is_instance_valid(enemies[slot]):
+		enemies[slot].queue_free()
+		enemies[slot] = null
+	await get_tree().create_timer(enemy_spawn_speed).timeout
+	add_new_enemy(slot)
+
+
+func _on_enemy_attacked(enemy: Enemy) -> void:
+	Player.current_health = Player.current_health - enemy.stats.damage
 
 
 func _on_slot_added() -> void:

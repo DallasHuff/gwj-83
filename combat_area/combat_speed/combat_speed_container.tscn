@@ -2,24 +2,33 @@
 
 [ext_resource type="Script" uid="uid://wwaycvb137hq" path="res://combat_area/combat_speed/combat_speed_container.gd" id="1_uvp47"]
 
-[node name="CombatSpeedContainer" type="HBoxContainer"]
-custom_minimum_size = Vector2(1152, 0)
-anchors_preset = 2
-anchor_top = 1.0
+[node name="MarginContainer" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = 1152.0
-grow_vertical = 0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_bottom = 20
+
+[node name="CombatSpeedContainer" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(1152, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 8
 theme_override_constants/separation = 100
 script = ExtResource("1_uvp47")
 
-[node name="PauseButton" type="Button" parent="."]
+[node name="PausePlay" type="Button" parent="CombatSpeedContainer"]
 unique_name_in_owner = true
+process_mode = 3
 custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
 size_flags_horizontal = 10
 
-[node name="SpeedButton" type="Button" parent="."]
+[node name="SpeedButton" type="Button" parent="CombatSpeedContainer"]
 unique_name_in_owner = true
+process_mode = 3
 custom_minimum_size = Vector2(150, 100)
 layout_mode = 2
 size_flags_horizontal = 2
