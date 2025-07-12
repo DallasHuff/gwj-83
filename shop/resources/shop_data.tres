@@ -1,0 +1,26 @@
+[gd_resource type="Resource" script_class="ShopData" load_steps=2 format=3 uid="uid://b6p7fs76j6uqt"]
+
+[ext_resource type="Script" uid="uid://2tb6odxgflwg" path="res://shop/shop_data.gd" id="1_7o88l"]
+
+[resource]
+script = ExtResource("1_7o88l")
+attack_damage_cost = 0
+attack_speed_cost = 0
+life_steal_cost = 0
+health_upgrade_cost = 0
+armor_upgrade_cost = 0
+spell_power_cost = 0
+mana_regen_cost = 0
+enemy_spawn_seed_cost = 0
+amount_spawned_cost = 0
+enemy_health_increase_cost = 0
+attack_damage_level = 0
+attack_speed_level = 0
+life_steal_level = 0
+health_upgrade_level = 0
+armor_upgrade_level = 0
+spell_power_level = 0
+mana_regen_level = 0
+enemy_spawn_seed_level = 0
+amount_spawned_level = 0
+enemy_health_increase_level = 0
