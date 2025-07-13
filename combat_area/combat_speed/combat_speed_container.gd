@@ -1,6 +1,5 @@
 extends HBoxContainer
 
-var in_combat := false
 
 @onready var pause_play: Button = %PausePlay
 @onready var speed_button: Button = %SpeedButton
@@ -9,29 +8,25 @@ var in_combat := false
 func _ready() -> void:
 	pause_play.pressed.connect(_on_pause_play_pressed)
 	speed_button.pressed.connect(_on_speed_button_pressed)
-	set_engine_speed()
-
-
-func set_engine_speed() -> void:
-	if in_combat:
-		Engine.time_scale = Settings.battle_speed
-	else:
-		Engine.time_scale = 1
+	Engine.time_scale = 1
 	get_tree().paused = false
 
 
 func _on_speed_button_pressed() -> void:
-	pass
+	if is_equal_approx(Engine.time_scale, 1):
+		speed_button.text = "2x"
+		Engine.time_scale = 2
+	elif is_equal_approx(Engine.time_scale, 2):
+		Engine.time_scale = 3
+		speed_button.text = "3x"
+	elif is_equal_approx(Engine.time_scale, 3):
+		Engine.time_scale = 1
+		speed_button.text = "1x"
 
 
 func _on_pause_play_pressed() -> void:
 	get_tree().paused = not get_tree().paused
-
-
-func _on_combat_started() -> void:
-	in_combat = true
-	set_engine_speed()
-
-
-func _on_combat_ended() -> void:
-	Engine.time_scale = 1
+	if get_tree().paused:
+		pause_play.text = "l>"
+	else:
+		pause_play.text = "ll"

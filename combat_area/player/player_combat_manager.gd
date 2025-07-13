@@ -56,7 +56,7 @@ func attack() -> void:
 
 
 func die() -> void:
-	pass
+	CombatEvents.game_over.emit()
 
 
 func _on_health_changed(current: float, max_hp: float) -> void:

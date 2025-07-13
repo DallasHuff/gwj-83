@@ -1,18 +1,26 @@
-[gd_scene load_steps=7 format=3 uid="uid://bpar1iyust6v3"]
+[gd_scene load_steps=10 format=3 uid="uid://bpar1iyust6v3"]
 
 [ext_resource type="Script" uid="uid://b0gcayqp0jv6m" path="res://common/main/main.gd" id="1_v2ws0"]
 [ext_resource type="PackedScene" uid="uid://r2o6ggkvfoia" path="res://menus/main_menu/main_menu.tscn" id="2_4eugw"]
+[ext_resource type="PackedScene" uid="uid://bnryqe4e1vtyh" path="res://menus/game_over_menu/game_over_menu.tscn" id="2_a5lpq"]
 [ext_resource type="PackedScene" uid="uid://dfwplfqccjgah" path="res://combat_area/arena.tscn" id="2_es36h"]
 [ext_resource type="Script" uid="uid://r5yekd1v2t0s" path="res://common/main/sub_viewport_container.gd" id="2_qfc1f"]
 [ext_resource type="PackedScene" uid="uid://b4g54u5y2n181" path="res://shop/shop.tscn" id="3_gpk2e"]
+[ext_resource type="PackedScene" uid="uid://dkgm6amlpemnq" path="res://menus/settings_menu/settings_menu.tscn" id="3_wiimp"]
 [ext_resource type="PackedScene" uid="uid://87bd3uothydn" path="res://combat_area/combat_speed/combat_speed_container.tscn" id="5_5okgu"]
+[ext_resource type="PackedScene" uid="uid://1eawpnc3rubl" path="res://common/main/music_manager.tscn" id="8_6wle4"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_v2ws0")
+game_over_menu_scene = ExtResource("2_a5lpq")
+settings_menu = ExtResource("3_wiimp")
 main_menu_scene = ExtResource("2_4eugw")
 arena_scene = ExtResource("2_es36h")
 shop_scene = ExtResource("3_gpk2e")
 combat_speed_container = ExtResource("5_5okgu")
+
+[node name="MusicManager" parent="." instance=ExtResource("8_6wle4")]
+unique_name_in_owner = true
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
