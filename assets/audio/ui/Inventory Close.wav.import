@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://wkxfdlp0phiw"
+path="res://.godot/imported/Inventory Close.wav-a1a3c2f70736ac4aee5b10cfe64a8303.sample"
+
+[deps]
+
+source_file="res://assets/audio/ui/Inventory Close.wav"
+dest_files=["res://.godot/imported/Inventory Close.wav-a1a3c2f70736ac4aee5b10cfe64a8303.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

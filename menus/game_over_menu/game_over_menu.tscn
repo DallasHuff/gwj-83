@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnryqe4e1vtyh"]
+[gd_scene load_steps=3 format=3 uid="uid://bnryqe4e1vtyh"]
 
 [ext_resource type="Script" uid="uid://cswohe86eo6bw" path="res://menus/game_over_menu/game_over_menu.gd" id="1_7exki"]
+[ext_resource type="Theme" uid="uid://bo21omvpamppy" path="res://common/ui/base_theme.tres" id="1_bjhed"]
 
 [node name="GameOverMenu" type="Control"]
 custom_minimum_size = Vector2(1152, 1080)
@@ -13,6 +14,7 @@ offset_right = 1152.0
 offset_bottom = 340.0
 grow_vertical = 2
 mouse_filter = 2
+theme = ExtResource("1_bjhed")
 script = ExtResource("1_7exki")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

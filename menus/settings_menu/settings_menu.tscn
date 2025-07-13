@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://dkgm6amlpemnq"]
+[gd_scene load_steps=3 format=3 uid="uid://dkgm6amlpemnq"]
 
+[ext_resource type="Theme" uid="uid://bo21omvpamppy" path="res://common/ui/base_theme.tres" id="1_r2f7a"]
 [ext_resource type="Script" uid="uid://b1eu0k3u2ys1q" path="res://menus/settings_menu/settings_menu.gd" id="1_twvox"]
 
 [node name="SettingsMenu" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme = ExtResource("1_r2f7a")
 script = ExtResource("1_twvox")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

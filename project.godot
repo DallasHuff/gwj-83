@@ -22,6 +22,7 @@ CombatEvents="*res://common/autoloads/combat_events.gd"
 Player="*res://common/autoloads/player.gd"
 Settings="*res://common/autoloads/settings.gd"
 StatTracker="*res://common/autoloads/stat_tracker.gd"
+UiSound="*res://common/autoloads/ui_sound.tscn"
 
 [debug]
 
