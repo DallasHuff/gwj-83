@@ -1,0 +1,117 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnryqe4e1vtyh"]
+
+[ext_resource type="Script" uid="uid://cswohe86eo6bw" path="res://menus/game_over_menu/game_over_menu.gd" id="1_7exki"]
+
+[node name="GameOverMenu" type="Control"]
+custom_minimum_size = Vector2(1152, 1080)
+layout_mode = 3
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -340.0
+offset_right = 1152.0
+offset_bottom = 340.0
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_7exki")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 200
+theme_override_constants/margin_top = 200
+theme_override_constants/margin_right = 200
+theme_override_constants/margin_bottom = 200
+
+[node name="PanelContainer" type="PanelContainer" parent="MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/PanelContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 300
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 300
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+mouse_filter = 2
+columns = 2
+
+[node name="Label8" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/GridContainer"]
+layout_mode = 2
+text = "Time Elapsed: "
+
+[node name="TimeSpent" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "00: 00"
+
+[node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/GridContainer"]
+layout_mode = 2
+text = "EnemiesKilled"
+
+[node name="EnemiesKilled" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100"
+
+[node name="Label6" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/GridContainer"]
+layout_mode = 2
+text = "Blood Consumed"
+
+[node name="BloodConsumed" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100"
+
+[node name="Label7" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/GridContainer"]
+layout_mode = 2
+text = "Souls Consumed"
+
+[node name="SoulsConsumed" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100"
+
+[node name="Label3" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/GridContainer"]
+layout_mode = 2
+text = "Memories Consumed"
+
+[node name="MemoriesConsumed" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/GridContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "100"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 10
+mouse_filter = 2
+theme_override_constants/separation = 50
+
+[node name="NewGameButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
+process_mode = 3
+custom_minimum_size = Vector2(250, 150)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "NEW GAME"
+
+[node name="MainMenuButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer"]
+unique_name_in_owner = true
+process_mode = 3
+custom_minimum_size = Vector2(150, 75)
+layout_mode = 2
+size_flags_horizontal = 4
+text = "MAIN MENU"

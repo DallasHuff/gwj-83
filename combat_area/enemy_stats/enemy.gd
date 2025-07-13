@@ -12,6 +12,8 @@ var dying := false
 @onready var animation_player: AnimationPlayer = %AnimationPlayer
 @onready var attack_progress: ProgressBar = %AttackProgress
 @onready var health_progress: ProgressBar = %HealthProgress
+@onready var attack_sfx: AudioStreamPlayer2D = %AttackSFX
+@onready var death_sfx: AudioStreamPlayer2D = %DeathSFX
 
 
 func _process(delta: float) -> void:
@@ -24,6 +26,7 @@ func _process(delta: float) -> void:
 
 	if attack_progress.value >= attack_progress.max_value:
 		animation_player.play("attack")
+		attack_sfx.play()
 
 
 func _set_stats(value: EnemyStats) -> void:
@@ -48,7 +51,7 @@ func attack() -> void:
 
 
 func die() -> void:
-	CombatEvents.enemy_died.emit(stats)
+	CombatEvents.enemy_died.emit(self)
 	died.emit()
 
 
@@ -57,4 +60,5 @@ func _on_stats_changed() -> void:
 	health_progress.value = stats.current_health
 	if stats.current_health <= 0:
 		dying = true
+		death_sfx.play()
 		animation_player.play("death")

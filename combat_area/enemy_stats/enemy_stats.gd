@@ -3,6 +3,8 @@ extends Resource
 
 @export_category("visuals")
 @export var sprite_frames: SpriteFrames
+@export var death_sfx: AudioStream
+@export var attack_sfx: AudioStream
 @export_category("battle stats")
 @export var health: float : set = _set_health
 @export var damage: float

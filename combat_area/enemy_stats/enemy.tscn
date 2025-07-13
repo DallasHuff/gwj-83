@@ -122,3 +122,9 @@ offset_bottom = -20.0
 theme_override_styles/background = SubResource("StyleBoxFlat_8eder")
 theme_override_styles/fill = SubResource("StyleBoxFlat_cbd3b")
 show_percentage = false
+
+[node name="DeathSFX" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+
+[node name="AttackSFX" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
