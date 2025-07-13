@@ -13,6 +13,7 @@ extends Control
 @onready var enemy_health_button: Button = %EnemyHealthButton
 
 # Labels
+#Ability price labels
 @onready var ability_price_1: Label = %AbilityPrice1
 @onready var ability_price_2: Label = %AbilityPrice2
 @onready var ability_price_3: Label = %AbilityPrice3
@@ -24,6 +25,7 @@ extends Control
 @onready var ability_price_9: Label = %AbilityPrice9
 @onready var armor_price_label: Label = %ArmorPriceLabel
 
+#Ability level labels 
 @onready var ability_level_1: Label = %AbilityLevel1
 @onready var ability_level_2: Label = %AbilityLevel2
 @onready var ability_level_3: Label = %AbilityLevel3
@@ -34,6 +36,11 @@ extends Control
 @onready var ability_level_8: Label = %AbilityLevel8
 @onready var ability_level_9: Label = %AbilityLevel9
 @onready var armor_level_label: Label = %ArmorLevelLabel
+
+#Resrouce Counter Labels 
+@onready var blood_count_label: Label = %BloodCountLabel
+@onready var souls_count_label: Label = %SoulsCountLabel
+@onready var memories_count_label: Label = %MemoriesCountLabel
 
 @export var shop_data: ShopData
 
@@ -51,6 +58,7 @@ var enemy_spawn_cost_cycle: int = 0
 var amount_spawned_cost_cycle: int = 0
 var enemy_health_cost_cycle: int = 0
 var armor_upgrade_cost_cycle: int = 0
+
 
 func _ready() -> void:
 	#CombatEvents.blood_gained.connect(_on_blood_gained)
@@ -82,10 +90,8 @@ func _ready() -> void:
 	ability_price_8.text = str("Cost: $", self.shop_data.amount_spawned_cost[0])
 	ability_price_9.text = str("Cost: $", self.shop_data.enemy_health_increase_cost[0])
 	armor_price_label.text = str("Cost: $", self.shop_data.armor_upgrade_cost[0])
-func _process(delta: float) -> void:
-
-
 	
+func _process(delta: float) -> void:
 	ability_level_1.text = str(self.shop_data.attack_damage_level)
 	ability_level_2.text = str(self.shop_data.attack_speed_level)
 	ability_level_3.text = str(self.shop_data.life_steal_level)
@@ -97,6 +103,41 @@ func _process(delta: float) -> void:
 	ability_level_9.text = str(self.shop_data.enemy_health_increase_level)
 	armor_level_label.text = str(self.shop_data.armor_upgrade_level)
 	
+enum CurrencyType {
+	BLOOD, 
+	SOULS, 
+	MEMORIES,
+}
+
+# disable the button when it goes to the final index of the dict 
+# then have the button.text set to "MAX" 
+# next if not what is before then we level up and call the lvl up func  
+
+func check_max_lvl(level_label: Label, cost_label: Label, cost_dict: Dictionary, level: int) -> bool:
+	if cost_dict.has(level):
+		return false 
+	else: 
+		level_label.text = "MAX"
+		return true
+
+# needs to handle labels and level of ability 
+# if this function is being called it means the level up was accepted. 
+func _level_up(level_label: Label, cost_label: Label, cost_dict: Dictionary, level: int, currency: CurrencyType) -> void: 
+	match currency:
+		CurrencyType.BLOOD:
+			blood -= cost_dict[level]
+		CurrencyType.SOULS: 
+			souls -= cost_dict[level]
+		CurrencyType.MEMORIES: 
+			memories -= cost_dict[level]
+	level_label.text = str(level)
+
+#func _test_blood_btn_func() -> void: 
+	#var max_lvl := check_max_lvl(ability_level_1, ability_price_1, shop_data.attack_damage_cost: Dictionary, shop_data.attack_damage_level, CurrencyType.BLOOD)
+
+
+
+
 # handling buttons 
 func _on_attk_dam_button_pressed() -> void:
 	if blood >= shop_data.attack_damage_cost[attk_dam_cost_cycle]:
@@ -104,7 +145,7 @@ func _on_attk_dam_button_pressed() -> void:
 		print("blood: ", blood, " ", "cost: ", shop_data.attack_damage_cost[attk_dam_cost_cycle])
 		attk_dam_cost_cycle += 1
 		blood -= shop_data.attack_damage_cost[attk_dam_cost_cycle]
-		ability_price_1.text = str("Cost: $", self.shop_data.attack_damage_cost[attk_dam_cost_cycle])
+		ability_price_1.text = str("Cost: $", shop_data.attack_damage_cost[attk_dam_cost_cycle])
 		
 func _on_attk_speed_button_pressed() -> void:
 	if blood >= shop_data.attack_speed_cost[attk_spd_cost_cycle]:
