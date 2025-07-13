@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://d335mk1ttthkr"]
+
+[ext_resource type="AudioStream" uid="uid://chuyo0d2n44a2" path="res://assets/audio/ui/System Select 1.wav" id="1_6v25b"]
+[ext_resource type="Script" uid="uid://ckla8rp81kr4t" path="res://common/autoloads/ui_sound.gd" id="1_b4621"]
+[ext_resource type="AudioStream" uid="uid://cswqgw6dwvyvu" path="res://assets/audio/ui/System Lesser Sound 8.wav" id="3_exj75"]
+
+[node name="UiSound" type="Node2D"]
+script = ExtResource("1_b4621")
+
+[node name="ButtonSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_6v25b")
+
+[node name="ButtonHoverSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_exj75")
+volume_db = -11.254
+pitch_scale = 0.73
