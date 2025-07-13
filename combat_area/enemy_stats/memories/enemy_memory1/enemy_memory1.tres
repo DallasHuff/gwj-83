@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=3 format=3 uid="uid://c16ur6kqwcw3c"]
+
+[ext_resource type="Script" uid="uid://cx2xvuia1gr48" path="res://combat_area/enemy_stats/enemy_stats.gd" id="1_moohq"]
+[ext_resource type="SpriteFrames" uid="uid://cstixwdmhclxl" path="res://combat_area/enemy_stats/memories/enemy_memory1/enemy_memory1_frames.tres" id="2_45drr"]
+
+[resource]
+script = ExtResource("1_moohq")
+sprite_frames = ExtResource("2_45drr")
+health = 0.0
+damage = 0.0
+time_between_attacks = 0.0
+blood = 0
+souls = 0
+memories = 1
+metadata/_custom_type_script = "uid://cx2xvuia1gr48"
