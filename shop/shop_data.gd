@@ -91,3 +91,8 @@ var mana_regen_level: int = 0
 var enemy_spawn_seed_level: int = 0
 var amount_spawned_level: int = 0
 var enemy_health_increase_level: int = 0
+
+# Currency
+var blood: int = 0
+var souls: int = 0
+var memories: int = 0

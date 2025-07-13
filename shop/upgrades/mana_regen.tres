@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Upgrade" load_steps=2 format=3 uid="uid://cpb3bjo0580ox"]
+
+[ext_resource type="Script" uid="uid://csbyvlbo5sfnu" path="res://shop/resources/upgrade.gd" id="1_b3ym5"]
+
+[resource]
+script = ExtResource("1_b3ym5")
+blood_cost = Dictionary[int, int]({})
+souls_cost = Dictionary[int, int]({})
+memories_cost = Dictionary[int, int]({})
+metadata/_custom_type_script = "uid://csbyvlbo5sfnu"
