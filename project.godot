@@ -27,6 +27,7 @@ StatTracker="*res://common/autoloads/stat_tracker.gd"
 
 gdscript/warnings/unused_signal=0
 gdscript/warnings/untyped_declaration=2
+gdscript/warnings/int_as_enum_without_cast=0
 
 [display]
 

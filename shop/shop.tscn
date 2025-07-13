@@ -1,8 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4g54u5y2n181"]
+[gd_scene load_steps=18 format=3 uid="uid://b4g54u5y2n181"]
 
 [ext_resource type="Script" uid="uid://c6t1d2valsj1n" path="res://shop/shop.gd" id="1_r2p71"]
-[ext_resource type="Resource" uid="uid://b6p7fs76j6uqt" path="res://shop/resources/shop_data.tres" id="2_sxvro"]
-[ext_resource type="Script" uid="uid://dvquutds0pfb7" path="res://shop/abilities/abilities_container.gd" id="3_givde"]
+[ext_resource type="Texture2D" uid="uid://cf0skqlq4v0uq" path="res://assets/icons/souls/hd_soul_2.png" id="2_hv745"]
+[ext_resource type="Script" uid="uid://cdyqvph4apit4" path="res://shop/upgrade_container.gd" id="2_sxvro"]
+[ext_resource type="Resource" uid="uid://b22rlssyklymi" path="res://shop/upgrades/attack_damage.tres" id="3_pafut"]
+[ext_resource type="Resource" uid="uid://d3dc6bryigda6" path="res://shop/upgrades/crit_chance.tres" id="4_hv745"]
+[ext_resource type="Resource" uid="uid://chcpd5hxwbiaa" path="res://shop/upgrades/attack_speed.tres" id="5_c8ks2"]
+[ext_resource type="Resource" uid="uid://q133tfhqrjeu" path="res://shop/upgrades/health.tres" id="6_k6x22"]
+[ext_resource type="Resource" uid="uid://7u8i2o3xemr6" path="res://shop/upgrades/defense.tres" id="7_mtsdc"]
+[ext_resource type="Resource" uid="uid://cerv3mn4c7sxs" path="res://shop/upgrades/life_steal.tres" id="8_sigkv"]
+[ext_resource type="Resource" uid="uid://e58xxysdcaa4" path="res://shop/upgrades/spell_power.tres" id="9_wobyc"]
+[ext_resource type="Resource" uid="uid://cpb3bjo0580ox" path="res://shop/upgrades/mana_regen.tres" id="10_7bvr6"]
+[ext_resource type="Resource" uid="uid://biy040pscbc5a" path="res://shop/upgrades/number_enemies.tres" id="11_mlbjk"]
+[ext_resource type="Resource" uid="uid://ebjtelux55c6" path="res://shop/upgrades/enemy_spawn_speed.tres" id="12_q5yfe"]
+[ext_resource type="Resource" uid="uid://wb3gxivn7oua" path="res://shop/upgrades/demon_strength.tres" id="13_auoiy"]
+[ext_resource type="Resource" uid="uid://bo3p701cbg24t" path="res://shop/upgrades/soul_strength.tres" id="14_o26su"]
+[ext_resource type="Resource" uid="uid://c44i0vgu6hmop" path="res://shop/upgrades/mind_eater_strength.tres" id="15_b3w7u"]
 
 [sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_givde"]
 
@@ -13,364 +26,487 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_r2p71")
-shop_data = ExtResource("2_sxvro")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
+custom_minimum_size = Vector2(768, 1080)
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -768.0
+offset_top = -544.0
+offset_bottom = 544.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+mouse_filter = 2
 
-[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
-offset_left = 1152.0
-offset_right = 1920.0
-offset_bottom = 1080.0
-
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 24
-theme_override_constants/margin_top = 48
+theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 15
+theme_override_constants/separation = -20
 
-[node name="Header" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
-layout_mode = 2
-text = "SHOP"
-horizontal_alignment = 1
-
-[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="CurrencyCounterContainerr" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_left = 0
 theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 12
 
-[node name="PlayerResourcesHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2"]
+[node name="PlayerResourcesHBox" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CurrencyCounterContainerr"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="BloodCountHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/PlayerResourcesHBox"]
+[node name="BloodCountHBox" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CurrencyCounterContainerr/PlayerResourcesHBox"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/separation = 5
 
-[node name="BloodIcon" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/PlayerResourcesHBox/BloodCountHBox"]
+[node name="BloodIcon" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/CurrencyCounterContainerr/PlayerResourcesHBox/BloodCountHBox"]
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_givde")
 expand_mode = 3
 
-[node name="BloodCountLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/PlayerResourcesHBox/BloodCountHBox"]
+[node name="BloodCountLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CurrencyCounterContainerr/PlayerResourcesHBox/BloodCountHBox"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Blood Count"
 
-[node name="SoulsCountHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/PlayerResourcesHBox"]
+[node name="SoulsCountHBox" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CurrencyCounterContainerr/PlayerResourcesHBox"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/separation = 5
 
-[node name="SoulsIcon" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/PlayerResourcesHBox/SoulsCountHBox"]
+[node name="SoulsIcon" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/CurrencyCounterContainerr/PlayerResourcesHBox/SoulsCountHBox"]
+custom_minimum_size = Vector2(64, 64)
 layout_mode = 2
-texture = SubResource("PlaceholderTexture2D_givde")
+texture = ExtResource("2_hv745")
 expand_mode = 3
+stretch_mode = 4
 
-[node name="SoulsCountLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/PlayerResourcesHBox/SoulsCountHBox"]
+[node name="SoulsCountLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CurrencyCounterContainerr/PlayerResourcesHBox/SoulsCountHBox"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Souls Count"
 
-[node name="MemoriesCountHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/PlayerResourcesHBox"]
+[node name="MemoriesCountHBox" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/CurrencyCounterContainerr/PlayerResourcesHBox"]
 layout_mode = 2
+size_flags_horizontal = 3
 theme_override_constants/separation = 5
 
-[node name="MemoriesIcon" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/PlayerResourcesHBox/MemoriesCountHBox"]
+[node name="MemoriesIcon" type="TextureRect" parent="PanelContainer/MarginContainer/VBoxContainer/CurrencyCounterContainerr/PlayerResourcesHBox/MemoriesCountHBox"]
 layout_mode = 2
 texture = SubResource("PlaceholderTexture2D_givde")
 expand_mode = 3
 
-[node name="MemoriesCountLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer2/PlayerResourcesHBox/MemoriesCountHBox"]
+[node name="MemoriesCountLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/CurrencyCounterContainerr/PlayerResourcesHBox/MemoriesCountHBox"]
 unique_name_in_owner = true
 layout_mode = 2
 text = "Memories Count"
 
-[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer/MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/margin_top = 48
 theme_override_constants/margin_bottom = 24
 
-[node name="AbilitiesContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+[node name="ScrollContainer" type="ScrollContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+custom_minimum_size = Vector2(700, 900)
+layout_mode = 2
+vertical_scroll_mode = 2
+
+[node name="AbilitiesContainer" type="VBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer"]
 unique_name_in_owner = true
 layout_mode = 2
-theme_override_constants/separation = 53
-script = ExtResource("3_givde")
-
-[node name="AttackDamageHbox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
-layout_mode = 2
-
-[node name="AttkDamLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackDamageHbox"]
-layout_mode = 2
 size_flags_horizontal = 3
+theme_override_constants/separation = 40
+
+[node name="AttackDamageHbox" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer"]
+layout_mode = 2
+script = ExtResource("2_sxvro")
+upgrade = ExtResource("3_pafut")
+
+[node name="AttkDamLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/AttackDamageHbox"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
 text = "Attack Damage"
 
-[node name="AbilityPrice1" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackDamageHbox"]
-unique_name_in_owner = true
+[node name="Price" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/AttackDamageHbox"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 11
 text = "Price"
+scroll_active = false
 
-[node name="AbilityLevel1" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackDamageHbox"]
-unique_name_in_owner = true
+[node name="Level" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/AttackDamageHbox"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 8
 text = "0"
 horizontal_alignment = 1
 
-[node name="AttackDamageButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackDamageHbox"]
-unique_name_in_owner = true
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/AttackDamageHbox"]
+custom_minimum_size = Vector2(225, 50)
 layout_mode = 2
-size_flags_horizontal = 3
-text = "+1"
+text = "UPGRADE"
 
-[node name="AttackSpeedHbox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
+[node name="CritChance" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer"]
 layout_mode = 2
+script = ExtResource("2_sxvro")
+upgrade = ExtResource("4_hv745")
 
-[node name="AttkSpeedLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackSpeedHbox"]
+[node name="AttkDamLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/CritChance"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+text = "Critical Strike Chance"
+
+[node name="Price" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/CritChance"]
+layout_mode = 2
+size_flags_horizontal = 11
+text = "Price"
+
+[node name="Level" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/CritChance"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "0"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/CritChance"]
+custom_minimum_size = Vector2(225, 50)
+layout_mode = 2
+text = "UPGRADE"
+
+[node name="AttackSpeed" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer"]
+layout_mode = 2
+script = ExtResource("2_sxvro")
+upgrade = ExtResource("5_c8ks2")
+
+[node name="AttkDamLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/AttackSpeed"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
 text = "Attack Speed"
 
-[node name="AbilityPrice2" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackSpeedHbox"]
-unique_name_in_owner = true
+[node name="Price" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/AttackSpeed"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 11
 text = "Price"
 
-[node name="AbilityLevel2" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackSpeedHbox"]
-unique_name_in_owner = true
+[node name="Level" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/AttackSpeed"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 8
 text = "0"
 horizontal_alignment = 1
 
-[node name="AttackSpeedButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackSpeedHbox"]
-unique_name_in_owner = true
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/AttackSpeed"]
+custom_minimum_size = Vector2(225, 50)
 layout_mode = 2
-size_flags_horizontal = 3
-text = "+1"
+text = "UPGRADE"
 
-[node name="LifeStealHbox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
+[node name="Health" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer"]
 layout_mode = 2
+script = ExtResource("2_sxvro")
+upgrade = ExtResource("6_k6x22")
 
-[node name="LifeStealLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/LifeStealHbox"]
+[node name="AttkDamLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/Health"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-size_flags_horizontal = 3
-text = "Life Steal"
-
-[node name="AbilityPrice3" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/LifeStealHbox"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-text = "Price"
-
-[node name="AbilityLevel3" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/LifeStealHbox"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-text = "0"
-horizontal_alignment = 1
-
-[node name="LifeStealButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/LifeStealHbox"]
-unique_name_in_owner = true
-layout_mode = 2
-size_flags_horizontal = 3
-text = "+1"
-
-[node name="HealthHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
-layout_mode = 2
-
-[node name="HealthUpgradeLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/HealthHBox"]
-layout_mode = 2
-size_flags_horizontal = 3
 text = "Health"
 
-[node name="AbilityPrice4" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/HealthHBox"]
-unique_name_in_owner = true
+[node name="Price" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/Health"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 11
 text = "Price"
 
-[node name="AbilityLevel4" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/HealthHBox"]
-unique_name_in_owner = true
+[node name="Level" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/Health"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 8
 text = "0"
 horizontal_alignment = 1
 
-[node name="HealthUpgradeButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/HealthHBox"]
-unique_name_in_owner = true
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/Health"]
+custom_minimum_size = Vector2(225, 50)
 layout_mode = 2
-size_flags_horizontal = 3
-text = "+1"
+text = "UPGRADE"
 
-[node name="ArmorHbox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
+[node name="Defense" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer"]
 layout_mode = 2
+script = ExtResource("2_sxvro")
+upgrade = ExtResource("7_mtsdc")
 
-[node name="ArmorUpgradeLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ArmorHbox"]
+[node name="AttkDamLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/Defense"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 text = "Defense"
 
-[node name="ArmorPriceLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ArmorHbox"]
-unique_name_in_owner = true
+[node name="Price" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/Defense"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 11
 text = "Price"
 
-[node name="ArmorLevelLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ArmorHbox"]
-unique_name_in_owner = true
+[node name="Level" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/Defense"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 8
 text = "0"
 horizontal_alignment = 1
 
-[node name="ArmorUpgradeButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ArmorHbox"]
-unique_name_in_owner = true
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/Defense"]
+custom_minimum_size = Vector2(225, 50)
 layout_mode = 2
-size_flags_horizontal = 3
-text = "+1"
+text = "UPGRADE"
 
-[node name="SpellPowerHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
+[node name="Lifesteal" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer"]
 layout_mode = 2
+script = ExtResource("2_sxvro")
+upgrade = ExtResource("8_sigkv")
 
-[node name="SpellPowerLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpellPowerHBox"]
+[node name="AttkDamLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/Lifesteal"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+text = "Lifesteal"
+
+[node name="Price" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/Lifesteal"]
+layout_mode = 2
+size_flags_horizontal = 11
+text = "Price"
+
+[node name="Level" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/Lifesteal"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "0"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/Lifesteal"]
+custom_minimum_size = Vector2(225, 50)
+layout_mode = 2
+text = "UPGRADE"
+
+[node name="SpellPower" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer"]
+layout_mode = 2
+script = ExtResource("2_sxvro")
+upgrade = ExtResource("9_wobyc")
+
+[node name="AttkDamLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/SpellPower"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
 text = "Spell Power"
 
-[node name="AbilityPrice5" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpellPowerHBox"]
-unique_name_in_owner = true
+[node name="Price" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/SpellPower"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 11
 text = "Price"
 
-[node name="AbilityLevel5" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpellPowerHBox"]
-unique_name_in_owner = true
+[node name="Level" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/SpellPower"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 8
 text = "0"
 horizontal_alignment = 1
 
-[node name="SpellPowerButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpellPowerHBox"]
-unique_name_in_owner = true
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/SpellPower"]
+custom_minimum_size = Vector2(225, 50)
 layout_mode = 2
-size_flags_horizontal = 3
-text = "+1"
+text = "UPGRADE"
 
-[node name="ManaRegenHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
+[node name="ManaRegen" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer"]
 layout_mode = 2
+script = ExtResource("2_sxvro")
+upgrade = ExtResource("10_7bvr6")
 
-[node name="ManaRegenLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ManaRegenHBox"]
+[node name="AttkDamLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/ManaRegen"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-size_flags_horizontal = 3
 text = "Mana Regen"
 
-[node name="AbilityPrice6" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ManaRegenHBox"]
-unique_name_in_owner = true
+[node name="Price" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/ManaRegen"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 11
 text = "Price"
 
-[node name="AbilityLevel6" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ManaRegenHBox"]
-unique_name_in_owner = true
+[node name="Level" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/ManaRegen"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 8
 text = "0"
 horizontal_alignment = 1
 
-[node name="ManaRegenButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ManaRegenHBox"]
-unique_name_in_owner = true
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/ManaRegen"]
+custom_minimum_size = Vector2(225, 50)
 layout_mode = 2
-size_flags_horizontal = 3
-text = "+1"
+text = "UPGRADE"
 
-[node name="EnemySpawnSeedHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
+[node name="NumberEnemies" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer"]
 layout_mode = 2
+script = ExtResource("2_sxvro")
+upgrade = ExtResource("11_mlbjk")
 
-[node name="EnemySpawnLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemySpawnSeedHBox"]
+[node name="AttkDamLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/NumberEnemies"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-size_flags_horizontal = 3
-text = "Enemy Spawn"
+text = "Number of Enemies"
 
-[node name="AbilityPrice7" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemySpawnSeedHBox"]
-unique_name_in_owner = true
+[node name="Price" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/NumberEnemies"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 11
 text = "Price"
 
-[node name="AbilityLevel7" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemySpawnSeedHBox"]
-unique_name_in_owner = true
+[node name="Level" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/NumberEnemies"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 8
 text = "0"
 horizontal_alignment = 1
 
-[node name="EnemySpawnButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemySpawnSeedHBox"]
-unique_name_in_owner = true
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/NumberEnemies"]
+custom_minimum_size = Vector2(225, 50)
 layout_mode = 2
-size_flags_horizontal = 3
-text = "+1"
+text = "UPGRADE"
 
-[node name="AmountSpawnedHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
+[node name="EnemySpawnSpeed" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer"]
 layout_mode = 2
+script = ExtResource("2_sxvro")
+upgrade = ExtResource("12_q5yfe")
 
-[node name="AmountSpawnedLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AmountSpawnedHBox"]
+[node name="AttkDamLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/EnemySpawnSpeed"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-size_flags_horizontal = 3
-text = "Amount Spawned"
+text = "Enemy Spawn Speed"
 
-[node name="AbilityPrice8" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AmountSpawnedHBox"]
-unique_name_in_owner = true
+[node name="Price" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/EnemySpawnSpeed"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 11
 text = "Price"
 
-[node name="AbilityLevel8" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AmountSpawnedHBox"]
-unique_name_in_owner = true
+[node name="Level" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/EnemySpawnSpeed"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 8
 text = "0"
 horizontal_alignment = 1
 
-[node name="AmountSpawnedButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AmountSpawnedHBox"]
-unique_name_in_owner = true
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/EnemySpawnSpeed"]
+custom_minimum_size = Vector2(225, 50)
 layout_mode = 2
-size_flags_horizontal = 3
-text = "+1"
+text = "UPGRADE"
 
-[node name="EnemyHealthIncreaseHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
+[node name="DemonStrength" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer"]
 layout_mode = 2
+script = ExtResource("2_sxvro")
+upgrade = ExtResource("13_auoiy")
 
-[node name="EnemyHealthUpgradeLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemyHealthIncreaseHBox"]
+[node name="AttkDamLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/DemonStrength"]
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
-size_flags_horizontal = 3
-text = "Enemy Health +"
+text = "Demon Strength"
 
-[node name="AbilityPrice9" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemyHealthIncreaseHBox"]
-unique_name_in_owner = true
+[node name="Price" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/DemonStrength"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 11
 text = "Price"
 
-[node name="AbilityLevel9" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemyHealthIncreaseHBox"]
-unique_name_in_owner = true
+[node name="Level" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/DemonStrength"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 8
 text = "0"
 horizontal_alignment = 1
 
-[node name="EnemyHealthButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemyHealthIncreaseHBox"]
-unique_name_in_owner = true
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/DemonStrength"]
+custom_minimum_size = Vector2(180, 50)
 layout_mode = 2
 size_flags_horizontal = 3
-text = "+1"
+text = "UPGRADE"
 
-[connection signal="button_down" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackDamageHbox/AttackDamageButton" to="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer" method="_on_attack_damage_button_button_down"]
+[node name="SoulStrength" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer"]
+layout_mode = 2
+script = ExtResource("2_sxvro")
+upgrade = ExtResource("14_o26su")
+
+[node name="AttkDamLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/SoulStrength"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Lost Souls Strength"
+
+[node name="Price" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/SoulStrength"]
+layout_mode = 2
+size_flags_horizontal = 11
+text = "Price"
+
+[node name="Level" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/SoulStrength"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "0"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/SoulStrength"]
+custom_minimum_size = Vector2(225, 50)
+layout_mode = 2
+text = "UPGRADE"
+
+[node name="MemoriesStrength" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer"]
+layout_mode = 2
+script = ExtResource("2_sxvro")
+upgrade = ExtResource("15_b3w7u")
+
+[node name="AttkDamLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/MemoriesStrength"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Mind Eater Strength"
+
+[node name="Price" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/MemoriesStrength"]
+layout_mode = 2
+size_flags_horizontal = 11
+text = "Price"
+
+[node name="Level" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/MemoriesStrength"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "0"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/MemoriesStrength"]
+custom_minimum_size = Vector2(225, 50)
+layout_mode = 2
+text = "UPGRADE"
+
+[node name="BossBattle" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer"]
+layout_mode = 2
+script = ExtResource("2_sxvro")
+upgrade = ExtResource("15_b3w7u")
+
+[node name="AttkDamLabel" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/BossBattle"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+text = "Key to the Devil"
+
+[node name="Price" type="RichTextLabel" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/BossBattle"]
+layout_mode = 2
+size_flags_horizontal = 11
+text = "Price"
+
+[node name="Level" type="Label" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/BossBattle"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+text = "0"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer/BossBattle"]
+custom_minimum_size = Vector2(225, 50)
+layout_mode = 2
+text = "PURCHASE"

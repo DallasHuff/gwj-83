@@ -7,6 +7,7 @@ extends Node
 @export var arena_scene: PackedScene
 @export var shop_scene: PackedScene
 @export var combat_speed_container: PackedScene
+var shop: Shop
 
 @onready var game: SubViewport = %SubViewport
 @onready var ui: Control = %UIParent
@@ -46,7 +47,7 @@ func go_arena() -> void:
 	var arena: Arena = arena_scene.instantiate()
 	game.add_child(arena)
 	arena.position = Vector2.ZERO
-	var shop: Control = shop_scene.instantiate()
+	shop = shop_scene.instantiate()
 	ui.add_child(shop)
 	shop.position = Vector2.ZERO
 	var speed_buttons_container: Control = combat_speed_container.instantiate()

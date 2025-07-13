@@ -1,0 +1,432 @@
+[gd_scene load_steps=4 format=3 uid="uid://b4g54u5y2n181"]
+
+[ext_resource type="Script" uid="uid://c6t1d2valsj1n" path="res://shop/shop.gd" id="1_r2p71"]
+[ext_resource type="Resource" uid="uid://b6p7fs76j6uqt" path="res://shop/resources/shop_data.tres" id="2_sxvro"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_givde"]
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r2p71")
+shop_data = ExtResource("2_sxvro")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PanelContainer" type="PanelContainer" parent="CanvasLayer"]
+custom_minimum_size = Vector2(768, 1080)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -768.0
+offset_top = -551.0
+offset_bottom = 551.0
+grow_horizontal = 0
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 24
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 24
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = -20
+
+[node name="CurrencyCounterContainerr" type="MarginContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 24
+theme_override_constants/margin_bottom = 12
+
+[node name="PlayerResourcesHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/CurrencyCounterContainerr"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="BloodCountHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/CurrencyCounterContainerr/PlayerResourcesHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+
+[node name="BloodIcon" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/CurrencyCounterContainerr/PlayerResourcesHBox/BloodCountHBox"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_givde")
+expand_mode = 3
+
+[node name="BloodCountLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/CurrencyCounterContainerr/PlayerResourcesHBox/BloodCountHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Blood Count"
+
+[node name="SoulsCountHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/CurrencyCounterContainerr/PlayerResourcesHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+
+[node name="SoulsIcon" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/CurrencyCounterContainerr/PlayerResourcesHBox/SoulsCountHBox"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_givde")
+expand_mode = 3
+
+[node name="SoulsCountLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/CurrencyCounterContainerr/PlayerResourcesHBox/SoulsCountHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Souls Count"
+
+[node name="MemoriesCountHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/CurrencyCounterContainerr/PlayerResourcesHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 5
+
+[node name="MemoriesIcon" type="TextureRect" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/CurrencyCounterContainerr/PlayerResourcesHBox/MemoriesCountHBox"]
+layout_mode = 2
+texture = SubResource("PlaceholderTexture2D_givde")
+expand_mode = 3
+
+[node name="MemoriesCountLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/CurrencyCounterContainerr/PlayerResourcesHBox/MemoriesCountHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Memories Count"
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 48
+theme_override_constants/margin_bottom = 24
+
+[node name="AbilitiesContainer" type="VBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 53
+
+[node name="AttackDamageHbox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
+layout_mode = 2
+
+[node name="AttkDamLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackDamageHbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Attack Damage"
+
+[node name="AbilityPrice1" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackDamageHbox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Price"
+
+[node name="AbilityLevel1" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackDamageHbox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="AttackDamageButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackDamageHbox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "+1"
+
+[node name="AttackSpeedHbox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
+layout_mode = 2
+
+[node name="AttkSpeedLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackSpeedHbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Attack Speed"
+
+[node name="AbilityPrice2" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackSpeedHbox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Price"
+
+[node name="AbilityLevel2" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackSpeedHbox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="AttackSpeedButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackSpeedHbox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "+1"
+
+[node name="HealthHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
+layout_mode = 2
+
+[node name="HealthUpgradeLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/HealthHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Health"
+
+[node name="AbilityPrice4" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/HealthHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Price"
+
+[node name="AbilityLevel4" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/HealthHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="HealthUpgradeButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/HealthHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "+1"
+
+[node name="ArmorHbox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
+layout_mode = 2
+
+[node name="ArmorUpgradeLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ArmorHbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Defense"
+
+[node name="ArmorPriceLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ArmorHbox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Price"
+
+[node name="ArmorLevelLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ArmorHbox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="ArmorUpgradeButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ArmorHbox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "+1"
+
+[node name="LifeStealHbox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
+layout_mode = 2
+
+[node name="LifeStealLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/LifeStealHbox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Life Steal"
+
+[node name="AbilityPrice3" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/LifeStealHbox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Price"
+
+[node name="AbilityLevel3" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/LifeStealHbox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="LifeStealButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/LifeStealHbox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "+1"
+
+[node name="SpellPowerHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
+layout_mode = 2
+
+[node name="SpellPowerLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpellPowerHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Spell Power"
+
+[node name="AbilityPrice5" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpellPowerHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Price"
+
+[node name="AbilityLevel5" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpellPowerHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="SpellPowerButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpellPowerHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "+1"
+
+[node name="ManaRegenHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
+layout_mode = 2
+
+[node name="ManaRegenLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ManaRegenHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mana Regen"
+
+[node name="AbilityPrice6" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ManaRegenHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Price"
+
+[node name="AbilityLevel6" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ManaRegenHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="ManaRegenButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ManaRegenHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "+1"
+
+[node name="SpawnNumberHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
+layout_mode = 2
+
+[node name="AmountSpawnedLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpawnNumberHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Number of Enemies"
+
+[node name="AbilityPrice8" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpawnNumberHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Price"
+
+[node name="AbilityLevel8" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpawnNumberHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="AmountSpawnedButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpawnNumberHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "+1"
+
+[node name="SpawnSpeed" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
+layout_mode = 2
+
+[node name="EnemySpawnLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpawnSpeed"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Enemy Spawn Speed"
+
+[node name="AbilityPrice7" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpawnSpeed"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Price"
+
+[node name="AbilityLevel7" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpawnSpeed"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="SpawnSpeedButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpawnSpeed"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "+1"
+
+[node name="DemonStrengthHBox" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
+layout_mode = 2
+
+[node name="EnemyHealthUpgradeLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/DemonStrengthHBox"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Demon Strength"
+
+[node name="AbilityPrice9" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/DemonStrengthHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Price"
+
+[node name="AbilityLevel9" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/DemonStrengthHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="DemonStrengthButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/DemonStrengthHBox"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "+1"
+
+[node name="EnemyHealthIncreaseHBox2" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
+layout_mode = 2
+
+[node name="EnemyHealthUpgradeLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemyHealthIncreaseHBox2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Lost Souls Strength"
+
+[node name="AbilityPrice9" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemyHealthIncreaseHBox2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Price"
+
+[node name="AbilityLevel9" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemyHealthIncreaseHBox2"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="LostSoulStrengthButton" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemyHealthIncreaseHBox2"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "+1"
+
+[node name="EnemyHealthIncreaseHBox3" type="HBoxContainer" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
+layout_mode = 2
+
+[node name="EnemyHealthUpgradeLabel" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemyHealthIncreaseHBox3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Mind Eater Strength"
+
+[node name="AbilityPrice9" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemyHealthIncreaseHBox3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Price"
+
+[node name="AbilityLevel9" type="Label" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemyHealthIncreaseHBox3"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "0"
+horizontal_alignment = 1
+
+[node name="MindEaterStrength" type="Button" parent="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/EnemyHealthIncreaseHBox3"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "+1"
+
+[connection signal="button_down" from="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackDamageHbox/AttackDamageButton" to="CanvasLayer/PanelContainer/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer" method="_on_attack_damage_button_button_down"]
