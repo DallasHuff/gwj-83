@@ -1,0 +1,12 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://bo21omvpamppy"]
+
+[ext_resource type="FontFile" uid="uid://b1dlveih6vdm5" path="res://shop/fonts/Alkhemikal.ttf" id="1_aw2xi"]
+[ext_resource type="StyleBox" uid="uid://bnrimejcgx205" path="res://assets/ui/buttons/buttonUnpressed.tres" id="1_s0scd"]
+[ext_resource type="StyleBox" uid="uid://c2s2ns705imga" path="res://assets/ui/buttons/button_highlight.tres" id="1_xs3gu"]
+[ext_resource type="StyleBox" uid="uid://dsbppprv4exa3" path="res://assets/ui/buttons/button_pressed.tres" id="3_nui8p"]
+
+[resource]
+default_font = ExtResource("1_aw2xi")
+Button/styles/hover = ExtResource("1_xs3gu")
+Button/styles/normal = ExtResource("1_s0scd")
+Button/styles/pressed = ExtResource("3_nui8p")
