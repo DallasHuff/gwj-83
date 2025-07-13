@@ -15,6 +15,8 @@ func play_main_menu() -> void:
 
 
 func play_arena() -> void:
+	if arena_1.playing or arena_2.playing:
+		return
 	_fade_in(arena_2, 5)
 	_fade_out(main_menu, 5)
 
