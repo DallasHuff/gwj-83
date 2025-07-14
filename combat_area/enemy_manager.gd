@@ -49,7 +49,7 @@ func _on_enemy_died(slot: int) -> void:
 
 
 func _on_enemy_attacked(enemy: Enemy) -> void:
-	Player.current_health = Player.current_health - enemy.stats.damage
+	Player.current_health -= enemy.stats.damage * Player.defense_dict[Player.defense.level]
 
 
 func _on_slot_added() -> void:
