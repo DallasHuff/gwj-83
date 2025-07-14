@@ -6,12 +6,12 @@
 script = ExtResource("1_85llq")
 starting_level = 0
 blood_cost = Dictionary[int, int]({
-0: 1000
+1: 100
 })
 souls_cost = Dictionary[int, int]({
-0: 1000
+1: 100
 })
 memories_cost = Dictionary[int, int]({
-0: 1000
+1: 100
 })
 metadata/_custom_type_script = "uid://csbyvlbo5sfnu"

@@ -4,23 +4,80 @@ extends Node
 var attack_damage_dict: Dictionary[int, float] = {
 	0: 5, # level 0 and level 1 should have the same value
 	1: 5, # level 0 and level 1 should have the same value
+	2: 10,
+	3: 15,
+	4: 20,
+	5: 25,
+	6: 30,
+	7: 35,
+	8: 40,
+	9: 45,
+	10: 50,
 }
 var attack_speed_dict: Dictionary[int, int] = {
 	0: 1, # level 0 and level 1 should have the same value
 	1: 1, # level 0 and level 1 should have the same value
+	2: 2,
+	3: 3,
+	4: 4,
+	5: 5,
+	6: 6,
+	7: 7,
+	8: 8,
+	9: 9,
+	10: 10,
 }
 var crit_chance_dict: Dictionary[int, float] = {
 	0: 0,
 	1: 10,
+	2: 15,
+	3: 20,
+	4: 25,
+	5: 30,
+	6: 35,
+	7: 40,
+	8: 45,
+	9: 50,
+	10: 55,
 }
 var lifesteal_dict: Dictionary[int, float] = {
 	0: 0,
+	1: 1,
+	2: 2,
+	3: 3,
+	4: 4,
+	5: 5,
+	6: 6,
+	7: 7,
+	8: 8,
+	9: 9,
+	10: 10,
 }
 var spell_power_dict: Dictionary[int, float] = {
 	0: 0,
+	1: 1,
+	2: 2,
+	3: 3,
+	4: 4,
+	5: 5,
+	6: 6,
+	7: 7,
+	8: 8,
+	9: 9,
+	10: 10,
 }
 var mana_regen_dict: Dictionary[int, float] = {
 	0: 0,
+	1: 1,
+	2: 2,
+	3: 3,
+	4: 4,
+	5: 5,
+	6: 6,
+	7: 7,
+	8: 8,
+	9: 9,
+	10: 10,
 }
 @export var attack_damage: Upgrade
 @export var attack_speed: Upgrade
