@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_tk21b")
+starting_level = 0
 blood_cost = Dictionary[int, int]({})
 souls_cost = Dictionary[int, int]({})
 memories_cost = Dictionary[int, int]({})
