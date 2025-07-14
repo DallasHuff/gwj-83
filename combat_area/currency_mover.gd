@@ -14,7 +14,6 @@ func _ready() -> void:
 func _on_enemy_died(enemy: Enemy) -> void:
 	var target_pos: Vector2 = Vector2(266.0, 120.0)
 	var cur_instance: Node2D
-	# check which type of currency they drop and instantiate the node 
 	if enemy.stats.blood >= 0:
 		cur_instance = blood_scene.instantiate()
 	elif enemy.stats.souls >= 0:
@@ -37,8 +36,3 @@ func _on_enemy_died(enemy: Enemy) -> void:
 	tween.tween_callback(cur_instance.queue_free)
 	print(cur_instance.global_position)
 	
-	
-	# create tween 
-	# move cur from enemy pos to player pos 
-	# increment player cur val 
-	# remove cur scene
