@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://ky5i4c36tnbv"]
+
+[ext_resource type="Texture2D" uid="uid://r7qj0726b1ww" path="res://assets/player/particle.png" id="1_fajuw"]
+[ext_resource type="Script" uid="uid://clehxn3r3km8l" path="res://combat_area/cancel_death_effect.gd" id="1_l7m0k"]
+
+[sub_resource type="Gradient" id="Gradient_kxhq1"]
+colors = PackedColorArray(0.290196, 0, 0, 1, 1, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_wvgqs"]
+gradient = SubResource("Gradient_kxhq1")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_slva6"]
+particle_flag_disable_z = true
+emission_shape_offset = Vector3(0, 20, 0)
+emission_shape = 1
+emission_sphere_radius = 47.55
+inherit_velocity_ratio = 0.145
+spread = 17.763
+flatness = 0.165
+gravity = Vector3(0, -40, 0)
+scale_min = 0.0
+scale_max = 0.7
+color = Color(1, 0, 0, 1)
+color_ramp = SubResource("GradientTexture1D_wvgqs")
+anim_speed_min = 1.4
+anim_speed_max = 2.25
+turbulence_enabled = true
+
+[node name="ParticleBase" type="Node2D"]
+script = ExtResource("1_l7m0k")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+position = Vector2(1, 0)
+texture = ExtResource("1_fajuw")
+process_material = SubResource("ParticleProcessMaterial_slva6")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

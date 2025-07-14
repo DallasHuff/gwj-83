@@ -4,6 +4,7 @@
 
 [resource]
 script = ExtResource("1_b3ym5")
+starting_level = 0
 blood_cost = Dictionary[int, int]({})
 souls_cost = Dictionary[int, int]({})
 memories_cost = Dictionary[int, int]({})
