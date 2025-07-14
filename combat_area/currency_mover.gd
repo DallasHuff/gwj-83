@@ -14,6 +14,9 @@ func _ready() -> void:
 func _on_enemy_died(enemy: Enemy) -> void:
 	var target_pos: Vector2 = Vector2(266.0, 120.0)
 	var cur_instance: Node2D
+	var bloods: int = bloods = enemy.stats.blood
+	var souls: int = enemy.stats.souls
+	var memories: int = enemy.stats.memories
 	if enemy.stats.blood >= 0:
 		cur_instance = blood_scene.instantiate()
 	elif enemy.stats.souls >= 0:
@@ -25,14 +28,13 @@ func _on_enemy_died(enemy: Enemy) -> void:
 		
 	cur_instance.global_position = Vector2(enemy.global_position.x, enemy.global_position.y + 35)
 	
-	if Global.main and Global.main.game:
-		Global.main.game.add_child(cur_instance)
-	else:
-		print("Global.main.game issue.")
+	Global.main.game.add_child(cur_instance)
 		
 	var tween: Tween = get_tree().create_tween()
 	tween.tween_property(cur_instance, "global_position", Vector2(65.0, 120.0), 1)
 	tween.tween_interval(.2)
 	tween.tween_callback(cur_instance.queue_free)
-	print(cur_instance.global_position)
+	tween.tween_callback(CombatEvents.blood_gained.emit.bind(bloods))
+	tween.tween_callback(CombatEvents.souls_gained.emit.bind(souls))
+	tween.tween_callback(CombatEvents.memories_gained.emit.bind(memories))
 	
