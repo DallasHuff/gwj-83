@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dwtfbr35che2u"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1lmj2"]
+
+[node name="EnemyDropsArea" type="Area2D"]
+
+[node name="DropZone" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_1lmj2")

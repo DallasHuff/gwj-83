@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://caic5tw13ptkb"]
+
+[ext_resource type="Texture2D" uid="uid://cf0skqlq4v0uq" path="res://assets/icons/souls/hd_soul_2.png" id="1_q2vwt"]
+
+[node name="Memory" type="Node2D"]
+
+[node name="MemorySprite" type="Sprite2D" parent="."]
+scale = Vector2(0.01, 0.01)
+texture = ExtResource("1_q2vwt")
