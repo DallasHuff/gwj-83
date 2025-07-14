@@ -13,6 +13,7 @@ var upgrade_containers: Array[UpgradeContainer] = []
 
 
 func _ready() -> void:
+	CombatEvents.new_game_started.connect(_on_new_game)
 	CombatEvents.blood_gained.connect(_on_blood_gained)
 	CombatEvents.souls_gained.connect(_on_souls_gained)
 	CombatEvents.memories_gained.connect(_on_memories_gained)
@@ -36,6 +37,12 @@ func update_currency_labels() -> void:
 	blood_count_label.text = str(blood)
 	soul_count_label.text = str(souls)
 	memories_count_label.text = str(memories)
+
+
+func _on_new_game() -> void:
+	blood = 0
+	souls = 0
+	memories = 0
 
 
 func _on_blood_gained(amount: int) -> void:

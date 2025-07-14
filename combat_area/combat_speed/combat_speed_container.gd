@@ -1,6 +1,5 @@
 extends HBoxContainer
 
-
 @onready var pause_play: Button = %PausePlay
 @onready var speed_button: Button = %SpeedButton
 
@@ -27,6 +26,6 @@ func _on_speed_button_pressed() -> void:
 func _on_pause_play_pressed() -> void:
 	get_tree().paused = not get_tree().paused
 	if get_tree().paused:
-		pause_play.text = "l>"
+		pause_play.text = "PLAY"
 	else:
-		pause_play.text = "ll"
+		pause_play.text = "PAUSE"

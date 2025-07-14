@@ -5,7 +5,7 @@ signal purchased
 
 const BLOOD: Texture2D = preload("res://assets/icons/souls/hd_soul_2.png")
 const SOUL: Texture2D = preload("res://assets/icons/souls/hd_soul_2.png")
-const MEM: Texture2D = preload("res://assets/icons/souls/hd_soul_2.png")
+const MEM: Texture2D = preload("res://assets/icons/memory_crystals/hd_memory_crystal.png")
 
 @export var upgrade: Upgrade
 
@@ -15,6 +15,7 @@ const MEM: Texture2D = preload("res://assets/icons/souls/hd_soul_2.png")
 
 
 func _ready() -> void:
+	CombatEvents.new_game_started.connect(func()->void:upgrade.reset())
 	button.pressed.connect(_on_button_pressed)
 	add_to_group("upgrade_container")
 	set_price_label()
