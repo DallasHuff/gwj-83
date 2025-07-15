@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://87bd3uothydn"]
+[gd_scene load_steps=7 format=3 uid="uid://87bd3uothydn"]
 
+[ext_resource type="Script" uid="uid://dh47xd8exmwcu" path="res://combat_area/combat_speed/potion_container.gd" id="1_b1uix"]
+[ext_resource type="Texture2D" uid="uid://bq5br2w7qxv4c" path="res://assets/icons/health_potion/full_potion.png" id="1_tp1cw"]
 [ext_resource type="Script" uid="uid://wwaycvb137hq" path="res://combat_area/combat_speed/combat_speed_container.gd" id="1_uvp47"]
+[ext_resource type="Texture2D" uid="uid://cwo40ptexg6rf" path="res://assets/icons/health_potion/hovered_potion.png" id="2_b1uix"]
+[ext_resource type="AudioStream" uid="uid://bmthoettiovb4" path="res://assets/audio/sfx/potion_drink.mp3" id="2_tlljd"]
+[ext_resource type="Texture2D" uid="uid://b5yxwga3237r7" path="res://assets/icons/health_potion/empty_potion.png" id="4_5hi0l"]
 
 [node name="MarginContainer" type="MarginContainer"]
 anchors_preset = 15
@@ -11,15 +16,19 @@ grow_vertical = 2
 mouse_filter = 2
 theme_override_constants/margin_bottom = 20
 
-[node name="CombatSpeedContainer" type="HBoxContainer" parent="."]
-custom_minimum_size = Vector2(1152, 0)
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+size_flags_horizontal = 0
+
+[node name="CombatSpeedContainer" type="HBoxContainer" parent="HBoxContainer"]
+custom_minimum_size = Vector2(800, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 8
 theme_override_constants/separation = 100
 script = ExtResource("1_uvp47")
 
-[node name="PausePlay" type="Button" parent="CombatSpeedContainer"]
+[node name="PausePlay" type="Button" parent="HBoxContainer/CombatSpeedContainer"]
 unique_name_in_owner = true
 process_mode = 3
 custom_minimum_size = Vector2(200, 100)
@@ -28,7 +37,7 @@ size_flags_horizontal = 10
 theme_override_font_sizes/font_size = 45
 text = "PAUSE"
 
-[node name="SpeedButton" type="Button" parent="CombatSpeedContainer"]
+[node name="SpeedButton" type="Button" parent="HBoxContainer/CombatSpeedContainer"]
 unique_name_in_owner = true
 process_mode = 3
 custom_minimum_size = Vector2(200, 100)
@@ -36,3 +45,33 @@ layout_mode = 2
 size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 45
 text = "1x"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="HBoxContainer/CombatSpeedContainer"]
+unique_name_in_owner = true
+stream = ExtResource("2_tlljd")
+bus = &"SFX"
+
+[node name="PotionContainer" type="HBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 2
+script = ExtResource("1_b1uix")
+
+[node name="TextureButton" type="TextureButton" parent="HBoxContainer/PotionContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_vertical = 8
+texture_normal = ExtResource("1_tp1cw")
+texture_hover = ExtResource("2_b1uix")
+texture_disabled = ExtResource("4_5hi0l")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="TextureButton2" type="TextureButton" parent="HBoxContainer/PotionContainer"]
+custom_minimum_size = Vector2(150, 150)
+layout_mode = 2
+size_flags_vertical = 8
+texture_normal = ExtResource("1_tp1cw")
+texture_hover = ExtResource("2_b1uix")
+texture_disabled = ExtResource("4_5hi0l")
+ignore_texture_size = true
+stretch_mode = 5
