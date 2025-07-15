@@ -3,7 +3,7 @@ extends HBoxContainer
 
 signal purchased
 
-const BLOOD: Texture2D = preload("res://assets/icons/souls/hd_soul_2.png")
+const BLOOD: Texture2D = preload("res://assets/icons/blood/hd_bright_blood.png")
 const SOUL: Texture2D = preload("res://assets/icons/souls/hd_soul_2.png")
 const MEM: Texture2D = preload("res://assets/icons/memory_crystals/hd_memory_crystal.png")
 

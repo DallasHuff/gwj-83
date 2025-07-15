@@ -4,7 +4,11 @@ var button_press_sounds: Array[AudioStreamPlayer] = []
 var button_hover_sounds: Array[AudioStreamPlayer] = []
 
 @onready var press_1: AudioStreamPlayer = $ButtonSound
+@onready var press_2: AudioStreamPlayer = $ButtonSound2
+@onready var press_3: AudioStreamPlayer = $ButtonSound3
 @onready var hover_1: AudioStreamPlayer = $ButtonHoverSound
+@onready var hover_2: AudioStreamPlayer = $ButtonHoverSound2
+@onready var hover_3: AudioStreamPlayer = $ButtonHoverSound3
 
 
 func _ready() -> void:
@@ -12,8 +16,8 @@ func _ready() -> void:
 	connect_buttons(get_tree().root)
 	get_tree().node_added.connect(_on_tree_node_added)
 
-	button_press_sounds = [press_1]
-	button_hover_sounds = 
+	button_press_sounds = [press_2, press_3]
+	button_hover_sounds = [hover_1, hover_2, hover_3]
 
 
 func _on_tree_node_added(node: Node) -> void:

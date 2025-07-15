@@ -1,16 +1,44 @@
-[gd_scene load_steps=4 format=3 uid="uid://kr7kfl3q0a1u"]
+[gd_scene load_steps=8 format=3 uid="uid://kr7kfl3q0a1u"]
 
 [ext_resource type="AudioStream" uid="uid://chuyo0d2n44a2" path="res://assets/audio/ui/System Select 1.wav" id="1_6v25b"]
-[ext_resource type="Script" path="res://common/autoloads/ui_sound.gd" id="1_b4621"]
+[ext_resource type="Script" uid="uid://ckla8rp81kr4t" path="res://common/autoloads/ui_sound.gd" id="1_b4621"]
+[ext_resource type="AudioStream" uid="uid://bpunbf56h0nxe" path="res://assets/audio/ui/System Select 2.wav" id="3_a5iap"]
 [ext_resource type="AudioStream" uid="uid://cswqgw6dwvyvu" path="res://assets/audio/ui/System Lesser Sound 8.wav" id="3_exj75"]
+[ext_resource type="AudioStream" uid="uid://co58bcqwsq6f8" path="res://assets/audio/ui/System Select 3.wav" id="4_q4w8a"]
+[ext_resource type="AudioStream" uid="uid://5h45v6k5scg0" path="res://assets/audio/ui/System Lesser Sound 7.wav" id="6_dqqqn"]
+[ext_resource type="AudioStream" uid="uid://bik6kstfc7wtq" path="res://assets/audio/ui/System Lesser Sound 10.wav" id="7_nvgft"]
 
 [node name="UiSound" type="Node2D"]
 script = ExtResource("1_b4621")
 
 [node name="ButtonSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_6v25b")
+bus = &"SFX"
+
+[node name="ButtonSound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_a5iap")
+volume_db = -2.0
+bus = &"SFX"
+
+[node name="ButtonSound3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_q4w8a")
+volume_db = -2.0
+bus = &"SFX"
 
 [node name="ButtonHoverSound" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_exj75")
 volume_db = -11.254
 pitch_scale = 0.73
+bus = &"SFX"
+
+[node name="ButtonHoverSound2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("6_dqqqn")
+volume_db = -11.254
+pitch_scale = 0.73
+bus = &"SFX"
+
+[node name="ButtonHoverSound3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_nvgft")
+volume_db = -11.254
+pitch_scale = 0.73
+bus = &"SFX"
