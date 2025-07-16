@@ -1,6 +1,7 @@
 class_name GameOverMenu
 extends Control
 
+@onready var win_lose_label: Label = %WinLoseLabel
 @onready var main_menu_button: Button = %MainMenuButton
 @onready var new_game_button: Button = %NewGameButton
 @onready var time_elapsed: Label = %TimeSpent

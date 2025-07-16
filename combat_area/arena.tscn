@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dfwplfqccjgah"]
+[gd_scene load_steps=38 format=3 uid="uid://dfwplfqccjgah"]
 
 [ext_resource type="Script" uid="uid://e8kd1dfgjoyx" path="res://combat_area/arena.gd" id="1_06mus"]
 [ext_resource type="Script" uid="uid://ur5fp1m7ww8m" path="res://combat_area/enemy_manager.gd" id="2_yhgyy"]
@@ -10,7 +10,7 @@
 [ext_resource type="Resource" uid="uid://d3dc6bryigda6" path="res://shop/upgrades/crit_chance.tres" id="5_uid5r"]
 [ext_resource type="Script" uid="uid://cx2xvuia1gr48" path="res://combat_area/enemy_stats/enemy_stats.gd" id="5_wjadm"]
 [ext_resource type="Resource" uid="uid://cerv3mn4c7sxs" path="res://shop/upgrades/life_steal.tres" id="6_0odsx"]
-[ext_resource type="Resource" uid="uid://b2lghwq7roidb" path="res://combat_area/enemy_stats/blood/mini_demon/mini_demon.tres" id="6_6fwj8"]
+[ext_resource type="Resource" uid="uid://b2lghwq7roidb" path="res://combat_area/enemy_stats/demon/mini_demon/mini_demon.tres" id="6_6fwj8"]
 [ext_resource type="Resource" uid="uid://cr4letfros8cu" path="res://combat_area/enemy_stats/memories/mini_memory_eater/mini_memory_eater.tres" id="7_8htal"]
 [ext_resource type="Resource" uid="uid://e58xxysdcaa4" path="res://shop/upgrades/spell_power.tres" id="8_afl5e"]
 [ext_resource type="Resource" uid="uid://cisl3g6enmscf" path="res://combat_area/enemy_stats/souls/mini_spirit/mini_spirit.tres" id="8_v6xpb"]
@@ -19,6 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bihof41ef7nqk" path="res://assets/arena/red_rock_bg.png" id="10_8htal"]
 [ext_resource type="Script" uid="uid://isgo1344a8t3" path="res://combat_area/visuals.gd" id="10_xb1dc"]
 [ext_resource type="Texture2D" uid="uid://0nx2784cmgem" path="res://assets/arena/beam01.png" id="11_v6xpb"]
+[ext_resource type="PackedScene" uid="uid://c8f508la147q" path="res://combat_area/enemy_stats/boss/boss1/boss.tscn" id="12_uid5r"]
 [ext_resource type="Script" uid="uid://kfs10s3tuefw" path="res://combat_area/point_light_2d.gd" id="13_cforn"]
 [ext_resource type="Script" uid="uid://cq2xj68xwd76f" path="res://combat_area/combat_text/combat_text_maker.gd" id="16_g2w5p"]
 [ext_resource type="PackedScene" uid="uid://ddfqtrnbnqcpv" path="res://combat_area/combat_text/combat_text.tscn" id="17_ydmkd"]
@@ -215,6 +216,7 @@ script = ExtResource("3_6fwj8")
 unique_name_in_owner = true
 script = ExtResource("2_yhgyy")
 enemy_scene = ExtResource("4_5ehcq")
+boss_scene = ExtResource("12_uid5r")
 available_enemies = Array[ExtResource("5_wjadm")]([ExtResource("6_6fwj8"), ExtResource("7_8htal"), ExtResource("8_v6xpb")])
 
 [node name="CombatTextMaker" type="Node" parent="."]

@@ -27,6 +27,7 @@ func _on_button_pressed() -> void:
 		upgrade.level += 1
 		level_label.text = str(upgrade.level)
 		set_price_label()
+		purchased.emit()
 	if upgrade.check_max_level():
 		set_max_level()
 

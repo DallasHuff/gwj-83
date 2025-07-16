@@ -4,6 +4,7 @@ extends Node
 const MAX_SLOTS: int = 6
 
 @export var enemy_scene: PackedScene
+@export var boss_scene: PackedScene
 @export var available_enemies: Array[EnemyStats]
 var slot_to_position: Dictionary[int, Vector2] = {
 	0 : Vector2(92, 104),
@@ -16,6 +17,7 @@ var slot_to_position: Dictionary[int, Vector2] = {
 var enemy_spawn_speed: float = 1
 var highest_slot_unlocked: int = 0
 var enemies: Array[Enemy] = []
+var boss_purchased := false
 
 
 func _ready() -> void:
@@ -23,6 +25,8 @@ func _ready() -> void:
 	enemies.fill(null)
 	for i in range(highest_slot_unlocked+1):
 		add_new_enemy(i)
+
+	CombatEvents.boss_purchased.connect(_on_boss_purchased)
 
 
 func add_new_enemy(slot: int) -> void:
@@ -49,7 +53,31 @@ func _on_enemy_died(slot: int) -> void:
 			enemies[slot].queue_free()
 		enemies[slot] = null
 	await get_tree().create_timer(enemy_spawn_speed).timeout
-	add_new_enemy(slot)
+	if not boss_purchased:
+		add_new_enemy(slot)
+
+
+func _on_boss_purchased() -> void:
+	print("boss purchased")
+	# Kill all enemies and don't replace them
+	boss_purchased = true
+	for enemy in enemies:
+		if not enemy:
+			continue
+		enemy.queue_free()
+	await get_tree().create_timer(1.5).timeout
+	# Create boss
+	var boss: Enemy = boss_scene.instantiate()
+	boss.stats = load("res://combat_area/enemy_stats/boss/boss1/boss1.tres")
+	Global.main.game.add_child(boss)
+	boss.died.connect(func()->void:CombatEvents.game_over.emit(true))
+	boss.attacked.connect(_on_enemy_attacked.bind(boss))
+	boss.global_position = Vector2(-200, 160)
+	var tween := create_tween()
+	tween.set_ease(Tween.EASE_OUT)
+	tween.tween_property(boss, "global_position", Vector2(120, 160), 1)
+	tween.tween_callback(func()->void: enemies[0] = boss; boss.in_combat = true)
+	print(boss.global_position)
 
 
 func _on_enemy_attacked(enemy: Enemy) -> void:

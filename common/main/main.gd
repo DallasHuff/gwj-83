@@ -64,9 +64,13 @@ func go_settings() -> void:
 	settings.exit_button.pressed.connect(go_main_menu)
 
 
-func _on_game_over() -> void:
+func _on_game_over(win: bool) -> void:
 	var game_over: GameOverMenu = game_over_menu_scene.instantiate()
 	ui.add_child(game_over)
+	if win:
+		game_over.win_lose_label.text = "YOU WIN!!"
+	else:
+		game_over.win_lose_label.text = "YOU LOSE!!"
 	game_over.global_position = Vector2.ZERO
 	game_over.main_menu_button.pressed.connect(go_main_menu)
 	game_over.new_game_button.pressed.connect(go_arena)

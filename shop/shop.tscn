@@ -508,6 +508,7 @@ layout_mode = 2
 text = "UPGRADE"
 
 [node name="BossBattle" type="HBoxContainer" parent="PanelContainer/MarginContainer/VBoxContainer/MarginContainer/ScrollContainer/AbilitiesContainer"]
+unique_name_in_owner = true
 layout_mode = 2
 script = ExtResource("2_sxvro")
 upgrade = ExtResource("18_k6x22")
