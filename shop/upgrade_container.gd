@@ -48,6 +48,5 @@ func set_price_label() -> void:
 
 func get_cost(cost_dict: Dictionary) -> String:
 	if cost_dict.has(upgrade.level):
-		print("has level")
 		return str(cost_dict[upgrade.level])
 	return "0"
