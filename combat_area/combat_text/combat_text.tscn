@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://ddfqtrnbnqcpv"]
+
+[ext_resource type="Script" uid="uid://cglfioa1154yi" path="res://combat_area/combat_text/combat_text.gd" id="1_2eicj"]
+
+[node name="CombatText" type="Label"]
+theme_override_constants/outline_size = 5
+text = "test"
+script = ExtResource("1_2eicj")

@@ -9,6 +9,7 @@ extends Node
 @export var combat_speed_container: PackedScene
 var shop: Shop
 
+@onready var subviewport_container: SubViewportContainer = %SubViewportContainer
 @onready var game: SubViewport = %SubViewport
 @onready var ui: Control = %UIParent
 @onready var music_manager: MusicManager = %MusicManager

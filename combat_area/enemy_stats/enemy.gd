@@ -38,6 +38,7 @@ func _set_stats(value: EnemyStats) -> void:
 		return
 
 	stats = value.duplicate()
+	death_sfx.stream = stats.death_sfx
 	stats.current_health = stats.health
 	attack_progress.max_value = stats.time_between_attacks
 	_on_stats_changed()

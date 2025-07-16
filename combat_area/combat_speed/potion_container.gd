@@ -2,7 +2,7 @@ extends HBoxContainer
 
 @onready var pot_1: TextureButton = $TextureButton
 @onready var pot_2: TextureButton = $TextureButton2
-@onready var sfx: AudioStreamPlayer = %AudioStreamPlayer
+@onready var sfx: AudioStreamPlayer = %PotionSFX
 
 
 func _ready() -> void:

@@ -1,9 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://bxcfivktca1dh"]
 
-[ext_resource type="Texture2D" uid="uid://cf0skqlq4v0uq" path="res://assets/icons/souls/hd_soul_2.png" id="1_xy8yc"]
+[ext_resource type="Texture2D" uid="uid://bd8voal8l2fpt" path="res://assets/icons/blood/16x16_bright_blood.png" id="1_xy8yc"]
 
 [node name="Blood" type="Node2D"]
 
 [node name="BloodSprite" type="Sprite2D" parent="."]
-scale = Vector2(0.01, 0.01)
 texture = ExtResource("1_xy8yc")

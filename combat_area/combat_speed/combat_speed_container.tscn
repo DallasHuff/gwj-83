@@ -46,11 +46,6 @@ size_flags_horizontal = 2
 theme_override_font_sizes/font_size = 45
 text = "1x"
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="HBoxContainer/CombatSpeedContainer"]
-unique_name_in_owner = true
-stream = ExtResource("2_tlljd")
-bus = &"SFX"
-
 [node name="PotionContainer" type="HBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 2
@@ -75,3 +70,8 @@ texture_hover = ExtResource("2_b1uix")
 texture_disabled = ExtResource("4_5hi0l")
 ignore_texture_size = true
 stretch_mode = 5
+
+[node name="PotionSFX" type="AudioStreamPlayer" parent="HBoxContainer/PotionContainer"]
+unique_name_in_owner = true
+stream = ExtResource("2_tlljd")
+bus = &"SFX"

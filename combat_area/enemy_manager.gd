@@ -6,12 +6,12 @@ const MAX_SLOTS: int = 6
 @export var enemy_scene: PackedScene
 @export var available_enemies: Array[EnemyStats]
 var slot_to_position: Dictionary[int, Vector2] = {
-	0 : Vector2(266, 96),
-	1 : Vector2(320, 160),
-	2 : Vector2(321, 42),
-	3 : Vector2(215, 162),
-	4 : Vector2(217, 35),
-	5 : Vector2(169, 94),
+	0 : Vector2(92, 104),
+	1 : Vector2(35, 162),
+	2 : Vector2(36, 30),
+	3 : Vector2(128, 32),
+	4 : Vector2(177, 162),
+	5 : Vector2(211, 93),
 }
 var enemy_spawn_speed: float = 1
 var highest_slot_unlocked: int = 0
@@ -33,7 +33,7 @@ func add_new_enemy(slot: int) -> void:
 	e.stats = available_enemies.pick_random()
 
 	Global.main.game.add_child(e)
-	e.global_position = Vector2(500, slot_to_position[slot].y)
+	e.global_position = Vector2(-200, slot_to_position[slot].y)
 	var tween := create_tween()
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(e, "global_position", slot_to_position[slot], 1)
