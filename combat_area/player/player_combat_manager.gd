@@ -2,82 +2,88 @@ class_name PlayerCombatManager
 extends Node
 
 var attack_damage_dict: Dictionary[int, float] = {
-	0: 5, # level 0 and level 1 should have the same value
-	1: 5, # level 0 and level 1 should have the same value
-	2: 10,
-	3: 15,
-	4: 20,
-	5: 25,
-	6: 30,
-	7: 35,
-	8: 40,
-	9: 45,
-	10: 50,
+	0: 1.5, # level 0 and level 1 should have the same value
+	1: 1.5, # level 0 and level 1 should have the same value
+	2: 3,
+	3: 4.5,
+	4: 6,
+	5: 7.5,
+	6: 9,
+	7: 10.5,
+	8: 12,
+	9: 13.5,
+	10: 15,
+	11: 17.5
 }
 var attack_speed_dict: Dictionary[int, int] = {
 	0: 1, # level 0 and level 1 should have the same value
 	1: 1, # level 0 and level 1 should have the same value
-	2: 2,
-	3: 3,
-	4: 4,
-	5: 5,
-	6: 6,
-	7: 7,
-	8: 8,
-	9: 9,
-	10: 10,
+	2: 1.1,
+	3: 1.15,
+	4: 1.2,
+	5: 1.25,
+	6: 1.3,
+	7: 1.35,
+	8: 1.4,
+	9: 1.45,
+	10: 1.5,
+	11: 1.55
 }
 var crit_chance_dict: Dictionary[int, float] = {
 	0: 0,
-	1: 10,
-	2: 15,
-	3: 20,
-	4: 25,
-	5: 30,
-	6: 35,
-	7: 40,
-	8: 45,
-	9: 50,
-	10: 55,
+	1: 0.05,
+	2: 0.1,
+	3: 0.15,
+	4: 0.2,
+	5: 0.25,
+	6: 0.3,
+	7: 0.35,
+	8: 0.4,
+	9: 0.45,
+	10: 0.5,
+	11: 0.55
 }
 var lifesteal_dict: Dictionary[int, float] = {
 	0: 0,
-	1: 1,
-	2: 2,
-	3: 3,
-	4: 4,
-	5: 5,
-	6: 6,
-	7: 7,
-	8: 8,
-	9: 9,
-	10: 10,
+	1: 0.02,
+	2: 0.04,
+	3: 0.06,
+	4: 0.08,
+	5: 0.1,
+	6: 0.12,
+	7: 0.14,
+	8: 0.16,
+	9: 0.18,
+	10: 0.2,
+	11: 0.22
 }
 var spell_power_dict: Dictionary[int, float] = {
 	0: 0,
-	1: 1,
-	2: 2,
-	3: 3,
-	4: 4,
-	5: 5,
-	6: 6,
-	7: 7,
-	8: 8,
-	9: 9,
-	10: 10,
+	1: 2,
+	2: 4,
+	3: 6,
+	4: 8,
+	5: 10,
+	6: 12,
+	7: 14,
+	8: 16,
+	9: 18,
+	10: 20,
+	11: 22
 }
 var mana_regen_dict: Dictionary[int, float] = {
 	0: 0,
-	1: 1,
-	2: 2,
-	3: 3,
-	4: 4,
-	5: 5,
-	6: 6,
-	7: 7,
-	8: 8,
-	9: 9,
-	10: 10,
+	1: 0.5,
+	2: 1,
+	3: 1.5,
+	4: 2,
+	5: 2.5,
+	6: 3,
+	7: 3.5,
+	8: 4,
+	9: 4.5,
+	10: 5,
+	11: 5.5
 }
 @export var attack_damage: Upgrade
 @export var attack_speed: Upgrade
