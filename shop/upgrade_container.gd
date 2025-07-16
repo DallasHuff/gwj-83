@@ -26,6 +26,7 @@ func _on_button_pressed() -> void:
 		upgrade.spend_currencies()
 		upgrade.level += 1
 		level_label.text = str(upgrade.level)
+		set_price_label()
 	if upgrade.check_max_level():
 		set_max_level()
 
@@ -47,5 +48,6 @@ func set_price_label() -> void:
 
 func get_cost(cost_dict: Dictionary) -> String:
 	if cost_dict.has(upgrade.level):
+		print("has level")
 		return str(cost_dict[upgrade.level])
 	return "0"
