@@ -1,7 +1,7 @@
 [gd_resource type="Resource" script_class="EnemyStats" load_steps=3 format=3 uid="uid://b2lghwq7roidb"]
 
 [ext_resource type="Script" uid="uid://cx2xvuia1gr48" path="res://combat_area/enemy_stats/enemy_stats.gd" id="1_pxdm0"]
-[ext_resource type="SpriteFrames" uid="uid://dybjqodhkfxri" path="res://combat_area/enemy_stats/blood/mini_demon/mini_demon_frames.tres" id="2_r54pm"]
+[ext_resource type="SpriteFrames" uid="uid://dybjqodhkfxri" path="res://combat_area/enemy_stats/demon/mini_demon/mini_demon_frames.tres" id="2_r54pm"]
 
 [resource]
 script = ExtResource("1_pxdm0")
