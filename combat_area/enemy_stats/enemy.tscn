@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbcarbcoykvcp"]
+[gd_scene load_steps=14 format=3 uid="uid://dbcarbcoykvcp"]
 
 [ext_resource type="Script" uid="uid://dwjtxcqkqyhv1" path="res://combat_area/enemy_stats/enemy.gd" id="1_1hql8"]
 [ext_resource type="SpriteFrames" uid="uid://bbjq76qsrcsy3" path="res://combat_area/enemy_stats/souls/mini_spirit/mini_spirit_frames.tres" id="2_4bc1d"]
@@ -73,21 +73,50 @@ _data = {
 &"death": SubResource("Animation_1hql8")
 }
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8eder"]
+light_mode = 1
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4bc1d"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0n22g"]
-bg_color = Color(0.578826, 0.262167, 0.0434045, 1)
+bg_color = Color(0.882353, 0.588235, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cbd3b"]
+light_mode = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8eder"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cbd3b"]
 bg_color = Color(0.0638053, 0.451248, 1.92523e-07, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_1hql8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
+position = Vector2(0, -32)
 sprite_frames = ExtResource("2_4bc1d")
 animation = &"attack"
 flip_h = true
@@ -100,27 +129,32 @@ libraries = {
 
 [node name="AttackProgress" type="ProgressBar" parent="."]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(45, 5)
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -24.0
-offset_top = -36.0
-offset_right = 21.0
-offset_bottom = -31.0
-grow_horizontal = 2
+material = SubResource("CanvasItemMaterial_8eder")
+custom_minimum_size = Vector2(5, 40)
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 39.0
+offset_top = -40.0
+offset_right = 44.0
+grow_horizontal = 0
+grow_vertical = 2
 size_flags_horizontal = 4
 theme_override_styles/background = SubResource("StyleBoxFlat_4bc1d")
 theme_override_styles/fill = SubResource("StyleBoxFlat_0n22g")
+fill_mode = 3
 show_percentage = false
 
 [node name="HealthProgress" type="ProgressBar" parent="."]
 unique_name_in_owner = true
-custom_minimum_size = Vector2(60, 7)
-offset_left = -30.0
-offset_top = -27.0
-offset_right = 30.0
-offset_bottom = -20.0
+material = SubResource("CanvasItemMaterial_cbd3b")
+custom_minimum_size = Vector2(40, 5)
+offset_left = -20.0
+offset_top = -71.0
+offset_right = 20.0
+offset_bottom = -66.0
 theme_override_styles/background = SubResource("StyleBoxFlat_8eder")
 theme_override_styles/fill = SubResource("StyleBoxFlat_cbd3b")
 show_percentage = false

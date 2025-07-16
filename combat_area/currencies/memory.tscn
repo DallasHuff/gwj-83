@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://caic5tw13ptkb"]
 
-[ext_resource type="Texture2D" uid="uid://cf0skqlq4v0uq" path="res://assets/icons/souls/hd_soul_2.png" id="1_q2vwt"]
+[ext_resource type="Texture2D" uid="uid://re7dbgue6mdx" path="res://assets/icons/memory_crystals/16x16_memory_crystal.png" id="1_q2vwt"]
 
 [node name="Memory" type="Node2D"]
 

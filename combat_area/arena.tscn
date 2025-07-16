@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dfwplfqccjgah"]
+[gd_scene load_steps=37 format=3 uid="uid://dfwplfqccjgah"]
 
 [ext_resource type="Script" uid="uid://e8kd1dfgjoyx" path="res://combat_area/arena.gd" id="1_06mus"]
 [ext_resource type="Script" uid="uid://ur5fp1m7ww8m" path="res://combat_area/enemy_manager.gd" id="2_yhgyy"]
@@ -20,6 +20,8 @@
 [ext_resource type="Script" uid="uid://isgo1344a8t3" path="res://combat_area/visuals.gd" id="10_xb1dc"]
 [ext_resource type="Texture2D" uid="uid://0nx2784cmgem" path="res://assets/arena/beam01.png" id="11_v6xpb"]
 [ext_resource type="Script" uid="uid://kfs10s3tuefw" path="res://combat_area/point_light_2d.gd" id="13_cforn"]
+[ext_resource type="Script" uid="uid://cq2xj68xwd76f" path="res://combat_area/combat_text/combat_text_maker.gd" id="16_g2w5p"]
+[ext_resource type="PackedScene" uid="uid://ddfqtrnbnqcpv" path="res://combat_area/combat_text/combat_text.tscn" id="17_ydmkd"]
 
 [sub_resource type="Animation" id="Animation_6fwj8"]
 resource_name = "attack"
@@ -140,26 +142,57 @@ _data = {
 &"idle": SubResource("Animation_v6xpb")
 }
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_ydmkd"]
+light_mode = 1
+
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_xb1dc"]
 light_mode = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xb1dc"]
+bg_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_cforn"]
-bg_color = Color(0.164206, 0.46262, 0.146827, 1)
+bg_color = Color(0.210385, 0.584903, 0.188967, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_cforn"]
 light_mode = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8htal"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6xpb"]
-bg_color = Color(0, 0.419047, 0.933055, 1)
+bg_color = Color(3.46541e-06, 0.482102, 0.732118, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wjadm"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6fwj8"]
-bg_color = Color(0.576949, 0.239198, 0, 1)
+bg_color = Color(0.884137, 0.589242, 7.70092e-07, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
 
 [node name="Arena" type="Node2D"]
 script = ExtResource("1_06mus")
@@ -183,6 +216,11 @@ unique_name_in_owner = true
 script = ExtResource("2_yhgyy")
 enemy_scene = ExtResource("4_5ehcq")
 available_enemies = Array[ExtResource("5_wjadm")]([ExtResource("6_6fwj8"), ExtResource("7_8htal"), ExtResource("8_v6xpb")])
+
+[node name="CombatTextMaker" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("16_g2w5p")
+text_scene = ExtResource("17_ydmkd")
 
 [node name="Line2D" type="Line2D" parent="."]
 visible = false
@@ -240,33 +278,35 @@ texture = ExtResource("11_v6xpb")
 
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="Player"]
 unique_name_in_owner = true
-position = Vector2(65, 79)
+material = SubResource("CanvasItemMaterial_ydmkd")
+position = Vector2(311, 100)
 sprite_frames = ExtResource("3_wjadm")
-animation = &"attack"
+animation = &"cast"
+flip_h = true
 
 [node name="HealthProgress" type="ProgressBar" parent="Player/PlayerSprite"]
 unique_name_in_owner = true
 material = SubResource("CanvasItemMaterial_xb1dc")
-custom_minimum_size = Vector2(40, 10)
-offset_left = -24.0
-offset_top = -31.0
-offset_right = 26.0
-offset_bottom = -21.0
+custom_minimum_size = Vector2(40, 8)
+offset_left = -27.0
+offset_top = -25.0
+offset_right = 13.0
+offset_bottom = -17.0
 theme_override_styles/background = SubResource("StyleBoxFlat_xb1dc")
 theme_override_styles/fill = SubResource("StyleBoxFlat_cforn")
 value = 100.0
 show_percentage = false
 metadata/_edit_use_anchors_ = true
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Player/PlayerSprite"]
+[node name="VBoxContainer" type="HBoxContainer" parent="Player/PlayerSprite"]
 material = SubResource("CanvasItemMaterial_cforn")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -94.0
-offset_top = -48.0
-offset_right = -54.0
-offset_bottom = -8.0
+offset_left = -31.0
+offset_top = 8.0
+offset_right = -19.0
+offset_bottom = 90.0
 grow_horizontal = 2
 theme_override_constants/separation = 2
 metadata/_edit_use_anchors_ = true
@@ -274,19 +314,21 @@ metadata/_edit_use_anchors_ = true
 [node name="ManaProgress" type="ProgressBar" parent="Player/PlayerSprite/VBoxContainer"]
 unique_name_in_owner = true
 use_parent_material = true
-custom_minimum_size = Vector2(40, 5)
+custom_minimum_size = Vector2(5, 40)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_8htal")
 theme_override_styles/fill = SubResource("StyleBoxFlat_v6xpb")
 max_value = 8.0
+fill_mode = 3
 show_percentage = false
 
 [node name="AttackProgress" type="ProgressBar" parent="Player/PlayerSprite/VBoxContainer"]
 unique_name_in_owner = true
 use_parent_material = true
-custom_minimum_size = Vector2(40, 5)
+custom_minimum_size = Vector2(5, 40)
 layout_mode = 2
 theme_override_styles/background = SubResource("StyleBoxFlat_wjadm")
 theme_override_styles/fill = SubResource("StyleBoxFlat_6fwj8")
 max_value = 3.0
+fill_mode = 3
 show_percentage = false

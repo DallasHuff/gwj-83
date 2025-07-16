@@ -86,6 +86,7 @@ var mana_regen_dict: Dictionary[int, float] = {
 @export var spell_power: Upgrade
 @export var mana_regen: Upgrade
 
+@onready var combat_text_maker: CombatTextMaker = %CombatTextMaker
 @onready var player_animator: AnimationPlayer = %PlayerAnimator
 @onready var player_sprite: AnimatedSprite2D = %PlayerSprite
 @onready var health_progress: ProgressBar = %HealthProgress
@@ -126,7 +127,9 @@ func cast() -> void:
 	for e: Enemy in enemy_manager.enemies:
 		if not is_instance_valid(e) or e.dying:
 			continue
-		e.stats.current_health -= attack_damage_dict[attack_damage.level]
+		var damage := attack_damage_dict[attack_damage.level]
+		combat_text_maker.make_text(damage, e.global_position - Vector2(0, 45), false, CombatTextMaker.Type.DAMAGE)
+		e.stats.current_health -= damage
 		mana_progress.value = 0
 
 
@@ -135,9 +138,13 @@ func attack() -> void:
 		if not is_instance_valid(e) or e.dying:
 			continue
 		var damage := attack_damage_dict[attack_damage.level]
+		var crit := randf() < crit_chance_dict[crit_chance.level]
+		if crit:
+			damage *= 2
 		var heal_amount := minf(e.stats.current_health, damage) * lifesteal_dict[lifesteal.level]
 		Player.current_health += heal_amount
 		e.stats.current_health -= damage
+		combat_text_maker.make_text(damage, e.global_position - Vector2(0, 45), crit, CombatTextMaker.Type.DAMAGE)
 		attack_progress.value = 0
 
 
@@ -146,6 +153,13 @@ func die() -> void:
 
 
 func _on_health_changed(current: float, max_hp: float) -> void:
+	var difference := health_progress.value - current
+	# Player healing text
+	if difference < -1:
+		combat_text_maker.make_text(abs(difference), player_sprite.global_position + Vector2(-10, 5), false, CombatTextMaker.Type.HEALING)
+	# Player damage text
+	if difference > 1:
+		combat_text_maker.make_text(abs(difference), player_sprite.global_position + Vector2(-10, 5), false, CombatTextMaker.Type.DAMAGE)
 	health_progress.value = current
 	health_progress.max_value = max_hp
 
