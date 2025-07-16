@@ -4,10 +4,16 @@ class_name ShopData
 # costs 
 var attack_damage_cost: Dictionary = {
 	0: 1,
-	1: 2, 
-	2: 3,
-	3: 4, 
-	4: 5,
+	1: 1, 
+	2: 1,
+	3: 2, 
+	4: 2,
+	5: 2,
+	6: 2,
+	7: 2,
+	8: 3,
+	9: 3,
+	10: 4
 }
 var attack_damage_cost1: Dictionary = {
 	0: 1,
@@ -17,11 +23,16 @@ var attack_damage_cost1: Dictionary = {
 	4: 5,
 }
 var attack_speed_cost: Dictionary = {
-	0: 1,
-	1: 2, 
-	2: 3,
-	3: 4,
-	4: 5,
+	1: 1,
+	2: 1,
+	3: 1,
+	4: 2,
+	5: 2,
+	6: 2,
+	7: 3,
+	8: 3,
+	9: 4,
+	10: 4,
 }
 var life_steal_cost: Dictionary = {
 	0: 1,

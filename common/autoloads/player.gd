@@ -7,12 +7,31 @@ signal player_died
 var max_health_dict: Dictionary[int, float] = {
 	0: 100, # level 0 and level 1 should have the same value
 	1: 100, # level 0 and level 1 should have the same value
-	2: 150,
+	2: 110,
+	3: 120,
+	4: 130,
+	5: 140,
+	6: 150,
+	7: 160,
+	8: 170,
+	9: 180,
+	10: 190,
+	11: 200
 }
 # This is % of damage to be taken. so 1 is 100%, 0.9 is 90% damage taken (10% reduction)
 var defense_dict: Dictionary[int, float] = {
 	0: 1,
-	1: 0.95,
+	1: 0.97,
+	2: 0.93,
+	3: 0.91,
+	4: 0.88,
+	5: 0.85,
+	6: 0.82,
+	7: 0.79,
+	8: 0.76,
+	9: 0.73,
+	10: 0.70,
+	11: 0.67
 }
 var max_health: Upgrade = preload("res://shop/upgrades/health.tres") : set = _set_max_hp
 var defense: Upgrade = preload("res://shop/upgrades/defense.tres")
