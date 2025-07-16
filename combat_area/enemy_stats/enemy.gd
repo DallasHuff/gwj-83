@@ -62,4 +62,5 @@ func _on_stats_changed() -> void:
 	if stats.current_health <= 0:
 		dying = true
 		death_sfx.play()
+		print(death_sfx.playing)
 		animation_player.play("death")

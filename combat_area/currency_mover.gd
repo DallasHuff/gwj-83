@@ -29,7 +29,6 @@ func _on_enemy_died(enemy: Enemy) -> void:
 		return 
 		
 	cur_instance.global_position = Vector2(enemy.global_position.x, enemy.global_position.y + 35)
-	print("here we are! ", cur_instance.global_position)
 
 	Global.main.game.add_child(cur_instance)
 		

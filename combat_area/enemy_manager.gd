@@ -42,7 +42,11 @@ func add_new_enemy(slot: int) -> void:
 
 func _on_enemy_died(slot: int) -> void:
 	if is_instance_valid(enemies[slot]):
-		enemies[slot].queue_free()
+		enemies[slot].hide()
+		if enemies[slot].death_sfx.playing:
+			enemies[slot].death_sfx.finished.connect(_free_enemy.bind(enemies[slot]))
+		else:
+			enemies[slot].queue_free()
 		enemies[slot] = null
 	await get_tree().create_timer(enemy_spawn_speed).timeout
 	add_new_enemy(slot)
@@ -60,3 +64,7 @@ func _on_slot_added() -> void:
 		return
 	
 	add_new_enemy(highest_slot_unlocked)
+
+
+func _free_enemy(e: Enemy) -> void:
+	e.queue_free()
