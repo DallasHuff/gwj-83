@@ -152,6 +152,7 @@ func attack() -> void:
 		e.stats.current_health -= damage
 		combat_text_maker.make_text(damage, e.global_position - Vector2(0, 45), crit, CombatTextMaker.Type.DAMAGE)
 		attack_progress.value = 0
+		break
 
 
 func die() -> void:
