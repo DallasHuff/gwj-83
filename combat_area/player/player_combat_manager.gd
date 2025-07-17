@@ -15,7 +15,7 @@ var attack_damage_dict: Dictionary[int, float] = {
 	10: 15,
 	11: 17.5
 }
-var attack_speed_dict: Dictionary[int, int] = {
+var attack_speed_dict: Dictionary[int, float] = {
 	0: 1, # level 0 and level 1 should have the same value
 	1: 1, # level 0 and level 1 should have the same value
 	2: 1.1,
@@ -45,17 +45,11 @@ var crit_chance_dict: Dictionary[int, float] = {
 }
 var lifesteal_dict: Dictionary[int, float] = {
 	0: 0,
-	1: 0.02,
-	2: 0.04,
-	3: 0.06,
-	4: 0.08,
-	5: 0.1,
-	6: 0.12,
-	7: 0.14,
-	8: 0.16,
-	9: 0.18,
-	10: 0.2,
-	11: 0.22
+	1: 0.20,
+	2: 0.40,
+	3: 0.60,
+	4: 0.80,
+	5: 1.0,
 }
 var spell_power_dict: Dictionary[int, float] = {
 	0: 0,
@@ -152,6 +146,7 @@ func attack() -> void:
 		e.stats.current_health -= damage
 		combat_text_maker.make_text(damage, e.global_position - Vector2(0, 45), crit, CombatTextMaker.Type.DAMAGE)
 		attack_progress.value = 0
+		break
 
 
 func die() -> void:

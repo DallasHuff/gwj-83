@@ -2,15 +2,16 @@ class_name Shop
 extends Control
 
 @export var attack_damage_upgrade: Upgrade
-var blood: int = 5
-var souls: int = 0
-var memories: int = 0
+var blood: int = 100
+var souls: int = 100
+var memories: int = 100
 var upgrade_containers: Array[UpgradeContainer] = []
 
 @onready var blood_count_label: Label = %BloodCountLabel
 @onready var soul_count_label: Label = %SoulsCountLabel
 @onready var memories_count_label: Label = %MemoriesCountLabel
 @onready var boss_battle_upgrade: UpgradeContainer = %BossBattle
+@onready var number_enemies_upgrade: UpgradeContainer = %NumberEnemies
 
 
 func _ready() -> void:
@@ -27,6 +28,7 @@ func _ready() -> void:
 		uc.purchased.connect(update_currency_labels)
 
 	boss_battle_upgrade.purchased.connect(func()->void:CombatEvents.boss_purchased.emit())
+	number_enemies_upgrade.purchased.connect(func()->void:CombatEvents.enemy_slot_added.emit())
 
 	update_currency_labels()
 

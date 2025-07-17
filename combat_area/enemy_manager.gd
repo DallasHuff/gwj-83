@@ -27,6 +27,7 @@ func _ready() -> void:
 		add_new_enemy(i)
 
 	CombatEvents.boss_purchased.connect(_on_boss_purchased)
+	CombatEvents.enemy_slot_added.connect(_on_slot_added)
 
 
 func add_new_enemy(slot: int) -> void:
