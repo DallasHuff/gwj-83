@@ -19,13 +19,14 @@ func _on_enemy_died(enemy: Enemy) -> void:
 	var bloods: int = enemy.stats.blood
 	var souls: int = enemy.stats.souls
 	var memories: int = enemy.stats.memories
-	if enemy.stats.blood >= 0:
+	if enemy.stats.blood > 0:
 		cur_instance = blood_scene.instantiate()
-	elif enemy.stats.souls >= 0:
+	elif enemy.stats.souls > 0:
 		cur_instance = soul_scene.instantiate() 
-	elif enemy.stats.memories >= 0:
+	elif enemy.stats.memories > 0:
 		cur_instance = memory_scene.instantiate() 
 	else:
+		push_warning("loot not set up for enemy")
 		return 
 		
 	cur_instance.global_position = Vector2(enemy.global_position.x, enemy.global_position.y + 35)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dfwplfqccjgah"]
+[gd_scene load_steps=47 format=3 uid="uid://dfwplfqccjgah"]
 
 [ext_resource type="Script" uid="uid://e8kd1dfgjoyx" path="res://combat_area/arena.gd" id="1_06mus"]
 [ext_resource type="Script" uid="uid://ur5fp1m7ww8m" path="res://combat_area/enemy_manager.gd" id="2_yhgyy"]
@@ -21,8 +21,17 @@
 [ext_resource type="Texture2D" uid="uid://0nx2784cmgem" path="res://assets/arena/beam01.png" id="11_v6xpb"]
 [ext_resource type="PackedScene" uid="uid://c8f508la147q" path="res://combat_area/enemy_stats/boss/boss1/boss.tscn" id="12_uid5r"]
 [ext_resource type="Script" uid="uid://kfs10s3tuefw" path="res://combat_area/point_light_2d.gd" id="13_cforn"]
+[ext_resource type="Resource" uid="uid://1y8flqty2wmg" path="res://combat_area/enemy_stats/demon/enemy_blood1/enemy_blood1.tres" id="15_2l7ux"]
 [ext_resource type="Script" uid="uid://cq2xj68xwd76f" path="res://combat_area/combat_text/combat_text_maker.gd" id="16_g2w5p"]
+[ext_resource type="Resource" uid="uid://bcrfa7h15pasl" path="res://combat_area/enemy_stats/demon/enemy_blood2/enemy_blood2.tres" id="16_hswid"]
+[ext_resource type="Resource" uid="uid://n3wr086ls5k1" path="res://combat_area/enemy_stats/demon/enemy_blood3/enemy_blood3.tres" id="17_hnfms"]
 [ext_resource type="PackedScene" uid="uid://ddfqtrnbnqcpv" path="res://combat_area/combat_text/combat_text.tscn" id="17_ydmkd"]
+[ext_resource type="Resource" uid="uid://crtxo3cq0txto" path="res://combat_area/enemy_stats/souls/enemy_soul1/enemy_soul1.tres" id="19_m885n"]
+[ext_resource type="Resource" uid="uid://csk8mqg7l4f0j" path="res://combat_area/enemy_stats/souls/enemy_soul2/enemy_soul2.tres" id="20_6xanc"]
+[ext_resource type="Resource" uid="uid://c2mt1mxvifrsh" path="res://combat_area/enemy_stats/souls/enemy_soul3/enemy_soul3.tres" id="21_wh7aj"]
+[ext_resource type="Resource" uid="uid://c16ur6kqwcw3c" path="res://combat_area/enemy_stats/memories/enemy_memory1/enemy_memory1.tres" id="23_lcbcf"]
+[ext_resource type="Resource" uid="uid://m8c6pikcyo0q" path="res://combat_area/enemy_stats/memories/enemy_memory2/enemy_memory2.tres" id="24_ejwl8"]
+[ext_resource type="Resource" uid="uid://dr84n1ygqlcgx" path="res://combat_area/enemy_stats/memories/enemy_memory3/enemy_memory3.tres" id="25_3g0br"]
 
 [sub_resource type="Animation" id="Animation_6fwj8"]
 resource_name = "attack"
@@ -217,7 +226,9 @@ unique_name_in_owner = true
 script = ExtResource("2_yhgyy")
 enemy_scene = ExtResource("4_5ehcq")
 boss_scene = ExtResource("12_uid5r")
-available_enemies = Array[ExtResource("5_wjadm")]([ExtResource("6_6fwj8"), ExtResource("7_8htal"), ExtResource("8_v6xpb")])
+demon_enemies = Array[ExtResource("5_wjadm")]([ExtResource("6_6fwj8"), ExtResource("15_2l7ux"), ExtResource("16_hswid"), ExtResource("17_hnfms")])
+soul_enemies = Array[ExtResource("5_wjadm")]([ExtResource("8_v6xpb"), ExtResource("19_m885n"), ExtResource("20_6xanc"), ExtResource("21_wh7aj")])
+memory_enemies = Array[ExtResource("5_wjadm")]([ExtResource("7_8htal"), ExtResource("23_lcbcf"), ExtResource("24_ejwl8"), ExtResource("25_3g0br")])
 
 [node name="CombatTextMaker" type="Node" parent="."]
 unique_name_in_owner = true
@@ -281,19 +292,19 @@ texture = ExtResource("11_v6xpb")
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="Player"]
 unique_name_in_owner = true
 material = SubResource("CanvasItemMaterial_ydmkd")
-position = Vector2(311, 100)
+position = Vector2(306, 100)
 sprite_frames = ExtResource("3_wjadm")
-animation = &"cast"
+animation = &"idle"
 flip_h = true
 
 [node name="HealthProgress" type="ProgressBar" parent="Player/PlayerSprite"]
 unique_name_in_owner = true
 material = SubResource("CanvasItemMaterial_xb1dc")
-custom_minimum_size = Vector2(40, 8)
-offset_left = -27.0
-offset_top = -25.0
-offset_right = 13.0
-offset_bottom = -17.0
+custom_minimum_size = Vector2(80, 8)
+offset_left = -24.0
+offset_top = -73.0
+offset_right = 56.0
+offset_bottom = -65.0
 theme_override_styles/background = SubResource("StyleBoxFlat_xb1dc")
 theme_override_styles/fill = SubResource("StyleBoxFlat_cforn")
 value = 100.0
@@ -305,10 +316,10 @@ material = SubResource("CanvasItemMaterial_cforn")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -31.0
-offset_top = 8.0
-offset_right = -19.0
-offset_bottom = 90.0
+offset_left = 7.0
+offset_top = -8.0
+offset_right = 19.0
+offset_bottom = 74.0
 grow_horizontal = 2
 theme_override_constants/separation = 2
 metadata/_edit_use_anchors_ = true
