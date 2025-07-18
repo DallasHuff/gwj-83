@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://r2o6ggkvfoia"]
 
 [ext_resource type="Script" uid="uid://dbxkq1g3vvgai" path="res://menus/main_menu/main_menu.gd" id="1_xbn2l"]
-[ext_resource type="Texture2D" uid="uid://cff22dm6w826p" path="res://assets/ui/backgrounds/treasure-hoard-background-preview.png" id="3_oic2i"]
+[ext_resource type="Texture2D" uid="uid://cp4wpjfstphlk" path="res://assets/ui/backgrounds/bgchar.png" id="2_vu5tu"]
 [ext_resource type="FontFile" uid="uid://b1dlveih6vdm5" path="res://shop/fonts/Alkhemikal.ttf" id="4_er5qh"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vu5tu"]
-texture = ExtResource("3_oic2i")
+texture = ExtResource("2_vu5tu")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -39,9 +39,15 @@ theme_override_constants/margin_bottom = 150
 [node name="TitleLabel" type="Label" parent="MarginContainer"]
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("4_er5qh")
-theme_override_font_sizes/font_size = 100
-text = "SOUL SUCKER"
+theme_override_font_sizes/font_size = 144
+text = "HELL'S GLUTTON"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -64,7 +70,7 @@ custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_font_sizes/font_size = 30
-text = "SETTINGS"
+text = " SETTINGS "
 
 [node name="CreditsButton" type="Button" parent="MarginContainer/VBoxContainer"]
 unique_name_in_owner = true

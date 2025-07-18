@@ -4,3 +4,5 @@
 
 [resource]
 texture = ExtResource("1_07qbc")
+expand_margin_top = 4.0
+expand_margin_bottom = 2.0
