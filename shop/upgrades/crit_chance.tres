@@ -6,9 +6,9 @@
 script = ExtResource("1_l3qof")
 starting_level = 0
 blood_cost = Dictionary[int, int]({
-0: 4,
-1: 4,
-2: 5,
+0: 1,
+1: 2,
+2: 4,
 3: 6,
 4: 7,
 5: 8,

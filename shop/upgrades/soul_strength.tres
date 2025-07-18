@@ -5,13 +5,18 @@
 [resource]
 script = ExtResource("1_pc0l4")
 starting_level = 0
-blood_cost = Dictionary[int, int]({})
+blood_cost = Dictionary[int, int]({
+0: 1,
+1: 1,
+2: 1,
+3: 2
+})
 souls_cost = Dictionary[int, int]({})
 memories_cost = Dictionary[int, int]({
-0: 4,
-1: 4,
-2: 5,
-3: 6,
+0: 1,
+1: 1,
+2: 2,
+3: 3,
 4: 7,
 5: 8,
 6: 9,
