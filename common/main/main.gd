@@ -4,6 +4,7 @@ extends Node
 @export var game_over_menu_scene: PackedScene
 @export var settings_menu: PackedScene
 @export var main_menu_scene: PackedScene
+@export var credits_menu: PackedScene
 @export var arena_scene: PackedScene
 @export var shop_scene: PackedScene
 @export var combat_speed_container: PackedScene
@@ -38,9 +39,16 @@ func go_main_menu() -> void:
 	main_menu.play_button.pressed.connect(go_arena)
 	main_menu.play_button.pressed.connect(func()->void:print("play button pressed"))
 	main_menu.settings_button.pressed.connect(go_settings)
+	main_menu.credits_button.pressed.connect(go_credits)
 	main_menu.exit_button.pressed.connect(func()->void:get_tree().quit(0))
 
-
+func go_credits() -> void:
+	clear_children()
+	var credits_menu: CreditsMenu = credits_menu.instantiate()
+	ui.add_child(credits_menu)
+	credits_menu.back_button.pressed.connect(go_main_menu)
+	
+	
 func go_arena() -> void:
 	music_manager.play_arena()
 	clear_children()
