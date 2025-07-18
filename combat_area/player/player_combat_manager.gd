@@ -2,46 +2,46 @@ class_name PlayerCombatManager
 extends Node
 
 var attack_damage_dict: Dictionary[int, float] = {
-	0: 1.5, # level 0 and level 1 should have the same value
-	1: 1.5, # level 0 and level 1 should have the same value
-	2: 3,
-	3: 4.5,
-	4: 6,
-	5: 7.5,
-	6: 9,
-	7: 10.5,
-	8: 12,
-	9: 13.5,
-	10: 15,
-	11: 17.5
+	0: 10, # level 0 and level 1 should have the same value
+	1: 10, # level 0 and level 1 should have the same value
+	2: 11.5,
+	3: 13,
+	4: 14.5,
+	5: 16,
+	6: 17.5,
+	7: 19,
+	8: 21.5,
+	9: 24,
+	10: 25.5,
+	11: 28
 }
 var attack_speed_dict: Dictionary[int, float] = {
 	0: 1, # level 0 and level 1 should have the same value
 	1: 1, # level 0 and level 1 should have the same value
-	2: 1.1,
-	3: 1.15,
-	4: 1.2,
-	5: 1.25,
-	6: 1.3,
-	7: 1.35,
-	8: 1.4,
-	9: 1.45,
-	10: 1.5,
-	11: 1.55
+	2: 1.4,
+	3: 1.8,
+	4: 2.2,
+	5: 2.6,
+	6: 2.9,
+	7: 3.2,
+	8: 3.5,
+	9: 3.8,
+	10: 4,
+	11: 4.2
 }
 var crit_chance_dict: Dictionary[int, float] = {
-	0: 0,
-	1: 0.05,
-	2: 0.1,
-	3: 0.15,
-	4: 0.2,
-	5: 0.25,
-	6: 0.3,
-	7: 0.35,
-	8: 0.4,
-	9: 0.45,
-	10: 0.5,
-	11: 0.55
+	0: 0.05,
+	1: 0.1,
+	2: 0.15,
+	3: 0.2,
+	4: 0.25,
+	5: 0.3,
+	6: 0.35,
+	7: 0.40,
+	8: 0.45,
+	9: 0.50,
+	10: 0.55,
+	11: 0.60
 }
 var lifesteal_dict: Dictionary[int, float] = {
 	0: 0,
@@ -142,6 +142,8 @@ func attack() -> void:
 		if crit:
 			damage *= 2
 		var heal_amount := minf(e.stats.current_health, damage) * lifesteal_dict[lifesteal.level]
+		if heal_amount < 1: 
+			heal_amount = 1.1
 		Player.current_health += heal_amount
 		e.stats.current_health -= damage
 		combat_text_maker.make_text(damage, e.global_position - Vector2(0, 45), crit, CombatTextMaker.Type.DAMAGE)

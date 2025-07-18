@@ -6,9 +6,9 @@
 [resource]
 script = ExtResource("1_pxdm0")
 sprite_frames = ExtResource("2_r54pm")
-health = 25.0
+health = 30.0
 damage = 5.0
-time_between_attacks = 2.0
+time_between_attacks = 1.5
 blood = 1
 souls = 0
 memories = 0
