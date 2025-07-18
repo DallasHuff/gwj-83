@@ -83,7 +83,6 @@ func _on_boss_purchased() -> void:
 	tween.set_ease(Tween.EASE_OUT)
 	tween.tween_property(boss, "global_position", Vector2(120, 160), 1)
 	tween.tween_callback(func()->void: enemies[0] = boss; boss.in_combat = true)
-	print(boss.global_position)
 
 
 func _on_enemy_attacked(enemy: Enemy) -> void:

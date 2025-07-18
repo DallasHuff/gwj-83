@@ -17,7 +17,7 @@ var dying := false
 
 
 func _process(delta: float) -> void:
-	if not in_combat:
+	if not in_combat or dying:
 		return
 	attack_progress.value += delta
 
