@@ -12,6 +12,9 @@ var upgrade_containers: Array[UpgradeContainer] = []
 @onready var memories_count_label: Label = %MemoriesCountLabel
 @onready var boss_battle_upgrade: UpgradeContainer = %BossBattle
 @onready var number_enemies_upgrade: UpgradeContainer = %NumberEnemies
+@onready var demon_strength: UpgradeContainer = %DemonStrength
+@onready var soul_strength: UpgradeContainer = %SoulStrength
+@onready var memories_strength: UpgradeContainer = %MemoriesStrength
 
 
 func _ready() -> void:
@@ -29,6 +32,9 @@ func _ready() -> void:
 
 	boss_battle_upgrade.purchased.connect(func()->void:CombatEvents.boss_purchased.emit())
 	number_enemies_upgrade.purchased.connect(func()->void:CombatEvents.enemy_slot_added.emit())
+	demon_strength.purchased.connect(CombatEvents.enemy_strength_increase.emit.bind(0))
+	soul_strength.purchased.connect(CombatEvents.enemy_strength_increase.emit.bind(1))
+	memories_strength.purchased.connect(CombatEvents.enemy_strength_increase.emit.bind(2))
 
 	update_currency_labels()
 

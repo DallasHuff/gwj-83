@@ -10,14 +10,6 @@ souls_cost = Dictionary[int, int]({})
 memories_cost = Dictionary[int, int]({
 0: 4,
 1: 4,
-2: 5,
-3: 6,
-4: 7,
-5: 8,
-6: 9,
-7: 11,
-8: 13,
-9: 15,
-10: 18
+2: 5
 })
 metadata/_custom_type_script = "uid://csbyvlbo5sfnu"

@@ -5,7 +5,9 @@ const MAX_SLOTS: int = 6
 
 @export var enemy_scene: PackedScene
 @export var boss_scene: PackedScene
-@export var available_enemies: Array[EnemyStats]
+@export var demon_enemies: Array[EnemyStats]
+@export var soul_enemies: Array[EnemyStats]
+@export var memory_enemies: Array[EnemyStats]
 var slot_to_position: Dictionary[int, Vector2] = {
 	0 : Vector2(92, 104),
 	1 : Vector2(35, 162),
@@ -17,6 +19,9 @@ var slot_to_position: Dictionary[int, Vector2] = {
 var enemy_spawn_speed: float = 1
 var highest_slot_unlocked: int = 0
 var enemies: Array[Enemy] = []
+var demon_strength: int = 0
+var soul_strength: int = 0
+var memories_strength: int = 0
 var boss_purchased := false
 
 
@@ -28,6 +33,7 @@ func _ready() -> void:
 
 	CombatEvents.boss_purchased.connect(_on_boss_purchased)
 	CombatEvents.enemy_slot_added.connect(_on_slot_added)
+	CombatEvents.enemy_strength_increase.connect(_enemy_strength_increased)
 
 
 func add_new_enemy(slot: int) -> void:
@@ -35,7 +41,7 @@ func add_new_enemy(slot: int) -> void:
 	e.died.connect(_on_enemy_died.bind(slot))
 	e.attacked.connect(_on_enemy_attacked.bind(e))
 	
-	e.stats = available_enemies.pick_random()
+	e.stats = [demon_enemies[demon_strength], soul_enemies[soul_strength], memory_enemies[memories_strength]].pick_random()
 
 	Global.main.game.add_child(e)
 	e.global_position = Vector2(-200, slot_to_position[slot].y)
@@ -59,7 +65,6 @@ func _on_enemy_died(slot: int) -> void:
 
 
 func _on_boss_purchased() -> void:
-	print("boss purchased")
 	# Kill all enemies and don't replace them
 	boss_purchased = true
 	for enemy in enemies:
@@ -83,6 +88,16 @@ func _on_boss_purchased() -> void:
 
 func _on_enemy_attacked(enemy: Enemy) -> void:
 	Player.current_health -= enemy.stats.damage * Player.defense_dict[Player.defense.level]
+
+
+func _enemy_strength_increased(type: int) -> void:
+	match type:
+		0:
+			demon_strength += 1
+		1:
+			soul_strength += 1
+		2:
+			memories_strength += 1
 
 
 func _on_slot_added() -> void:

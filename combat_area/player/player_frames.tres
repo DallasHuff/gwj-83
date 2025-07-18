@@ -1,7 +1,8 @@
-[gd_resource type="SpriteFrames" load_steps=24 format=3 uid="uid://c6y7e2duvk6f2"]
+[gd_resource type="SpriteFrames" load_steps=25 format=3 uid="uid://c6y7e2duvk6f2"]
 
 [ext_resource type="Texture2D" uid="uid://bpx726uswm0o8" path="res://assets/enemies/kobold/ATTACK 1.png" id="1_woq13"]
 [ext_resource type="Texture2D" uid="uid://dsd6g5edgf2kn" path="res://assets/enemies/kobold/DEATH.png" id="2_n15pq"]
+[ext_resource type="Texture2D" uid="uid://bp0tu5w8axx10" path="res://combat_area/player/player_consume.png" id="3_d48x8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n15pq"]
 atlas = ExtResource("1_woq13")
@@ -83,9 +84,9 @@ region = Rect2(1184, 0, 148, 96)
 atlas = ExtResource("2_n15pq")
 region = Rect2(1332, 0, 148, 96)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_iwawi"]
-atlas = ExtResource("1_woq13")
-region = Rect2(0, 0, 148, 96)
+[sub_resource type="AtlasTexture" id="AtlasTexture_l44xl"]
+atlas = ExtResource("3_d48x8")
+region = Rect2(0, 0, 96, 128)
 
 [resource]
 animations = [{
@@ -166,7 +167,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_iwawi")
+"texture": SubResource("AtlasTexture_l44xl")
 }],
 "loop": false,
 "name": &"idle",
