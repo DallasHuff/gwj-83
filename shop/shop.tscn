@@ -1,8 +1,9 @@
-[gd_scene load_steps=20 format=3 uid="uid://b4g54u5y2n181"]
+[gd_scene load_steps=26 format=3 uid="uid://b4g54u5y2n181"]
 
 [ext_resource type="Script" uid="uid://c6t1d2valsj1n" path="res://shop/shop.gd" id="1_r2p71"]
 [ext_resource type="Texture2D" uid="uid://cf0skqlq4v0uq" path="res://assets/icons/souls/hd_soul_2.png" id="2_hv745"]
 [ext_resource type="Texture2D" uid="uid://byghhx4vxbg33" path="res://assets/icons/blood/hd_bright_blood.png" id="2_mtsdc"]
+[ext_resource type="Texture2D" uid="uid://fcgnpgar4nwc" path="res://assets/ui/backgrounds/bgshop.png" id="2_sigkv"]
 [ext_resource type="Script" uid="uid://cdyqvph4apit4" path="res://shop/upgrade_container.gd" id="2_sxvro"]
 [ext_resource type="Texture2D" uid="uid://cm5qq4y2nvuwi" path="res://assets/icons/memory_crystals/hd_memory_crystal.png" id="3_c8ks2"]
 [ext_resource type="Resource" uid="uid://b22rlssyklymi" path="res://shop/upgrades/attack_damage.tres" id="3_pafut"]
@@ -16,13 +17,33 @@
 [ext_resource type="Resource" uid="uid://wb3gxivn7oua" path="res://shop/upgrades/demon_strength.tres" id="13_auoiy"]
 [ext_resource type="Resource" uid="uid://bo3p701cbg24t" path="res://shop/upgrades/soul_strength.tres" id="14_o26su"]
 [ext_resource type="Resource" uid="uid://c44i0vgu6hmop" path="res://shop/upgrades/mind_eater_strength.tres" id="15_b3w7u"]
+[ext_resource type="Texture2D" uid="uid://vdwrwr5574xy" path="res://assets/ui/backgrounds/redbg.png" id="16_mtsdc"]
 [ext_resource type="Resource" uid="uid://eihor5c2tt1m" path="res://shop/upgrades/boss_purchase.tres" id="18_k6x22"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_c8ks2"]
 bg_color = Color(0, 0, 0, 1)
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7bvr6"]
+texture = ExtResource("2_sigkv")
+
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_k6x22"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mlbjk"]
+texture = ExtResource("16_mtsdc")
+texture_margin_top = 2048.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sigkv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mtsdc"]
+bg_color = Color(1, 0, 0, 0)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(1, 0, 0, 1)
+border_blend = true
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -51,6 +72,10 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 mouse_filter = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_c8ks2")
+
+[node name="Panel" type="Panel" parent="ShopPanel"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_7bvr6")
 
 [node name="MarginContainer" type="MarginContainer" parent="ShopPanel"]
 layout_mode = 2
@@ -424,6 +449,10 @@ offset_right = 1019.0
 offset_bottom = 88.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_k6x22")
 
+[node name="Panel" type="Panel" parent="CurrencyPanel"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_mlbjk")
+
 [node name="CurrencyCounterContainer" type="MarginContainer" parent="CurrencyPanel"]
 custom_minimum_size = Vector2(1152, 162)
 layout_mode = 2
@@ -438,7 +467,10 @@ theme_override_constants/separation = 100
 alignment = 1
 
 [node name="Button" type="Button" parent="CurrencyPanel/CurrencyCounterContainer/HBoxContainer"]
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
 theme_override_font_sizes/font_size = 30
 text = "Settings"
 
@@ -506,3 +538,25 @@ unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 30
 text = "Memories Count"
+
+[node name="ShopBorder" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 1152.0
+offset_right = 1919.0
+offset_bottom = 1079.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sigkv")
+
+[node name="Border" type="Panel" parent="ShopBorder"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mtsdc")
+
+[node name="CurrencyBorder" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 1.0
+offset_right = 1153.0
+offset_bottom = 162.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sigkv")
+
+[node name="Border" type="Panel" parent="CurrencyBorder"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mtsdc")

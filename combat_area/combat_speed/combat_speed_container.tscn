@@ -1,14 +1,29 @@
-[gd_scene load_steps=8 format=3 uid="uid://87bd3uothydn"]
+[gd_scene load_steps=11 format=3 uid="uid://87bd3uothydn"]
 
-[ext_resource type="Script" uid="uid://dh47xd8exmwcu" path="res://combat_area/combat_speed/potion_container.gd" id="1_b1uix"]
+[ext_resource type="Script" path="res://combat_area/combat_speed/potion_container.gd" id="1_b1uix"]
 [ext_resource type="Texture2D" uid="uid://bq5br2w7qxv4c" path="res://assets/icons/health_potion/full_potion.png" id="1_tp1cw"]
 [ext_resource type="Script" uid="uid://wwaycvb137hq" path="res://combat_area/combat_speed/combat_speed_container.gd" id="1_uvp47"]
+[ext_resource type="Texture2D" uid="uid://nvswnoddlgi0" path="res://assets/ui/backgrounds/bgbot.png" id="1_ykf3q"]
 [ext_resource type="Texture2D" uid="uid://cwo40ptexg6rf" path="res://assets/icons/health_potion/hovered_potion.png" id="2_b1uix"]
 [ext_resource type="AudioStream" uid="uid://bmthoettiovb4" path="res://assets/audio/sfx/potion_drink.mp3" id="2_tlljd"]
 [ext_resource type="Texture2D" uid="uid://b5yxwga3237r7" path="res://assets/icons/health_potion/empty_potion.png" id="4_5hi0l"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_tlljd"]
 bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jljno"]
+texture = ExtResource("1_ykf3q")
+expand_margin_top = 243.0
+expand_margin_bottom = 54.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ykf3q"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 15
+border_width_top = 15
+border_width_right = 15
+border_width_bottom = 15
+border_color = Color(1, 0, 0, 1)
+border_blend = true
 
 [node name="MarginContainer" type="MarginContainer"]
 z_index = -10
@@ -24,6 +39,14 @@ custom_minimum_size = Vector2(0, 273)
 layout_mode = 2
 size_flags_vertical = 8
 theme_override_styles/panel = SubResource("StyleBoxFlat_tlljd")
+
+[node name="Panel" type="Panel" parent="PanelContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jljno")
+
+[node name="Border" type="Panel" parent="PanelContainer"]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_ykf3q")
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
 layout_mode = 2
