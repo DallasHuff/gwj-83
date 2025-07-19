@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://dfwplfqccjgah"]
+[gd_scene load_steps=49 format=3 uid="uid://dfwplfqccjgah"]
 
 [ext_resource type="Script" uid="uid://e8kd1dfgjoyx" path="res://combat_area/arena.gd" id="1_06mus"]
 [ext_resource type="Script" uid="uid://ur5fp1m7ww8m" path="res://combat_area/enemy_manager.gd" id="2_yhgyy"]
@@ -32,6 +32,7 @@
 [ext_resource type="Resource" uid="uid://c16ur6kqwcw3c" path="res://combat_area/enemy_stats/memories/enemy_memory1/enemy_memory1.tres" id="23_lcbcf"]
 [ext_resource type="Resource" uid="uid://m8c6pikcyo0q" path="res://combat_area/enemy_stats/memories/enemy_memory2/enemy_memory2.tres" id="24_ejwl8"]
 [ext_resource type="Resource" uid="uid://dr84n1ygqlcgx" path="res://combat_area/enemy_stats/memories/enemy_memory3/enemy_memory3.tres" id="25_3g0br"]
+[ext_resource type="Script" uid="uid://bc8xw4gejxjby" path="res://combat_area/mana_click.gd" id="33_hswid"]
 
 [sub_resource type="Animation" id="Animation_6fwj8"]
 resource_name = "attack"
@@ -204,6 +205,10 @@ border_width_right = 1
 border_width_bottom = 1
 border_color = Color(0, 0, 0, 1)
 
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2l7ux"]
+radius = 30.0
+height = 120.0
+
 [node name="Arena" type="Node2D"]
 script = ExtResource("1_06mus")
 
@@ -289,7 +294,7 @@ texture = ExtResource("11_v6xpb")
 
 [node name="Player" type="Node2D" parent="."]
 
-[node name="PlayerSprite" type="AnimatedSprite2D" parent="Player"]
+[node name="PlayerSprite" type="AnimatedSprite2D" parent="Player" groups=["player"]]
 unique_name_in_owner = true
 material = SubResource("CanvasItemMaterial_ydmkd")
 position = Vector2(306, 100)
@@ -345,3 +350,10 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_6fwj8")
 max_value = 3.0
 fill_mode = 3
 show_percentage = false
+
+[node name="ManaClick" type="Area2D" parent="Player"]
+position = Vector2(325, 109)
+script = ExtResource("33_hswid")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/ManaClick"]
+shape = SubResource("CapsuleShape2D_2l7ux")

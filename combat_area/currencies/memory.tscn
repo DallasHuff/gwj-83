@@ -5,5 +5,4 @@
 [node name="Memory" type="Node2D"]
 
 [node name="MemorySprite" type="Sprite2D" parent="."]
-scale = Vector2(0.01, 0.01)
 texture = ExtResource("1_q2vwt")
