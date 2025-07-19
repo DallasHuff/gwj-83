@@ -24,8 +24,8 @@ func _ready() -> void:
 	CombatEvents.memories_gained.connect(_on_memories_gained)
 	for node in get_tree().get_nodes_in_group("upgrade_container"):
 		upgrade_containers.append(node as UpgradeContainer)
-	if upgrade_containers.size() != 14:
-		push_error("wrong number of upgrade containers. Expected 14 but got: ", upgrade_containers.size())
+	if upgrade_containers.size() != 12:
+		push_error("wrong number of upgrade containers. Expected 12 but got: ", upgrade_containers.size())
 
 	for uc in upgrade_containers:
 		uc.purchased.connect(update_currency_labels)
