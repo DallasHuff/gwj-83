@@ -42,11 +42,12 @@ func go_main_menu() -> void:
 	main_menu.credits_button.pressed.connect(go_credits)
 	main_menu.exit_button.pressed.connect(func()->void:get_tree().quit(0))
 
+
 func go_credits() -> void:
 	clear_children()
-	var credits_menu: CreditsMenu = credits_menu.instantiate()
-	ui.add_child(credits_menu)
-	credits_menu.back_button.pressed.connect(go_main_menu)
+	var credits: CreditsMenu = credits_menu.instantiate()
+	ui.add_child(credits)
+	credits.back_button.pressed.connect(go_main_menu)
 	
 	
 func go_arena() -> void:

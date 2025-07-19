@@ -106,9 +106,9 @@ script = ExtResource("2_sxvro")
 upgrade = ExtResource("3_pafut")
 
 [node name="AttkDamLabel" type="Label" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackDamageHbox"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 text = "Attack Damage"
 
 [node name="Price" type="RichTextLabel" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackDamageHbox"]
@@ -121,11 +121,12 @@ scroll_active = false
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 8
+size_flags_vertical = 1
 text = "0"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackDamageHbox"]
-custom_minimum_size = Vector2(225, 50)
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 text = "UPGRADE"
 
@@ -135,9 +136,9 @@ script = ExtResource("2_sxvro")
 upgrade = ExtResource("4_hv745")
 
 [node name="AttkDamLabel" type="Label" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/CritChance"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 text = "Critical Strike Chance"
 
 [node name="Price" type="RichTextLabel" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/CritChance"]
@@ -149,11 +150,12 @@ text = "Price"
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 8
+size_flags_vertical = 1
 text = "0"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/CritChance"]
-custom_minimum_size = Vector2(225, 50)
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 text = "UPGRADE"
 
@@ -163,9 +165,9 @@ script = ExtResource("2_sxvro")
 upgrade = ExtResource("5_c8ks2")
 
 [node name="AttkDamLabel" type="Label" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackSpeed"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 text = "Attack Speed"
 
 [node name="Price" type="RichTextLabel" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackSpeed"]
@@ -177,11 +179,12 @@ text = "Price"
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 8
+size_flags_vertical = 5
 text = "0"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/AttackSpeed"]
-custom_minimum_size = Vector2(225, 50)
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 text = "UPGRADE"
 
@@ -191,9 +194,9 @@ script = ExtResource("2_sxvro")
 upgrade = ExtResource("6_k6x22")
 
 [node name="AttkDamLabel" type="Label" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/Health"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 text = "Health"
 
 [node name="Price" type="RichTextLabel" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/Health"]
@@ -205,11 +208,12 @@ text = "Price"
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 8
+size_flags_vertical = 5
 text = "0"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/Health"]
-custom_minimum_size = Vector2(225, 50)
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 text = "UPGRADE"
 
@@ -219,9 +223,9 @@ script = ExtResource("2_sxvro")
 upgrade = ExtResource("8_sigkv")
 
 [node name="AttkDamLabel" type="Label" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/Lifesteal"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 text = "Lifesteal"
 
 [node name="Price" type="RichTextLabel" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/Lifesteal"]
@@ -233,11 +237,12 @@ text = "Price"
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 8
+size_flags_vertical = 5
 text = "0"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/Lifesteal"]
-custom_minimum_size = Vector2(225, 50)
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 text = "UPGRADE"
 
@@ -247,9 +252,9 @@ script = ExtResource("2_sxvro")
 upgrade = ExtResource("9_wobyc")
 
 [node name="AttkDamLabel" type="Label" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpellPower"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 text = "Spell Power"
 
 [node name="Price" type="RichTextLabel" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpellPower"]
@@ -261,11 +266,12 @@ text = "Price"
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 8
+size_flags_vertical = 5
 text = "0"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SpellPower"]
-custom_minimum_size = Vector2(225, 50)
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 text = "UPGRADE"
 
@@ -275,9 +281,9 @@ script = ExtResource("2_sxvro")
 upgrade = ExtResource("10_7bvr6")
 
 [node name="AttkDamLabel" type="Label" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ManaRegen"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 text = "Mana Regen"
 
 [node name="Price" type="RichTextLabel" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ManaRegen"]
@@ -289,11 +295,12 @@ text = "Price"
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 8
+size_flags_vertical = 5
 text = "0"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/ManaRegen"]
-custom_minimum_size = Vector2(225, 50)
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 text = "UPGRADE"
 
@@ -304,9 +311,9 @@ script = ExtResource("2_sxvro")
 upgrade = ExtResource("11_mlbjk")
 
 [node name="AttkDamLabel" type="Label" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/NumberEnemies"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 text = "Number of Enemies"
 
 [node name="Price" type="RichTextLabel" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/NumberEnemies"]
@@ -318,11 +325,12 @@ text = "Price"
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 8
+size_flags_vertical = 5
 text = "0"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/NumberEnemies"]
-custom_minimum_size = Vector2(225, 50)
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 text = "UPGRADE"
 
@@ -333,27 +341,27 @@ script = ExtResource("2_sxvro")
 upgrade = ExtResource("13_auoiy")
 
 [node name="AttkDamLabel" type="Label" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/DemonStrength"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 text = "Demon Strength"
 
 [node name="Price" type="RichTextLabel" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/DemonStrength"]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 11
 text = "Price"
 
 [node name="Level" type="Label" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/DemonStrength"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 8
+size_flags_vertical = 5
 text = "0"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/DemonStrength"]
-custom_minimum_size = Vector2(180, 50)
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
-size_flags_horizontal = 3
 text = "UPGRADE"
 
 [node name="SoulStrength" type="HBoxContainer" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer"]
@@ -363,9 +371,9 @@ script = ExtResource("2_sxvro")
 upgrade = ExtResource("14_o26su")
 
 [node name="AttkDamLabel" type="Label" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SoulStrength"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 text = "Lost Souls Strength"
 
 [node name="Price" type="RichTextLabel" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SoulStrength"]
@@ -377,11 +385,12 @@ text = "Price"
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 8
+size_flags_vertical = 5
 text = "0"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/SoulStrength"]
-custom_minimum_size = Vector2(225, 50)
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 text = "UPGRADE"
 
@@ -392,25 +401,26 @@ script = ExtResource("2_sxvro")
 upgrade = ExtResource("15_b3w7u")
 
 [node name="AttkDamLabel" type="Label" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/MemoriesStrength"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 text = "Mind Eater Strength"
 
 [node name="Price" type="RichTextLabel" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/MemoriesStrength"]
 layout_mode = 2
-size_flags_horizontal = 11
+size_flags_horizontal = 3
 text = "Price"
 
 [node name="Level" type="Label" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/MemoriesStrength"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 8
+size_flags_vertical = 5
 text = "0"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/MemoriesStrength"]
-custom_minimum_size = Vector2(225, 50)
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 text = "UPGRADE"
 
@@ -421,25 +431,26 @@ script = ExtResource("2_sxvro")
 upgrade = ExtResource("18_k6x22")
 
 [node name="AttkDamLabel" type="Label" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/BossBattle"]
-custom_minimum_size = Vector2(200, 0)
+custom_minimum_size = Vector2(220, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 25
+theme_override_font_sizes/font_size = 20
 text = "Key to the Devil"
 
 [node name="Price" type="RichTextLabel" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/BossBattle"]
 layout_mode = 2
-size_flags_horizontal = 11
+size_flags_horizontal = 3
 text = "Price"
 
 [node name="Level" type="Label" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/BossBattle"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 size_flags_horizontal = 8
+size_flags_vertical = 5
 text = "0"
 horizontal_alignment = 1
 
 [node name="Button" type="Button" parent="ShopPanel/MarginContainer/VBoxContainer/MarginContainer/AbilitiesContainer/BossBattle"]
-custom_minimum_size = Vector2(225, 50)
+custom_minimum_size = Vector2(150, 50)
 layout_mode = 2
 text = "PURCHASE"
 
