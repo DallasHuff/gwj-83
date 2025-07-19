@@ -4,6 +4,7 @@ extends Node2D
 signal attacked
 signal died
 
+@export var projectile_scene: PackedScene
 var stats: EnemyStats : set = _set_stats
 var in_combat := false
 var dying := false
@@ -27,7 +28,11 @@ func _process(delta: float) -> void:
 	if attack_progress.value >= attack_progress.max_value:
 		animation_player.play("attack")
 		attack_sfx.play()
-
+		if stats.projectile_texture:
+			var projectile: Projectile = projectile_scene.instantiate()
+			Global.main.game.add_child(projectile)
+			projectile.sprite.texture = stats.projectile_texture
+			
 
 func _set_stats(value: EnemyStats) -> void:
 	if not is_node_ready():

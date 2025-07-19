@@ -99,6 +99,7 @@ func _ready() -> void:
 	Player.player_died.connect(_on_player_died)
 	Player.health_changed.connect(_on_health_changed)
 	player_animator.animation_finished.connect(_on_animation_finished)
+	CombatEvents.mana_clicked.connect(func()->void:mana_progress.value += 1)
 
 
 func _process(delta: float) -> void:
@@ -114,6 +115,11 @@ func _process(delta: float) -> void:
 		if target_available():
 			player_animator.play("cast")
 		return
+
+
+func consume() -> void:
+	if player_animator.current_animation == "idle":
+		player_sprite.play("consume")
 
 
 func target_available() -> bool:

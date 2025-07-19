@@ -29,8 +29,7 @@ func _on_enemy_died(enemy: Enemy) -> void:
 		push_warning("loot not set up for enemy")
 		return 
 		
-	cur_instance.global_position = Vector2(enemy.global_position.x, enemy.global_position.y + 35)
-
+	cur_instance.global_position = Vector2(enemy.global_position.x, enemy.global_position.y - 30)
 	Global.main.game.add_child(cur_instance)
 		
 	var tween: Tween = get_tree().create_tween()

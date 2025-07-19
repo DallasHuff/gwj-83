@@ -3,6 +3,7 @@ extends Resource
 
 @export_category("visuals")
 @export var sprite_frames: SpriteFrames
+@export var projectile_texture: Texture2D
 @export var death_sfx: AudioStream
 @export var attack_sfx: AudioStream
 @export_category("battle stats")
