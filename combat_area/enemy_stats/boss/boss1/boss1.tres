@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyStats" load_steps=3 format=3 uid="uid://53cds7ly1484"]
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://53cds7ly1484"]
 
 [ext_resource type="Script" uid="uid://cx2xvuia1gr48" path="res://combat_area/enemy_stats/enemy_stats.gd" id="1_08ms7"]
+[ext_resource type="AudioStream" uid="uid://gjgx7cq0lv4y" path="res://assets/audio/enemies/axe_boss.wav" id="1_oluki"]
 [ext_resource type="SpriteFrames" uid="uid://cvvity4vpfs4p" path="res://combat_area/enemy_stats/boss/boss1/boss1_frames.tres" id="2_311mf"]
 
 [resource]
 script = ExtResource("1_08ms7")
 sprite_frames = ExtResource("2_311mf")
+attack_sfx = ExtResource("1_oluki")
 health = 1000.0
 damage = 45.0
 time_between_attacks = 1.5

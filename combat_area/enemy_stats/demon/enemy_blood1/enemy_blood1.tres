@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyStats" load_steps=3 format=3 uid="uid://1y8flqty2wmg"]
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://1y8flqty2wmg"]
 
+[ext_resource type="AudioStream" uid="uid://c4eurds84o28w" path="res://assets/audio/enemies/attack_monster.wav" id="1_a1eib"]
 [ext_resource type="Script" uid="uid://cx2xvuia1gr48" path="res://combat_area/enemy_stats/enemy_stats.gd" id="1_mwgr5"]
 [ext_resource type="SpriteFrames" uid="uid://b3r44xn1m82if" path="res://combat_area/enemy_stats/demon/enemy_blood1/enemy_blood1_frames.tres" id="2_f11e8"]
 
 [resource]
 script = ExtResource("1_mwgr5")
 sprite_frames = ExtResource("2_f11e8")
+attack_sfx = ExtResource("1_a1eib")
 health = 60.0
 damage = 10.0
 time_between_attacks = 1.5
