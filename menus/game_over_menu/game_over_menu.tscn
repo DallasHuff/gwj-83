@@ -48,6 +48,7 @@ layout_mode = 2
 [node name="WinLoseLabel" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 45
 text = "YOU LOSE!"
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2"]
@@ -58,47 +59,57 @@ columns = 2
 
 [node name="Label8" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/GridContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Time Elapsed: "
 
 [node name="TimeSpent" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "00: 00"
 
 [node name="Label2" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/GridContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "EnemiesKilled"
 
 [node name="EnemiesKilled" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "100"
 
 [node name="Label6" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/GridContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Blood Consumed"
 
 [node name="BloodConsumed" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "100"
 
 [node name="Label7" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/GridContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Souls Consumed"
 
 [node name="SoulsConsumed" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "100"
 
 [node name="Label3" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/GridContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "Memories Consumed"
 
 [node name="MemoriesConsumed" type="Label" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
+theme_override_font_sizes/font_size = 20
 text = "100"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2"]
@@ -113,6 +124,7 @@ process_mode = 3
 custom_minimum_size = Vector2(250, 150)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_font_sizes/font_size = 35
 text = "NEW GAME"
 
 [node name="MainMenuButton" type="Button" parent="MarginContainer/PanelContainer/MarginContainer/VBoxContainer2/VBoxContainer"]

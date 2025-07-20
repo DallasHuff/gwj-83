@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bpar1iyust6v3"]
+[gd_scene load_steps=12 format=3 uid="uid://bpar1iyust6v3"]
 
 [ext_resource type="Script" uid="uid://b0gcayqp0jv6m" path="res://common/main/main.gd" id="1_v2ws0"]
 [ext_resource type="PackedScene" uid="uid://r2o6ggkvfoia" path="res://menus/main_menu/main_menu.tscn" id="2_4eugw"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://87bd3uothydn" path="res://combat_area/combat_speed/combat_speed_container.tscn" id="5_5okgu"]
 [ext_resource type="PackedScene" uid="uid://bn75gicw0gbwq" path="res://menus/credits_menu/credits.tscn" id="5_06hnu"]
 [ext_resource type="PackedScene" uid="uid://1eawpnc3rubl" path="res://common/main/music_manager.tscn" id="8_6wle4"]
+[ext_resource type="PackedScene" uid="uid://chnd46mguiney" path="res://menus/settings_menu/arena_settings_menu.tscn" id="9_4l7q7"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_v2ws0")
@@ -20,6 +21,7 @@ credits_menu = ExtResource("5_06hnu")
 arena_scene = ExtResource("2_es36h")
 shop_scene = ExtResource("3_gpk2e")
 combat_speed_container = ExtResource("5_5okgu")
+arena_settings_scene = ExtResource("9_4l7q7")
 
 [node name="MusicManager" parent="." instance=ExtResource("8_6wle4")]
 unique_name_in_owner = true

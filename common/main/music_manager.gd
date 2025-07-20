@@ -31,4 +31,3 @@ func _fade_in(music: AudioStreamPlayer2D, time: float) -> void:
 func _fade_out(music: AudioStreamPlayer2D, time: float) -> void:
 	var tween := create_tween()
 	tween.tween_property(music, "volume_db", -50, time)
-	tween.tween_callback(music.stop)

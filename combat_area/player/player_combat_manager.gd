@@ -85,6 +85,7 @@ var mana_regen_dict: Dictionary[int, float] = {
 @export var lifesteal: Upgrade
 @export var spell_power: Upgrade
 @export var mana_regen: Upgrade
+var animation_base_speed: float
 
 @onready var combat_text_maker: CombatTextMaker = %CombatTextMaker
 @onready var player_animator: AnimationPlayer = %PlayerAnimator
@@ -100,6 +101,19 @@ func _ready() -> void:
 	Player.health_changed.connect(_on_health_changed)
 	player_animator.animation_finished.connect(_on_animation_finished)
 	CombatEvents.mana_clicked.connect(func()->void:mana_progress.value += 1)
+	for anim_name in player_sprite.sprite_frames.get_animation_names():
+		# Get duration of animation in AnimatedSprite2D
+		var frame_count := player_sprite.sprite_frames.get_frame_count(anim_name)
+		var frames_per_second := player_sprite.sprite_frames.get_animation_speed(anim_name)
+		var seconds := frame_count / frames_per_second
+		# Set duration of animation in AnimationPlayer
+		player_animator.get_animation(anim_name).length = seconds
+		# If there's logic associated with this animation, set the logic track
+		# to a length comparable to the animation length
+		if player_animator.get_animation(anim_name).get_track_count() > 1:
+			player_animator.get_animation(anim_name).track_set_key_time(1, 0, seconds * 0.75)
+		if anim_name == "attack":
+			animation_base_speed = seconds
 
 
 func _process(delta: float) -> void:
@@ -140,6 +154,10 @@ func cast() -> void:
 
 
 func attack() -> void:
+	player_animator.speed_scale = attack_speed_dict[attack_speed.level]
+	player_sprite.sprite_frames.set_animation_speed(("attack"), 12 * attack_speed_dict[attack_speed.level])
+
+	player_sprite.sprite_frames.set_animation_speed(("cast"), 12 * attack_speed_dict[attack_speed.level])
 	for e: Enemy in enemy_manager.enemies:
 		if not is_instance_valid(e) or e.dying:
 			continue

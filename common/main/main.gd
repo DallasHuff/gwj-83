@@ -8,6 +8,7 @@ extends Node
 @export var arena_scene: PackedScene
 @export var shop_scene: PackedScene
 @export var combat_speed_container: PackedScene
+@export var arena_settings_scene: PackedScene
 var shop: Shop
 
 @onready var subviewport_container: SubViewportContainer = %SubViewportContainer
@@ -19,7 +20,7 @@ var shop: Shop
 func _ready() -> void:
 	Global.main = self
 	CombatEvents.game_over.connect(_on_game_over)
-	go_arena()
+	go_main_menu()
 
 
 func clear_children() -> void:
@@ -63,6 +64,15 @@ func go_arena() -> void:
 	var speed_buttons_container: Control = combat_speed_container.instantiate()
 	ui.add_child(speed_buttons_container)
 	speed_buttons_container.position = Vector2.ZERO
+	shop.settings_button.pressed.connect(_settings_button_pressed)
+
+
+func _settings_button_pressed() -> void:
+	var settings: SettingsMenu = arena_settings_scene.instantiate()
+	Global.main.ui.add_child(settings)
+	settings.position = Vector2.ZERO
+	get_tree().paused = true
+	settings.exit_button.pressed.connect(func()->void:get_tree().paused = false; settings.queue_free())
 
 
 func go_settings() -> void:

@@ -164,7 +164,9 @@ show_percentage = false
 [node name="DeathSFX" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("4_esqal")
+bus = &"SFX"
 
 [node name="AttackSFX" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("5_hyiqd")
+bus = &"SFX"

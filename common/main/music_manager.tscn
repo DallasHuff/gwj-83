@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://f5bhai2u6v7t" path="res://common/main/music_manager.gd" id="1_sbngg"]
 [ext_resource type="AudioStream" uid="uid://bjvh0ruhj85lk" path="res://assets/audio/music/main_menu/ancient_gods.wav" id="2_sgqtv"]
 [ext_resource type="AudioStream" uid="uid://bvqqt610apep5" path="res://assets/audio/music/arena/dark_lord.wav" id="3_3eeha"]
-[ext_resource type="AudioStream" uid="uid://dityxxn33tsdk" path="res://assets/audio/music/arena/exploring_darkness.wav" id="4_udd3w"]
+[ext_resource type="AudioStream" uid="uid://dk4w60ncv2cql" path="res://assets/audio/music/arena/jasper_music.mp3" id="4_3eeha"]
 
 [node name="MusicManager" type="Node2D"]
 process_mode = 3
@@ -21,5 +21,5 @@ bus = &"Music"
 
 [node name="ArenaMusic2" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
-stream = ExtResource("4_udd3w")
+stream = ExtResource("4_3eeha")
 bus = &"Music"

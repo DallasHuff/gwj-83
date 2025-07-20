@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://dfwplfqccjgah"]
+[gd_scene load_steps=50 format=3 uid="uid://dfwplfqccjgah"]
 
 [ext_resource type="Script" uid="uid://e8kd1dfgjoyx" path="res://combat_area/arena.gd" id="1_06mus"]
 [ext_resource type="Script" uid="uid://ur5fp1m7ww8m" path="res://combat_area/enemy_manager.gd" id="2_yhgyy"]
@@ -96,6 +96,23 @@ tracks/1/keys = {
 }]
 }
 
+[sub_resource type="Animation" id="Animation_hswid"]
+resource_name = "consume"
+tracks/0/type = "method"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Player/PlayerSprite")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"consume", 1.0, false],
+"method": &"play"
+}]
+}
+
 [sub_resource type="Animation" id="Animation_wjadm"]
 resource_name = "death"
 tracks/0/type = "method"
@@ -149,6 +166,7 @@ tracks/0/keys = {
 _data = {
 &"attack": SubResource("Animation_6fwj8"),
 &"cast": SubResource("Animation_8htal"),
+&"consume": SubResource("Animation_hswid"),
 &"death": SubResource("Animation_wjadm"),
 &"idle": SubResource("Animation_v6xpb")
 }
@@ -297,7 +315,7 @@ texture = ExtResource("11_v6xpb")
 [node name="PlayerSprite" type="AnimatedSprite2D" parent="Player" groups=["player"]]
 unique_name_in_owner = true
 material = SubResource("CanvasItemMaterial_ydmkd")
-position = Vector2(306, 100)
+position = Vector2(295, 98)
 sprite_frames = ExtResource("3_wjadm")
 animation = &"idle"
 flip_h = true
@@ -306,10 +324,10 @@ flip_h = true
 unique_name_in_owner = true
 material = SubResource("CanvasItemMaterial_xb1dc")
 custom_minimum_size = Vector2(80, 8)
-offset_left = -24.0
-offset_top = -73.0
-offset_right = 56.0
-offset_bottom = -65.0
+offset_left = -13.0
+offset_top = -62.0
+offset_right = 67.0
+offset_bottom = -54.0
 theme_override_styles/background = SubResource("StyleBoxFlat_xb1dc")
 theme_override_styles/fill = SubResource("StyleBoxFlat_cforn")
 value = 100.0
@@ -321,10 +339,10 @@ material = SubResource("CanvasItemMaterial_cforn")
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = 7.0
-offset_top = -8.0
-offset_right = 19.0
-offset_bottom = 74.0
+offset_left = -18.0
+offset_top = 37.0
+offset_right = -6.0
+offset_bottom = 119.0
 grow_horizontal = 2
 theme_override_constants/separation = 2
 metadata/_edit_use_anchors_ = true
@@ -352,7 +370,7 @@ fill_mode = 3
 show_percentage = false
 
 [node name="ManaClick" type="Area2D" parent="Player"]
-position = Vector2(325, 109)
+position = Vector2(321, 127)
 script = ExtResource("33_hswid")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/ManaClick"]

@@ -15,6 +15,7 @@ var upgrade_containers: Array[UpgradeContainer] = []
 @onready var demon_strength: UpgradeContainer = %DemonStrength
 @onready var soul_strength: UpgradeContainer = %SoulStrength
 @onready var memories_strength: UpgradeContainer = %MemoriesStrength
+@onready var settings_button: Button = %SettingsButton
 
 
 func _ready() -> void:
