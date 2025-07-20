@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://1xlhdr4kjeo8"
+path="res://.godot/imported/WHSH_MOVEMENT-Noise Zap_HY_PC-001.wav-9e6b308cf2c92df4ee3632b2f11283e1.sample"
+
+[deps]
+
+source_file="res://assets/audio/enemies/WHSH_MOVEMENT-Noise Zap_HY_PC-001.wav"
+dest_files=["res://.godot/imported/WHSH_MOVEMENT-Noise Zap_HY_PC-001.wav-9e6b308cf2c92df4ee3632b2f11283e1.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

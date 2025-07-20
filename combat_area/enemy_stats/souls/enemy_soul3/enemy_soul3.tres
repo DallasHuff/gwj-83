@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cx2xvuia1gr48" path="res://combat_area/enemy_stats/enemy_stats.gd" id="1_3m0w6"]
 [ext_resource type="AudioStream" uid="uid://d1qu5mllqcfa8" path="res://assets/audio/player/death5.wav" id="1_082g3"]
-[ext_resource type="AudioStream" uid="uid://csx8qntfehto0" path="res://assets/audio/enemies/roar4_monster.wav" id="1_f8qyc"]
+[ext_resource type="AudioStream" uid="uid://kcogyj8eobde" path="res://assets/audio/enemies/Riverbeast_2.wav" id="1_f8qyc"]
 [ext_resource type="Texture2D" uid="uid://51cq3r64wfq" path="res://combat_area/enemy_stats/souls/enemy_soul3/snarlsburg_projectile.png" id="2_cuwq5"]
 [ext_resource type="SpriteFrames" uid="uid://dlhlrjpluyaac" path="res://combat_area/enemy_stats/souls/enemy_soul3/enemy_soul3_frames.tres" id="2_kmd2q"]
 
