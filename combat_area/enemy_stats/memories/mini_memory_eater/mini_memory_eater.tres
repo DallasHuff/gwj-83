@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyStats" load_steps=3 format=3 uid="uid://cr4letfros8cu"]
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://cr4letfros8cu"]
 
 [ext_resource type="Script" uid="uid://cx2xvuia1gr48" path="res://combat_area/enemy_stats/enemy_stats.gd" id="1_6glr1"]
+[ext_resource type="AudioStream" uid="uid://fu1j3b2uhulk" path="res://assets/audio/enemies/Injured.wav" id="1_t3wb1"]
 [ext_resource type="SpriteFrames" uid="uid://bdaietwnn5gnp" path="res://combat_area/enemy_stats/memories/mini_memory_eater/mini_memory_eater_frames.tres" id="2_f4j7h"]
 
 [resource]
 script = ExtResource("1_6glr1")
 sprite_frames = ExtResource("2_f4j7h")
+attack_sfx = ExtResource("1_t3wb1")
 health = 15.0
 damage = 10.0
 time_between_attacks = 2.0

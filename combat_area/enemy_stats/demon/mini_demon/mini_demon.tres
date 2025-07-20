@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyStats" load_steps=3 format=3 uid="uid://b2lghwq7roidb"]
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://b2lghwq7roidb"]
 
+[ext_resource type="AudioStream" uid="uid://bfialbfe24ssc" path="res://assets/audio/enemies/Fire Spell Impact 1.wav" id="1_hdikj"]
 [ext_resource type="Script" uid="uid://cx2xvuia1gr48" path="res://combat_area/enemy_stats/enemy_stats.gd" id="1_pxdm0"]
 [ext_resource type="SpriteFrames" uid="uid://dybjqodhkfxri" path="res://combat_area/enemy_stats/demon/mini_demon/mini_demon_frames.tres" id="2_r54pm"]
 
 [resource]
 script = ExtResource("1_pxdm0")
 sprite_frames = ExtResource("2_r54pm")
+attack_sfx = ExtResource("1_hdikj")
 health = 30.0
 damage = 5.0
 time_between_attacks = 1.5

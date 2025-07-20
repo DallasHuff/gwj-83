@@ -1,11 +1,13 @@
-[gd_resource type="Resource" script_class="EnemyStats" load_steps=3 format=3 uid="uid://c16ur6kqwcw3c"]
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://c16ur6kqwcw3c"]
 
 [ext_resource type="Script" uid="uid://cx2xvuia1gr48" path="res://combat_area/enemy_stats/enemy_stats.gd" id="1_moohq"]
+[ext_resource type="AudioStream" uid="uid://csx8qntfehto0" path="res://assets/audio/enemies/roar4_monster.wav" id="1_v0g1o"]
 [ext_resource type="SpriteFrames" uid="uid://cstixwdmhclxl" path="res://combat_area/enemy_stats/memories/enemy_memory1/enemy_memory1_frames.tres" id="2_45drr"]
 
 [resource]
 script = ExtResource("1_moohq")
 sprite_frames = ExtResource("2_45drr")
+attack_sfx = ExtResource("1_v0g1o")
 health = 30.0
 damage = 20.0
 time_between_attacks = 2.0
