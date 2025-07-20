@@ -1,7 +1,7 @@
 class_name Projectile
 extends Node2D
 
-var player: Sprite2D
+var player: AnimatedSprite2D
 
 @onready var sprite: Sprite2D = %Sprite2D
 

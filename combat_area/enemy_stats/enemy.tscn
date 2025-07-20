@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://dbcarbcoykvcp"]
+[gd_scene load_steps=16 format=3 uid="uid://dbcarbcoykvcp"]
 
 [ext_resource type="Script" uid="uid://dwjtxcqkqyhv1" path="res://combat_area/enemy_stats/enemy.gd" id="1_1hql8"]
 [ext_resource type="SpriteFrames" uid="uid://bbjq76qsrcsy3" path="res://combat_area/enemy_stats/souls/mini_spirit/mini_spirit_frames.tres" id="2_4bc1d"]
+[ext_resource type="PackedScene" uid="uid://iiakmqsb8qbj" path="res://combat_area/projectile.tscn" id="2_kjgu3"]
 [ext_resource type="AudioStream" uid="uid://d1qu5mllqcfa8" path="res://assets/audio/player/death5.wav" id="3_8eder"]
-[ext_resource type="Script" path="res://combat_area/enemy_stats/enemy_animation_player.gd" id="3_cbd3b"]
+[ext_resource type="Script" uid="uid://d0k01tnxek8b2" path="res://combat_area/enemy_stats/enemy_animation_player.gd" id="3_cbd3b"]
 [ext_resource type="AudioStream" uid="uid://drnnk83hn7ip8" path="res://assets/audio/player/Sword Attack 3.wav" id="4_cbd3b"]
 
 [sub_resource type="Animation" id="Animation_4bc1d"]
@@ -114,6 +115,7 @@ border_color = Color(0, 0, 0, 1)
 
 [node name="Enemy" type="Node2D"]
 script = ExtResource("1_1hql8")
+projectile_scene = ExtResource("2_kjgu3")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 unique_name_in_owner = true
@@ -164,9 +166,11 @@ show_percentage = false
 [node name="DeathSFX" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("3_8eder")
+volume_db = -10.0
 bus = &"SFX"
 
 [node name="AttackSFX" type="AudioStreamPlayer2D" parent="."]
 unique_name_in_owner = true
 stream = ExtResource("4_cbd3b")
+volume_db = -10.0
 bus = &"SFX"

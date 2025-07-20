@@ -32,6 +32,7 @@ func _process(delta: float) -> void:
 			var projectile: Projectile = projectile_scene.instantiate()
 			Global.main.game.add_child(projectile)
 			projectile.sprite.texture = stats.projectile_texture
+			projectile.queue_free()
 			
 
 func _set_stats(value: EnemyStats) -> void:

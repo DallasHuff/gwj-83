@@ -88,6 +88,7 @@ var animation_base_speed: float
 @onready var attack_progress: ProgressBar = %AttackProgress
 @onready var mana_progress: ProgressBar = %ManaProgress
 @onready var enemy_manager: EnemyManager = %EnemyManager
+@onready var slice_sfx: AudioStreamPlayer2D = %Slice
 
 
 func _ready() -> void:
@@ -166,6 +167,7 @@ func attack() -> void:
 		e.stats.current_health -= damage
 		combat_text_maker.make_text(damage, e.global_position - Vector2(0, 45), crit, CombatTextMaker.Type.DAMAGE)
 		attack_progress.value = 0
+		slice_sfx.play()
 		break
 
 

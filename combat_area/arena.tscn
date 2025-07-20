@@ -1,4 +1,4 @@
-[gd_scene load_steps=50 format=3 uid="uid://dfwplfqccjgah"]
+[gd_scene load_steps=51 format=3 uid="uid://dfwplfqccjgah"]
 
 [ext_resource type="Script" uid="uid://e8kd1dfgjoyx" path="res://combat_area/arena.gd" id="1_06mus"]
 [ext_resource type="Script" uid="uid://ur5fp1m7ww8m" path="res://combat_area/enemy_manager.gd" id="2_yhgyy"]
@@ -33,6 +33,7 @@
 [ext_resource type="Resource" uid="uid://m8c6pikcyo0q" path="res://combat_area/enemy_stats/memories/enemy_memory2/enemy_memory2.tres" id="24_ejwl8"]
 [ext_resource type="Resource" uid="uid://dr84n1ygqlcgx" path="res://combat_area/enemy_stats/memories/enemy_memory3/enemy_memory3.tres" id="25_3g0br"]
 [ext_resource type="Script" uid="uid://bc8xw4gejxjby" path="res://combat_area/mana_click.gd" id="33_hswid"]
+[ext_resource type="AudioStream" uid="uid://df2da78cv1tow" path="res://assets/audio/player/slice_sfx.wav" id="34_hnfms"]
 
 [sub_resource type="Animation" id="Animation_6fwj8"]
 resource_name = "attack"
@@ -375,3 +376,9 @@ script = ExtResource("33_hswid")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/ManaClick"]
 shape = SubResource("CapsuleShape2D_2l7ux")
+
+[node name="Slice" type="AudioStreamPlayer2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(327, 128)
+stream = ExtResource("34_hnfms")
+bus = &"SFX"

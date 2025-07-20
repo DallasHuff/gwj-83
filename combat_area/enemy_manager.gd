@@ -47,7 +47,7 @@ func add_new_enemy(slot: int) -> void:
 	e.global_position = Vector2(-200, slot_to_position[slot].y)
 	var tween := create_tween()
 	tween.set_ease(Tween.EASE_OUT)
-	tween.tween_property(e, "global_position", slot_to_position[slot], 1)
+	tween.tween_property(e, "global_position", slot_to_position[slot] + Vector2(30, 45), 1)
 	tween.tween_callback(func()->void: enemies[slot] = e; e.in_combat = true)
 
 
