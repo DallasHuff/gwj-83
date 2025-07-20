@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://crtxo3cq0txto"]
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=5 format=3 uid="uid://crtxo3cq0txto"]
 
 [ext_resource type="Script" uid="uid://cx2xvuia1gr48" path="res://combat_area/enemy_stats/enemy_stats.gd" id="1_4msgs"]
 [ext_resource type="AudioStream" uid="uid://dtpsmndmoo0j3" path="res://assets/audio/enemies/roar6_monster.wav" id="1_xqyby"]
+[ext_resource type="AudioStream" uid="uid://k3d2vqtnxlvq" path="res://assets/audio/enemies/Monster_Thud.mp3" id="2_77w66"]
 [ext_resource type="SpriteFrames" uid="uid://clx0ssb37vlj7" path="res://combat_area/enemy_stats/souls/enemy_soul1/enemy_soul1_frames.tres" id="2_ayjst"]
 
 [resource]
 script = ExtResource("1_4msgs")
 sprite_frames = ExtResource("2_ayjst")
+death_sfx = ExtResource("2_77w66")
 attack_sfx = ExtResource("1_xqyby")
 health = 40.0
 damage = 14.0

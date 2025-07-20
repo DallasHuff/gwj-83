@@ -1,13 +1,15 @@
-[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://bcrfa7h15pasl"]
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=5 format=3 uid="uid://bcrfa7h15pasl"]
 
+[ext_resource type="AudioStream" uid="uid://1xlhdr4kjeo8" path="res://assets/audio/enemies/WHSH_MOVEMENT-Noise Zap_HY_PC-001.wav" id="1_btldt"]
 [ext_resource type="Script" uid="uid://cx2xvuia1gr48" path="res://combat_area/enemy_stats/enemy_stats.gd" id="1_komu4"]
-[ext_resource type="AudioStream" uid="uid://b1a62a1nw0cu1" path="res://assets/audio/enemies/roar3_monster.wav" id="1_yuaqb"]
 [ext_resource type="SpriteFrames" uid="uid://d1is6vk5upsyx" path="res://combat_area/enemy_stats/demon/enemy_blood2/enemy_blood2_frames.tres" id="2_5de56"]
+[ext_resource type="AudioStream" uid="uid://csw3xoy18rvbi" path="res://assets/audio/enemies/Light Torch 1.wav" id="2_x77sh"]
 
 [resource]
 script = ExtResource("1_komu4")
 sprite_frames = ExtResource("2_5de56")
-attack_sfx = ExtResource("1_yuaqb")
+death_sfx = ExtResource("2_x77sh")
+attack_sfx = ExtResource("1_btldt")
 health = 100.0
 damage = 20.0
 time_between_attacks = 1.5

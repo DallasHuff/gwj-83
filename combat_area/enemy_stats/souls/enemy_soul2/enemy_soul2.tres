@@ -1,12 +1,14 @@
-[gd_resource type="Resource" script_class="EnemyStats" load_steps=4 format=3 uid="uid://csk8mqg7l4f0j"]
+[gd_resource type="Resource" script_class="EnemyStats" load_steps=5 format=3 uid="uid://csk8mqg7l4f0j"]
 
 [ext_resource type="AudioStream" uid="uid://behg32vro1rr8" path="res://assets/audio/enemies/Hiss.wav" id="1_23q2i"]
 [ext_resource type="Script" uid="uid://cx2xvuia1gr48" path="res://combat_area/enemy_stats/enemy_stats.gd" id="1_aw2qy"]
 [ext_resource type="SpriteFrames" uid="uid://bd84ei7v1hgf" path="res://combat_area/enemy_stats/souls/enemy_soul2/enemy_soul2_frames.tres" id="2_dpcoa"]
+[ext_resource type="AudioStream" uid="uid://bxmkbuhktgtr3" path="res://assets/audio/enemies/Fae_Gasp.wav" id="2_edqh8"]
 
 [resource]
 script = ExtResource("1_aw2qy")
 sprite_frames = ExtResource("2_dpcoa")
+death_sfx = ExtResource("2_edqh8")
 attack_sfx = ExtResource("1_23q2i")
 health = 80.0
 damage = 30.0
