@@ -6,10 +6,10 @@
 [resource]
 script = ExtResource("1_5w1cc")
 sprite_frames = ExtResource("2_irwak")
-health = 0.0
-damage = 0.0
-time_between_attacks = 0.0
+health = 100.0
+damage = 40.0
+time_between_attacks = 2.0
 blood = 0
 souls = 0
-memories = 1
+memories = 4
 metadata/_custom_type_script = "uid://cx2xvuia1gr48"

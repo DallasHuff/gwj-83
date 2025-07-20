@@ -7,16 +7,16 @@ signal player_died
 var max_health_dict: Dictionary[int, float] = {
 	0: 100, # level 0 and level 1 should have the same value
 	1: 100, # level 0 and level 1 should have the same value
-	2: 110,
-	3: 120,
-	4: 130,
-	5: 140,
-	6: 150,
-	7: 160,
-	8: 170,
-	9: 180,
-	10: 190,
-	11: 200
+	2: 120,
+	3: 140,
+	4: 160,
+	5: 180,
+	6: 200,
+	7: 220,
+	8: 240,
+	9: 260,
+	10: 280,
+	11: 300
 }
 # This is % of damage to be taken. so 1 is 100%, 0.9 is 90% damage taken (10% reduction)
 var defense_dict: Dictionary[int, float] = {

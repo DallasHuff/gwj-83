@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://87bd3uothydn"]
 
-[ext_resource type="Script" uid="uid://dh47xd8exmwcu" path="res://combat_area/combat_speed/potion_container.gd" id="1_b1uix"]
+[ext_resource type="Script" path="res://combat_area/combat_speed/potion_container.gd" id="1_b1uix"]
 [ext_resource type="Texture2D" uid="uid://bq5br2w7qxv4c" path="res://assets/icons/health_potion/full_potion.png" id="1_tp1cw"]
 [ext_resource type="Script" uid="uid://wwaycvb137hq" path="res://combat_area/combat_speed/combat_speed_container.gd" id="1_uvp47"]
 [ext_resource type="Texture2D" uid="uid://nvswnoddlgi0" path="res://assets/ui/backgrounds/bgbot.png" id="1_ykf3q"]
