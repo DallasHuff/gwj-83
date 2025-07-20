@@ -2,7 +2,7 @@ class_name Shop
 extends Control
 
 @export var attack_damage_upgrade: Upgrade
-var blood: int = 5
+var blood: int = 3
 var souls: int = 1
 var memories: int = 1
 var upgrade_containers: Array[UpgradeContainer] = []
