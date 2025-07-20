@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://dwjtxcqkqyhv1" path="res://combat_area/enemy_stats/enemy.gd" id="1_1hql8"]
 [ext_resource type="SpriteFrames" uid="uid://bbjq76qsrcsy3" path="res://combat_area/enemy_stats/souls/mini_spirit/mini_spirit_frames.tres" id="2_4bc1d"]
 [ext_resource type="AudioStream" uid="uid://d1qu5mllqcfa8" path="res://assets/audio/player/death5.wav" id="3_8eder"]
-[ext_resource type="Script" uid="uid://d0k01tnxek8b2" path="res://combat_area/enemy_stats/enemy_animation_player.gd" id="3_cbd3b"]
+[ext_resource type="Script" path="res://combat_area/enemy_stats/enemy_animation_player.gd" id="3_cbd3b"]
 [ext_resource type="AudioStream" uid="uid://drnnk83hn7ip8" path="res://assets/audio/player/Sword Attack 3.wav" id="4_cbd3b"]
 
 [sub_resource type="Animation" id="Animation_4bc1d"]

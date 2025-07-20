@@ -4,16 +4,16 @@ extends Node
 var attack_damage_dict: Dictionary[int, float] = {
 	0: 10, # level 0 and level 1 should have the same value
 	1: 10, # level 0 and level 1 should have the same value
-	2: 11.5,
-	3: 13,
-	4: 14.5,
-	5: 16,
-	6: 17.5,
-	7: 19,
-	8: 21.5,
-	9: 24,
-	10: 25.5,
-	11: 28
+	2: 13,
+	3: 16,
+	4: 19,
+	5: 22,
+	6: 25,
+	7: 28,
+	8: 31,
+	9: 34,
+	10: 37,
+	11: 40
 }
 var attack_speed_dict: Dictionary[int, float] = {
 	0: 1, # level 0 and level 1 should have the same value
@@ -52,32 +52,26 @@ var lifesteal_dict: Dictionary[int, float] = {
 	5: 1.0,
 }
 var spell_power_dict: Dictionary[int, float] = {
-	0: 0,
-	1: 2,
-	2: 4,
-	3: 6,
-	4: 8,
-	5: 10,
-	6: 12,
-	7: 14,
-	8: 16,
-	9: 18,
-	10: 20,
-	11: 22
+	0: 10,
+	1: 14,
+	2: 18,
+	3: 22,
+	4: 26,
+	5: 30,
+	6: 34,
+	7: 38,
+	8: 42,
+	9: 46,
+	10: 50,
+	11: 54
 }
 var mana_regen_dict: Dictionary[int, float] = {
 	0: 0,
-	1: 0.5,
-	2: 1,
-	3: 1.5,
-	4: 2,
-	5: 2.5,
-	6: 3,
-	7: 3.5,
-	8: 4,
-	9: 4.5,
-	10: 5,
-	11: 5.5
+	1: 1,
+	2: 2,
+	3: 3,
+	4: 4,
+	5: 5
 }
 @export var attack_damage: Upgrade
 @export var attack_speed: Upgrade
@@ -147,7 +141,7 @@ func cast() -> void:
 	for e: Enemy in enemy_manager.enemies:
 		if not is_instance_valid(e) or e.dying:
 			continue
-		var damage := attack_damage_dict[attack_damage.level]
+		var damage := spell_power_dict[spell_power.level]
 		combat_text_maker.make_text(damage, e.global_position - Vector2(0, 45), false, CombatTextMaker.Type.DAMAGE)
 		e.stats.current_health -= damage
 		mana_progress.value = 0
